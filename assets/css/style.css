@@ -255,4 +255,77 @@ nav .nav-center .login :first-child:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+#restaurant {
+  width: 100%;
+  padding: 100px 0px;
+  background-color: white;
+}
+
+#customer {
+  width: 100%;
+  padding: 100px 0px;
+  background-color: #000929;
+  color: white;
+}
+#customer .customer-center {
+  width: 100%;
+}
+#customer .customer-center #top {
+  text-align: center;
+  padding-bottom: 100px;
+}
+#customer .customer-center #top h2 {
+  font-size: 50px;
+}
+#customer .customer-center #bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+}
+#customer .customer-center #bottom .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#customer .customer-center #bottom .top {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  padding-top: 70px;
+  position: relative;
+}
+#customer .customer-center #bottom .top .img img {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+}
+#customer .customer-center #bottom .bottom {
+  display: flex;
+  gap: 15px;
+}
+#customer .customer-center #bottom .bottom .img {
+  width: 100px;
+}
+#customer .customer-center #bottom .bottom .img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#customer .customer-center #bottom .bottom .text {
+  display: flex;
+  flex-direction: column;
+}
+#customer .customer-center #bottom .bottom .text .star {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+#customer .customer-center #bottom .bottom .text .star i {
+  color: #ffb23e;
+}
+#customer .customer-center #bottom .bottom .text h5 {
+  padding-bottom: 5px;
 }/*# sourceMappingURL=style.css.map */

@@ -262,6 +262,7 @@ nav {
     .left {
         // width: 44%;
         margin-left: -200px;
+
         img {
             width: 100%;
             object-fit: cover;
@@ -300,13 +301,94 @@ nav {
                 gap: 10px;
             }
 
-            // .number {
-            //     width: 35px;
-            //     img {
-            //         width: 100%;
-            //     }
-            // }
         }
     }
 
+}
+
+// <!---------- Restaurant ---------->
+#restaurant {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: white;
+}
+
+
+// <!---------- CUSTOMER ---------->
+#customer {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: $background;
+    color: white;
+
+    .customer-center {
+        width: 100%;
+
+        #top {
+            text-align: center;
+            padding-bottom: 100px;
+
+            h2 {
+                font-size: 50px;
+            }
+        }
+
+        #bottom {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 20px;
+
+            .cards {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .top {
+                border: 1px solid white;
+                border-radius: 20px;
+                padding: 20px;
+                padding-top: 70px;
+                position: relative;
+
+                .img {
+                    img {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                    }
+                }
+            }
+
+            .bottom {
+                display: flex;
+                gap: 15px;
+
+                .img {
+                    width: 100px;
+
+                    img {
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    .star{
+                        display:  flex;
+                        gap: 5px;
+                        padding-bottom: 10px;
+                        i{
+                            color: $star;
+                        }
+                    }
+                    h5{
+                        padding-bottom: 5px;
+                    }                  
+                }
+            }
+        }
+    }
 }
