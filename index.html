@@ -23,6 +23,8 @@
       rel="stylesheet"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
@@ -60,7 +62,7 @@
             <p>Unlock Your Restaurant's Potential.</p>
             <p>Smarter Restaurant Management Starts Here.</p>
           </div>
-          <div class="banner-btns">
+          <div class="banner-btns" data-aos="fade-up" data-aos-duration="3000">
             <button class="button"><i class="bi bi-truck"></i>Delivery</button>
             <button class="button">
               <i class="bi bi-geo-alt-fill"></i>Pick Up
@@ -72,12 +74,107 @@
         </div>
       </div>
     </div>
+
+    <!---------- Section-2 ---------->
+    <section id="sec3">
+      <div class="container">
+        <div class="sec3-center">
+          <div class="top"><h2>Our Categories</h2></div>
+          <div class="bottom">
+            <div class="left" data-aos="zoom-in-right">
+              <img src="./assets/img/PromoBanner-2.png" alt="" />
+            </div>
+
+            <div class="right" data-aos="zoom-in-left">
+              <img src="./assets/img/PromoBanner-1.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---------- Location ---------->
+    <section id="location">
+      <div class="container">
+        <div class="location-center">
+          <div
+            class="left"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            <img src="./assets/img/process-themb.png" alt="" />
+          </div>
+
+          <div class="right">
+            <h3 data-aos="fade-up" data-aos-duration="3000">
+              The Process of Crafting your Dining Experience
+            </h3>
+
+            <div class="item" data-aos="fade-up" data-aos-duration="3000">
+              <div class="icon">
+                <i class="bi bi-qr-code"></i>
+              </div>
+              <div class="text">
+                <h5>Set your location</h5>
+                <p>A high quality solution beautifully food for customers</p>
+              </div>
+              <div class="number">
+                <img src="./assets/img/1.png" alt="" />
+              </div>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="3000">
+              <div class="icon">
+                <i class="bi bi-qr-code"></i>
+              </div>
+              <div class="text">
+                <h5>Set your location</h5>
+                <p>A high quality solution beautifully food for customers</p>
+              </div>
+              <div class="number">
+                <img src="./assets/img/2.png" alt="" />
+              </div>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="3000">
+              <div class="icon">
+                <i class="bi bi-qr-code"></i>
+              </div>
+              <div class="text">
+                <h5>Set your location</h5>
+                <p>A high quality solution beautifully food for customers</p>
+              </div>
+              <div class="number">
+                <img src="./assets/img/3.png" alt="" />
+              </div>
+            </div>
+            <div class="item" data-aos="fade-up" data-aos-duration="3000">
+              <div class="icon">
+                <i class="bi bi-qr-code"></i>
+              </div>
+              <div class="text">
+                <h5>Set your location</h5>
+                <p>A high quality solution beautifully food for customers</p>
+              </div>
+              <div class="number">
+                <img src="./assets/img/4.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="./assets/js/script.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
