@@ -26,6 +26,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
+
   </head>
   <body>
     <!-------------- Navbar ---------------->
@@ -41,12 +42,12 @@
               <li><a href="./index.html">Home</a></li>
               <li><a href="">Restaurants</a></li>
               <li><a href="">Pages</a></li>
-              <li><a href="">User Dashboard</a></li>
+              <li><a href="./admin.html">User Dashboard</a></li>
             </ul>
           </div>
           <div class="login">
-            <button class="button">Log In</button>
-            <button class="button">Sign Up</button>
+            <button class="button" id="logIn">Log In</button>
+            <button class="button" id="signUp">Sign Up</button>
           </div>
           <i class="bi bi-list list"></i>
         </div>
@@ -536,5 +537,8 @@
     <script>
       AOS.init();
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </body>
 </html>

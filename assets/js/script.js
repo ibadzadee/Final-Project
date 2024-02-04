@@ -13,3 +13,14 @@ window.addEventListener("scroll" , ()=>{
         nav.style.padding = "";
       }
 })
+
+let logInButton = document.querySelector('#logIn')
+let signUpButton = document.querySelector('#signUp')
+
+logInButton.addEventListener("click" , ()=>{
+  window.location = './login.html'
+})
+
+signUpButton.addEventListener("click" , ()=>{
+  window.location = './signup.html'
+})
