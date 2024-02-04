@@ -1,0 +1,117 @@
+@import '../mixin/mixin';
+@import '../variable/variable';
+@import '../reset/reset';
+
+
+
+#banner.restorans {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(../img/restoran1.jpg);
+    @include image;
+}
+
+
+// ---------------------Section2--------------------------
+#sec2 {
+    .top {
+        display: flex;
+    }
+
+    .bottom {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .items {
+            padding: 20px 30px;
+            border-radius: 20px;
+            background-color: rgba(240, 248, 255, 0.3);
+            backdrop-filter: blur(10.5px);
+            @include display;
+            flex-direction: column;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
+            .img,
+            h5,
+            p {
+                position: relative;
+                z-index: 2;
+            }
+
+            &:before {
+                content: "";
+                @include display;
+                background: $red;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                font-size: 30px;
+                font-weight: 600;
+                transition: left 0.7s;
+                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            }
+
+            &:hover {
+                &::before {
+                    left: 0;
+                }
+                h5, p{
+                    color: white;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .img {
+                width: 110px;
+                height: 110px;
+                border-radius: 9999px;
+                padding: 20px;
+                background-color: white;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h5 {
+                font-size: 22px;
+                font-weight: 700;
+                padding: 15px 0px;
+                color: $dark-blue;
+            }
+
+            p {
+                position: relative;
+                color: rgb(79, 77, 77);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 9999px;
+                    background-color: $star;
+                    left: -20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                }
+            }
+        }
+    }
+}
+
+// ---------------------Populars--------------------------
+
+#restaurant.populars{
+    background-image: none;
+    background-color: $gray;
+}

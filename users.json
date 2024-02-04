@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Sara",
+      "email": "sara.ibadzade@gmail.com",
+      "password": "12345"
+    },
+    {
+      "name": "Sara ibadzade",
+      "email": "sara.ibadzade@gmail.com",
+      "password": "12345",
+      "id": 2
+    },
+    {
+      "name": "Sara ibadzade",
+      "email": "sara@gmail.com",
+      "password": "yeni1",
+      "id": 3
+    }
+  ]
+}
