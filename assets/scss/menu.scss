@@ -1,0 +1,161 @@
+@import '../mixin/mixin';
+@import '../variable/variable';
+@import '../reset/reset';
+
+// ---------------- Menu --------------
+// flipping card--
+#menu {
+    padding: 100px 0px;
+    background-image: url(../img/traditional-bg.png);
+    
+    .menu-center {
+        width: 100%;
+        @include display;
+        padding: 200px 0px;
+        gap: 20px;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(3.5px);
+        border-radius: 20px;
+    }
+}
+
+.flippingCard {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    // margin: 0 auto 40px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    transform-origin: right center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.card.flipped {
+    -webkit-transform: translateX(-100%) rotateY(-180deg);
+    -moz-transform: translateX(-100%) rotateY(-180deg);
+    -o-transform: translateX(-100%) rotateY(-180deg);
+    transform: translateX(-100%) rotateY(-180deg);
+
+}
+
+.card figure {
+    // display: block;
+    height: 100%;
+    width: 100%;
+    // line-height: 260px;
+    color: white;
+    // text-align: center;
+    // font-weight: bold;
+    // font-size: 140px;
+    position: absolute;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    // overflow: hidden;
+}
+
+.card .front {
+    background-image: url(../img/popular1.png);
+    @include image;
+    border-radius: 20px;
+
+    &:hover {
+        &::after {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3.5px);
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            content: 'Click for more details';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            @include display;
+        }
+    }
+}
+
+
+
+.card .back {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3, 5px);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    border-radius: 20px;
+    @include display(flex-start, center);
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+
+    h5 {
+        font-size: 20px;
+    }
+
+    #name {
+        margin-bottom: 10px;
+        color: $red;
+    }
+
+    #name-inner {
+        font-size: 16px;
+    }
+
+    #about {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        color: $red;
+    }
+
+    .about {
+        border: 1px solid white;
+        padding: 15px 50px;
+        @include display;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        border-radius: 20px;
+    }
+
+    #cost {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        color: $red;
+    }
+}
+
+// .card-inner{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+// }

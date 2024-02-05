@@ -1,0 +1,190 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+* a {
+  text-decoration: none;
+}
+* li {
+  list-style: none;
+}
+* ul {
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+* p {
+  margin-bottom: 0;
+}
+* .h1,
+* .h2,
+* .h3,
+* .h4,
+* .h5,
+* .h6,
+* h1,
+* h2,
+* h3,
+* h4,
+* h5,
+* h6 {
+  margin-bottom: 0;
+}
+
+.otherPages {
+  box-shadow: 0 0 10px 1px black;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+}
+
+.loginPage, .signupPage {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  background-image: url(../img/loginBack.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginPage #form, .signupPage #form {
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 100px;
+  gap: 10px;
+  box-shadow: 0 0 10px 1px gray;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+}
+.loginPage #form input, .signupPage #form input {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#menu {
+  padding: 100px 0px;
+  background-image: url(../img/traditional-bg.png);
+}
+#menu .menu-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0px;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  border-radius: 20px;
+}
+
+.flippingCard {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: right center;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.card.flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card figure {
+  height: 100%;
+  width: 100%;
+  color: white;
+  position: absolute;
+  margin: 0;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background-image: url(../img/popular1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+.card .front:hover::after {
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  content: "Click for more details";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(3, 5px);
+          backdrop-filter: blur(3, 5px);
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+.card .back h5 {
+  font-size: 20px;
+}
+.card .back #name {
+  margin-bottom: 10px;
+  color: #F01543;
+}
+.card .back #name-inner {
+  font-size: 16px;
+}
+.card .back #about {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #F01543;
+}
+.card .back .about {
+  border: 1px solid white;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  border-radius: 20px;
+}
+.card .back #cost {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: #F01543;
+}/*# sourceMappingURL=menu.css.map */
