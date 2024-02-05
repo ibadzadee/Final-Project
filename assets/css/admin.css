@@ -76,4 +76,106 @@ nav {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(../img/loginBack.jpg);
+}
+#adminPage .admin-center {
+  width: 100%;
+  display: flex;
+}
+#adminPage .left {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  box-shadow: 0 0 10px 2px snow;
+  width: 35%;
+  padding: 50px;
+  border-radius: 20px;
+}
+#adminPage .left .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+#adminPage .left .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#adminPage .left h5 {
+  margin: 20px;
+  text-align: center;
+}
+#adminPage .left .left-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#adminPage .left .left-bottom .display {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid gray !important;
+  padding-bottom: 10px;
+  cursor: pointer;
+  color: white;
+}
+#adminPage .left .left-bottom .display i {
+  background-color: rgb(247, 199, 199);
+  border-radius: 9999px;
+  padding: 5px 10px;
+  font-size: 25px;
+}
+#adminPage .left .left-bottom .display p {
+  font-size: 18px;
+  font-weight: 500;
+}
+#adminPage .left .left-bottom .display:hover i,
+#adminPage .left .left-bottom .display:hover p {
+  transition: all 0.5s ease;
+  color: #F01543;
+}
+#adminPage .right {
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 2px snow;
+  -webkit-backdrop-filter: url(3.5px);
+          backdrop-filter: url(3.5px);
+  border-radius: 20px;
+  padding: 50px 100px;
+}
+#adminPage .right form {
+  width: 500px;
+  background-color: red;
+  -webkit-backdrop-filter: url(3.5px);
+          backdrop-filter: url(3.5px);
+  border-radius: 20px;
+  padding: 50px 100px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+#adminPage .right form label {
+  margin-top: 20px;
+}
+#adminPage .right form p {
+  color: red;
+  display: none;
+}
+#adminPage .right form #submit {
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: green;
+  border: none;
+  border-radius: 999px;
+  padding: 5px 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=admin.css.map */
