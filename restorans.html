@@ -134,41 +134,80 @@
             <h2>Our Featured & Newest Restaurant</h2>
           </div>
 
-          <div class="bottom" data-aos="fade-up" data-aos-duration="3000">
+          <div
+            class="bottom owl-carousel"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             <div class="cards">
               <div class="img">
-                <img src="./assets/img/faq-1.png" alt="" />
+                <img src="./assets/img/popular1.png" alt="" />
               </div>
-              <h4>Vegetarian Restaurant</h4>
-              <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <p>4.7(2.5K)</p>
+              <h4 id="name">Baked Chicken Wings and Legs</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>4 Piece Chicken</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Spicy Sauce</p>
+                </div>
+                <h5 id="cost">$35.00</h5>
               </div>
             </div>
+
             <div class="cards">
               <div class="img">
-                <img src="./assets/img/faq-1.png" alt="" />
+                <img src="./assets/img/popular1.png" alt="" />
               </div>
-              <h4>Vegetarian Restaurant</h4>
-              <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <p>4.7(2.5K)</p>
+              <h4 id="name">Baked Chicken Wings and Legs</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>4 Piece Chicken</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Spicy Sauce</p>
+                </div>
+                <h5 id="cost">$35.00</h5>
               </div>
             </div>
+
             <div class="cards">
               <div class="img">
-                <img src="./assets/img/faq-1.png" alt="" />
+                <img src="./assets/img/popular1.png" alt="" />
               </div>
-              <h4>Vegetarian Restaurant</h4>
-              <div class="star">
-                <i class="bi bi-star-fill"></i>
-                <p>4.7(2.5K)</p>
+              <h4 id="name">Baked Chicken Wings and Legs</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>4 Piece Chicken</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Spicy Sauce</p>
+                </div>
+                <h5 id="cost">$35.00</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- flipping card -->
+    <section class="flippingCard">
+      <div id="card1" class="card">
+        <figure class="front">
+          <div id="menu">details</div>
+        </figure>
+        <figure class="back">
+          <div id="menu">details</div>
+        </figure>
+      </div>
+    </section>
 
     <!---------------- Footer ---------------->
     <footer>
@@ -212,5 +251,16 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./assets/js/restorans.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+      $(function () {
+        $(".card").click(function (event) {
+          $(event.currentTarget).toggleClass("flipped");
+        });
+      });
+    </script>
   </body>
 </html>

@@ -61,7 +61,9 @@
                 &::before {
                     left: 0;
                 }
-                h5, p{
+
+                h5,
+                p {
                     color: white;
                     transition: all 0.5s ease;
                 }
@@ -111,7 +113,135 @@
 
 // ---------------------Populars--------------------------
 
-#restaurant.populars{
+#restaurant.populars {
     background-image: none;
     background-color: $gray;
+
+    #name {
+        color: $dark-blue;
+        margin-bottom: 0;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 1px solid $red;
+        padding: 10px 20px;
+
+        .p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                color: $dark-blue;
+            }
+
+            i {
+                color: $red;
+                font-size: 19px;
+            }
+        }
+
+        .p2 {
+            padding-bottom: 15px;
+            border-bottom: 1px solid $red;
+        }
+
+        #cost {
+            @include display;
+            font-size: 25px;
+            padding: 10px;
+        }
+    }
+
+    .cards:hover {
+        #name {
+            color: $red;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+// flipping card--
+.flippingCard {
+    width: 200px;
+    height: 260px;
+    position: relative;
+    margin: 0 auto 40px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.card.flipped {
+    -webkit-transform: translateX(-100%) rotateY(-180deg);
+    -moz-transform: translateX(-100%) rotateY(-180deg);
+    -o-transform: translateX(-100%) rotateY(-180deg);
+    transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card figure {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 260px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 140px;
+    position: absolute;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card .front {
+    background: red;
+    // position: relative;
+    z-index: 1;
+}
+
+    #menu {
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
+        // padding: 0;
+        // margin: 0;
+        font-size: 20px;
+        margin-top: 0;
+        z-index: 10;
+        color: black;
+        line-height: initial !important;
+    }
+
+.card .back {
+    background: blue;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
