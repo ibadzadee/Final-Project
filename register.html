@@ -26,9 +26,14 @@
               </a>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" required="" />
-            <input type="email" placeholder="Email" required="" />
-            <input type="password" placeholder="Password" required="" />
+            <input type="text" name="name" placeholder="Name" required="" />
+            <input type="email" name="email" placeholder="Email" required="" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required=""
+            />
             <button id="signup">Sign Up</button>
           </form>
         </div>
@@ -47,8 +52,20 @@
               </a>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" required="" />
-            <input type="password" placeholder="Password" required="" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required=""
+              id="emailLogin"
+            />
+            <input
+              type="password"
+              name="password"
+              id="passwordLogin"
+              placeholder="Password"
+              required=""
+            />
             <button id="login">Sign In</button>
           </form>
         </div>
@@ -59,7 +76,7 @@
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button class="ghost" id="signIn">Sign In</button>
+              <button class="ghost" id="login">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
               <h1>Hello,Friend</h1>
@@ -71,41 +88,68 @@
       </div>
     </section>
 
-    
-
     <!--------------------- Resp < 600px --------------------->
-    
+
     <section id="register">
-      <div class="main">  	
-        <input type="checkbox" id="chk" aria-hidden="true">
-  
+      <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+
         <div class="signup">
           <form>
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="name" id="name" placeholder="Full Name" required="">
-            <input type="email" name="email" id="email" placeholder="Email" required="">
-            <input type="password" name="password" id="password" placeholder="Password" required="">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full Name"
+              required=""
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required=""
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required=""
+            />
             <button id="signUp2">Sign up</button>
           </form>
         </div>
-  
+
         <div class="login">
           <form>
             <label for="chk" aria-hidden="true">Login</label>
-            <input type="email" name="email" id="emailLogin" placeholder="Email" required="">
-            <input type="password" name="password" id="passwordLogin" placeholder="Password" required="">
+            <input
+              type="email"
+              name="email"
+              id="emailLogin"
+              placeholder="Email"
+              required=""
+            />
+            <input
+              type="password"
+              name="password"
+              id="passwordLogin"
+              placeholder="Password"
+              required=""
+            />
             <button id="login">Login</button>
           </form>
         </div>
       </div>
-  </section>
+    </section>
 
+    <!------------------ Js ------------------>
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
 
-  <!------------------ Js ------------------>
-  <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/register.js"></script>
   </body>
 </html>
