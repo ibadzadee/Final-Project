@@ -148,19 +148,37 @@ nav {
   -webkit-backdrop-filter: url(3.5px);
           backdrop-filter: url(3.5px);
   border-radius: 20px;
-  padding: 50px 100px;
+  padding: 50px;
 }
 #adminPage .right form {
-  width: 500px;
+  width: 100%;
   background-color: red;
   -webkit-backdrop-filter: url(3.5px);
           backdrop-filter: url(3.5px);
   border-radius: 20px;
-  padding: 50px 100px;
+  padding: 50px 0px;
   margin: 0 auto;
-  margin-top: 100px;
   display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+}
+#adminPage .right form .imageDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+#adminPage .right form .imageDiv .image {
+  width: 150px;
+  height: 100px;
+  border: 2px solid white;
+}
+#adminPage .right form .imageDiv .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #adminPage .right form label {
   margin-top: 20px;
@@ -178,4 +196,37 @@ nav {
   border-radius: 999px;
   padding: 5px 20px;
   cursor: pointer;
+}
+#adminPage .right form .menuDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#adminPage .right form .menuItems {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding: 20px;
+  align-items: center;
+}
+#adminPage .right form .menuItems input {
+  width: 150px;
+  height: 25px;
+}
+#adminPage .right form .menuItems .menuImageDiv {
+  display: flex;
+  flex-direction: column;
+}
+#adminPage .right form .menuItems .menuImageDiv .img {
+  width: 80px;
+  height: 80px;
+}
+#adminPage .right form .menuItems .menuImageDiv .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=admin.css.map */

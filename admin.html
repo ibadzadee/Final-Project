@@ -47,8 +47,8 @@
             </ul>
           </div>
           <div class="login">
-            <button class="button" id="logIn">Log In</button>
-            <button class="button" id="signUp">Sign Up</button>
+            <button class="button" id="logIn" taget ="_blank">Log In</button>
+            <button class="button" id="signUp" taget ="_blank">Sign Up</button>
           </div>
           <i class="bi bi-list list"></i>
         </div>
@@ -58,7 +58,6 @@
 
     <section id="adminPage">
       <div class="container">
-
         <!-- giris olmayanda bu yazi yazilsin! -->
         <div id="logoff">You are not logged !</div>
 
@@ -67,10 +66,15 @@
             <div class="img"><img src="./assets/img/user.webp" alt="" /></div>
 
             <h5 id="info" style="display: none"></h5>
+
             <div class="left-bottom">
-              <div class="restoran display">
+              <div class="restoranCreate display">
                 <i class="bi bi-house-door-fill"></i>
-                <p>Create/Edit your Restoran</p>
+                <p>Create Restoran</p>
+              </div>
+              <div class="restoranEdit display">
+                <i class="bi bi-pencil-square"></i>
+                <p>Edit Restoran</p>
               </div>
               <div class="profile display">
                 <i class="bi bi-person-fill"></i>
@@ -84,34 +88,81 @@
           </div>
 
           <div class="right">
-
             <form action="add" id="form">
-
               <label for="name">Restoran's name:</label>
-              <input type="name" id="name" />
+              <input type="name" id="nameRestoran" />
               <p>*Please , fill out Name:</p>
 
               <div class="imageDiv">
                 <input type="file" id="file" />
                 <p>*Please , choose a file</p>
                 <div class="image">
-                  <img src="./assets/img/restoran1.jpg" alt="">
+                  <img src="./assets/img/restoran1.jpg" alt="" />
                 </div>
               </div>
 
-              <label for="name">Categories:</label>
-              <input type="name" id="name" />
-              <p>*Please , fill out Name:</p>
+              <h5>Menu:</h5>
+              <div class="menuDiv">
 
-              <label for="cost">Cost:</label>
+                <div class="menuItems">
+                  <div class="menuImageDiv">
+                    <div class="img">
+                      <img src="./assets/img/popular1.png" alt="" />
+                    </div>
+                    <input type="file" />
+                  </div>
+                  <label for="name">Name:</label>
+                  <input type="name" id="name" />
+                  <p>*Please , fill out Name:</p>
+  
+                  <label for="cost">Cost:</label>
+                  <input type="cost" id="cost" />
+                  <p>*Please , fill out Name:</p>
+                </div>
+                
+                <div class="menuItems">
+                  <div class="menuImageDiv">
+                    <div class="img">
+                      <img src="./assets/img/popular1.png" alt="" />
+                    </div>
+                    <input type="file" />
+                  </div>
+                  <label for="name">Name:</label>
+                  <input type="name" id="name" />
+                  <p>*Please , fill out Name:</p>
+  
+                  <label for="cost">Cost:</label>
+                  <input type="cost" id="cost" />
+                  <p>*Please , fill out Name:</p>
+                </div>
+                <div class="menuItems">
+                  <div class="menuImageDiv">
+                    <div class="img">
+                      <img src="./assets/img/popular1.png" alt="" />
+                    </div>
+                    <input type="file" />
+                  </div>
+                  <label for="name">Name:</label>
+                  <input type="name" id="name" />
+                  <p>*Please , fill out Name:</p>
+  
+                  <label for="cost">Cost:</label>
+                  <input type="cost" id="cost" />
+                  <p>*Please , fill out Name:</p>
+                </div>
+
+              </div>
+                
+
+              <!-- <label for="cost">Cost:</label>
               <input type="cost" id="cost" />
-              <p>*Please , fill out Cost</p>
+              <p>*Please , fill out Cost</p> -->
 
               <input type="submit" id="submit" />
             </form>
-            
           </div>
         </div>
+        <button><a href="./restorans.html"></a></button>
       </div>
     </section>
 
