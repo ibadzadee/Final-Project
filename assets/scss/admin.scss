@@ -28,14 +28,16 @@ body {
     margin: 20px 0px;
     text-align: center;
 }
- #info h5{
+.mb-5{
+    margin-bottom: 0 !important;
+}
+
+#info h5 {
     width: 100%;
     text-align: center;
-     color: white;
+    color: white;
     text-shadow: 0 0 10px red;
- }
-
-
+}
 .nav-pills-custom .nav-link {
     color: #aaa;
     background: #fff;
@@ -177,7 +179,29 @@ table {
 }
 
 
+.goPage {
+    margin-top: 70px;
+    margin-bottom: 0;
+    margin-left: 100%;
+    transform: translateX(-100%);
+    border: 1px solid white;
+    width: 250px;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 999px;
+    &:hover{
+        background-color: $red;
+        transition: all 0.5s ease;
+        a{
+            color: white;
+        }
+    }
 
+    a {
+        font-size: 18px;
+        color: $red;
+    }
+}
 
 
 
