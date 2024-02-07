@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 * a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 * li {
   list-style: none;
@@ -66,167 +66,172 @@
   margin-bottom: 50px;
 }
 
-nav {
-  background: #000929;
+body {
+  background: linear-gradient(to left, #1d1d1a, #95a696) !important;
+  min-height: 100vh;
 }
 
-#adminPage {
-  padding-top: 200px;
-  padding-bottom: 100px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../img/loginBack.jpg);
+.image {
+  width: 120px !important;
+  height: 120px !important;
+  margin: 0 auto;
+  border-radius: 9999px;
 }
-#adminPage .admin-center {
-  width: 100%;
-  display: flex;
-}
-#adminPage .left {
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-backdrop-filter: blur(3.5px);
-          backdrop-filter: blur(3.5px);
-  box-shadow: 0 0 10px 2px snow;
-  width: 35%;
-  padding: 50px;
-  border-radius: 20px;
-}
-#adminPage .left .img {
-  width: 100px;
-  height: 100px;
-  border-radius: 999px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-#adminPage .left .img img {
+.image img {
   width: 100%;
   height: 100%;
-  border-radius: 9999px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 9999px;
 }
-#adminPage .left h5 {
-  margin: 20px;
+
+#info,
+#logoff {
+  width: 100%;
+  margin: 20px 0px;
   text-align: center;
 }
-#adminPage .left .left-bottom {
+
+#info h5 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px red;
+}
+
+.nav-pills-custom .nav-link {
+  color: #aaa;
+  background: #fff;
+  position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+  color: #F01543;
+  background: #fff;
+}
+
+.nav-pills-custom .nav-link.active::before {
+  opacity: 1;
+}
+
+.restoranForm {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  margin: 0 auto;
 }
-#adminPage .left .left-bottom .display {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid gray !important;
-  padding-bottom: 10px;
-  cursor: pointer;
-  color: white;
+.restoranForm label {
+  color: #0D0C28;
+  margin-bottom: 2px;
 }
-#adminPage .left .left-bottom .display i {
-  background-color: rgb(247, 199, 199);
-  border-radius: 9999px;
-  padding: 5px 10px;
-  font-size: 25px;
-}
-#adminPage .left .left-bottom .display p {
+.restoranForm input {
+  margin-bottom: 25px;
   font-size: 18px;
-  font-weight: 500;
+  padding: 5px 10px;
 }
-#adminPage .left .left-bottom .display:hover i,
-#adminPage .left .left-bottom .display:hover p {
-  transition: all 0.5s ease;
+.restoranForm .displayFile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restoranForm input[type=submit] {
+  margin: 0px 200px;
+  margin-top: 20px;
+}
+.restoranForm .saveRestoran:hover {
+  transform: scale(1.1);
+}
+
+.heading {
   color: #F01543;
 }
-#adminPage .right {
-  width: 60%;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 10px 2px snow;
-  -webkit-backdrop-filter: url(3.5px);
-          backdrop-filter: url(3.5px);
-  border-radius: 20px;
-  padding: 50px;
+
+.plus {
+  padding: 0px 5px;
+  border: 1px solid transparent;
+  background-color: #45b649;
+  color: white;
 }
-#adminPage .right form {
-  width: 100%;
-  background-color: red;
-  -webkit-backdrop-filter: url(3.5px);
-          backdrop-filter: url(3.5px);
-  border-radius: 20px;
-  padding: 50px 0px;
-  margin: 0 auto;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.plus:hover {
+  transition: all 0.4s ease;
+  background-color: #95a696;
 }
-#adminPage .right form .imageDiv {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-#adminPage .right form .imageDiv .image {
-  width: 150px;
-  height: 100px;
-  border: 2px solid white;
-}
-#adminPage .right form .imageDiv .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#adminPage .right form label {
-  margin-top: 20px;
-}
-#adminPage .right form p {
-  color: red;
-  display: none;
-}
-#adminPage .right form #submit {
-  margin-top: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
-  background-color: green;
-  border: none;
-  border-radius: 999px;
+
+.save {
+  background-color: #F01543;
   padding: 5px 20px;
-  cursor: pointer;
+  color: white;
+  font-size: 19px;
+  border: 1px solid transparent;
 }
-#adminPage .right form .menuDiv {
+.save:hover {
+  background-color: #F01543;
+  transition: all 0.5s ease;
+  opacity: 0.8;
+}
+
+.backgroundTheme {
+  background-color: rgba(140, 128, 128, 0.3);
+  padding: 50px;
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+  border-radius: 20px;
+}
+
+table {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  border-collapse: collapse;
+  border: solid 1px gray;
+  margin: auto;
+  text-align: center;
+  background-color: white;
+  margin-top: 6px;
 }
-#adminPage .right form .menuItems {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid;
-  padding: 20px;
-  align-items: center;
+table th,
+table td {
+  border: solid 1px gray;
+  padding: 10px;
 }
-#adminPage .right form .menuItems input {
-  width: 150px;
-  height: 25px;
+table td {
+  width: 50px;
+  padding: 0;
 }
-#adminPage .right form .menuItems .menuImageDiv {
-  display: flex;
-  flex-direction: column;
-}
-#adminPage .right form .menuItems .menuImageDiv .img {
-  width: 80px;
-  height: 80px;
-}
-#adminPage .right form .menuItems .menuImageDiv .img img {
+table td input {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  text-align: center;
+}
+table td button {
+  padding: 10px 20px;
+  background: #acacac;
+  color: #fff;
+}
+table #number {
+  font-weight: bold;
+}
+
+.addTab {
+  margin-left: 100%;
+  transform: translateX(-100%);
+  margin-bottom: 20px;
+}
+
+.saveMenu {
+  margin-left: 100%;
+  transform: translateX(-100%);
+  margin-top: 70px;
+}
+
+@media (min-width: 992px) {
+  .nav-pills-custom .nav-link::before {
+    content: "";
+    display: block;
+    border-top: 8px solid transparent;
+    border-left: 10px solid #fff;
+    border-bottom: 8px solid transparent;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=admin.css.map */

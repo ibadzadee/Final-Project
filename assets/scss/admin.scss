@@ -2,193 +2,197 @@
 @import '../variable/variable';
 @import '../reset/reset';
 
-nav {
-    background: $background;
+body {
+    background: linear-gradient(to left, #1d1d1a, #95a696) !important;
+    min-height: 100vh;
 }
 
-#adminPage {
-    padding-top: 200px;
-    padding-bottom: 100px;
-    @include image;
-    background-image: url(../img/loginBack.jpg);
+.image {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto;
+    border-radius: 9999px;
 
-    .admin-center {
+    img {
         width: 100%;
-        display: flex;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 9999px;
     }
 
-    .left {
-        background-color: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(3.5px);
-        box-shadow: 0 0 10px 2px snow;
-        width: 35%;
-        padding: 50px;
-        border-radius: 20px;
+}
 
-        .img {
-            width: 100px;
-            height: 100px;
-            border-radius: 999px;
-            @include display;
-            margin-left: 50%;
-            transform: translateX(-50%);
+#info,
+#logoff {
+    width: 100%;
+    margin: 20px 0px;
+    text-align: center;
+}
+ #info h5{
+    width: 100%;
+    text-align: center;
+     color: white;
+    text-shadow: 0 0 10px red;
+ }
 
-            img {
-                width: 100%;
-                height: 100%;
-                border-radius: 9999px;
-                object-fit: cover;
-            }
-        }
 
-        h5 {
-            margin: 20px;
+.nav-pills-custom .nav-link {
+    color: #aaa;
+    background: #fff;
+    position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+    color: $red;
+    background: #fff;
+}
+
+
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+}
+
+
+// -------Right Side---------
+.restoranForm {
+    display: flex;
+    flex-direction: column;
+    // width: 400px;
+    margin: 0 auto;
+
+    label {
+        color: $dark-blue;
+        margin-bottom: 2px;
+    }
+
+    input {
+        margin-bottom: 25px;
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .displayFile {
+        width: 100%;
+        @include display(space-between, center);
+    }
+
+    input[type="submit"] {
+        margin: 0px 200px;
+        margin-top: 20px;
+    }
+
+    .saveRestoran:hover {
+        transform: scale(1.1);
+    }
+}
+
+// ------forAll----
+.heading {
+    color: $red;
+}
+
+.plus {
+    padding: 0px 5px;
+    border: 1px solid transparent;
+    background-color: $green;
+    color: white;
+
+    &:hover {
+        transition: all 0.4s ease;
+        background-color: #95a696;
+    }
+}
+
+.save {
+    background-color: $red;
+    padding: 5px 20px;
+    color: white;
+    font-size: 19px;
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: $red;
+        transition: all 0.5s ease;
+        opacity: 0.8;
+    }
+}
+
+.backgroundTheme {
+    background-color: rgba(140, 128, 128, 0.3);
+    padding: 50px;
+    backdrop-filter: blur(3.5px);
+    border-radius: 20px;
+}
+
+
+
+//-------------- Edit Menu--------------
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px gray;
+    margin: auto;
+    text-align: center;
+    background-color: white;
+    margin-top: 6px;
+
+    th,
+    td {
+        border: solid 1px gray;
+        padding: 10px;
+    }
+
+    td {
+        width: 50px;
+        padding: 0;
+
+        input {
+            width: 100%;
             text-align: center;
         }
-
-        .left-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-
-            .display {
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                border-bottom: 1px solid gray !important;
-                padding-bottom: 10px;
-                cursor: pointer;
-                color: white;
-
-                i {
-                    background-color: rgb(247, 199, 199);
-                    border-radius: 9999px;
-                    padding: 5px 10px;
-                    font-size: 25px;
-
-                }
-
-                p {
-                    font-size: 18px;
-                    font-weight: 500;
-                }
-
-                &:hover {
-
-                    i,
-                    p {
-                        transition: all 0.5s ease;
-                        color: $red;
-                    }
-                }
-            }
-        }
-
-        // #logout{
-        // }
     }
 
-    .right {
-        width: 60%;
-        background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 10px 2px snow;
-        backdrop-filter: url(3.5px);
-        border-radius: 20px;
-        padding: 50px;
+    td button {
+        padding: 10px 20px;
+        background: #acacac;
+        color: #fff;
+    }
 
-        form {
-            width: 100%;
-            background-color: red;
-            // box-shadow: 0 0 10px 2px snow;
-            backdrop-filter: url(3.5px);
-            border-radius: 20px;
-            padding: 50px 0px;
-            margin: 0 auto;
-            // margin-top: 100px;
-            display: flex;
-            @include display;
-            flex-direction: column;
-            // padding: 50px;
-            // #nameRestoran{
-            //     width: 200px;
-                
-            // }
+    #number {
+        font-weight: bold;
+    }
+}
 
-            .imageDiv {
-                display: flex;
-                align-items: center;
-                margin-top: 10px;
+.addTab {
+    margin-left: 100%;
+    transform: translateX(-100%);
+    margin-bottom: 20px;
+}
 
-                .image {
-                    width: 150px;
-                    height: 100px;
-                    border: 2px solid white;
+.saveMenu {
+    margin-left: 100%;
+    transform: translateX(-100%);
+    margin-top: 70px;
+}
 
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
 
-                }
-            }
 
-            label {
-                margin-top: 20px;
-            }
 
-            p {
-                color: red;
-                display: none;
-            }
 
-            #submit {
-                margin-top: 20px;
-                margin-left: 100px;
-                margin-right: 100px;
-                background-color: green;
-                border: none;
-                border-radius: 999px;
-                padding: 5px 20px;
-                cursor: pointer;
-            }
 
-            .menuDiv {
-                width: 100%;
-                @include display;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
 
-            .menuItems {
-                display: flex;
-                flex-direction: column;
-                border: 1px solid;
-                padding: 20px;
-                align-items: center;
-
-                input {
-                    width: 150px;
-                    height: 25px;
-                }
-
-                .menuImageDiv {
-                    display: flex;
-                    flex-direction: column;
-
-                    .img {
-                        width: 80px;
-                        height: 80px;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-                }
-
-            }
-        }
+@media (min-width: 992px) {
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
     }
 }

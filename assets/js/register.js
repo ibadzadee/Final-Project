@@ -30,9 +30,9 @@ loginBtn.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
 
-      let currentUserInfo = data.find((user) => user.email == emailLogin);
+      let currentUserInfo = data.find((user) => user.email == emailLogin.trim());
       if (currentUserInfo) {
-        if (currentUserInfo.password == passLogin) {
+        if (currentUserInfo.password == passLogin.trim()) {
           localStorage.setItem("currentUser", JSON.stringify(currentUserInfo));
           window.location = "./admin.html";
         } else {

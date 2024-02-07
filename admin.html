@@ -25,6 +25,15 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <link rel="stylesheet" href="./assets/css/admin.css" />
@@ -47,8 +56,8 @@
             </ul>
           </div>
           <div class="login">
-            <button class="button" id="logIn" taget ="_blank">Log In</button>
-            <button class="button" id="signUp" taget ="_blank">Sign Up</button>
+            <button class="button" id="logIn" taget="_blank">Log In</button>
+            <button class="button" id="signUp" taget="_blank">Sign Up</button>
           </div>
           <i class="bi bi-list list"></i>
         </div>
@@ -56,113 +65,350 @@
       </div>
     </nav>
 
-    <section id="adminPage">
-      <div class="container">
-        <!-- giris olmayanda bu yazi yazilsin! -->
-        <div id="logoff">You are not logged !</div>
+    <!------------------- ADMIN SECTION ------------------->
 
-        <div class="admin-center">
-          <div class="left">
-            <div class="img"><img src="./assets/img/user.webp" alt="" /></div>
+    <section class="py-5 header">
+      <div class="container py-4">
+        <header class="text-center mb-5 pb-5 text-white"></header>
 
-            <h5 id="info" style="display: none"></h5>
+        <div class="row">
+          <div class="col-md-3 left">
+            <!-- Tabs nav -->
 
-            <div class="left-bottom">
-              <div class="restoranCreate display">
-                <i class="bi bi-house-door-fill"></i>
-                <p>Create Restoran</p>
-              </div>
-              <div class="restoranEdit display">
-                <i class="bi bi-pencil-square"></i>
-                <p>Edit Restoran</p>
-              </div>
-              <div class="profile display">
-                <i class="bi bi-person-fill"></i>
-                <p>Edit Profile</p>
-              </div>
-              <div class="logout display">
-                <i class="bi bi-box-arrow-right"></i>
-                <p id="logout">Log out</p>
-              </div>
+            <div class="image">
+              <img id="img" src="./assets/img/user.webp" alt="" />
+            </div>
+            <div id="info" style="display: none"></div>
+            <div id="logoff">You are not logged !</div>
+
+            <div
+              class="nav flex-column nav-pills nav-pills-custom"
+              id="v-pills-tab"
+              role="tablist"
+              aria-orientation="vertical"
+            >
+              <a
+                class="nav-link mb-3 p-3 shadow active"
+                id="v-pills-home-tab"
+                data-toggle="pill"
+                href="#v-pills-home"
+                role="tab"
+                aria-controls="v-pills-home"
+                aria-selected="true"
+              >
+                <i class="fa fa-user-circle-o mr-2"></i>
+                <span class="font-weight-bold small text-uppercase"
+                  >Personal information</span
+                ></a
+              >
+
+              <a
+                class="nav-link mb-3 p-3 shadow"
+                id="v-pills-profile-tab"
+                data-toggle="pill"
+                href="#v-pills-profile"
+                role="tab"
+                aria-controls="v-pills-profile"
+                aria-selected="false"
+              >
+                <i class="bi bi-house-door-fill mr-2"></i>
+                <span class="font-weight-bold small text-uppercase"
+                  >Edit Restoran</span
+                ></a
+              >
+
+              <a
+                class="nav-link mb-3 p-3 shadow"
+                id="v-pills-messages-tab"
+                data-toggle="pill"
+                href="#v-pills-messages"
+                role="tab"
+                aria-controls="v-pills-messages"
+                aria-selected="false"
+              >
+                <i class="bi bi-pencil-square mr-2"></i>
+                <span class="font-weight-bold small text-uppercase"
+                  >Edit Menu</span
+                ></a
+              >
+
+              <a
+                class="nav-link mb-3 p-3 shadow logout"
+                id="v-pills-settings-tab"
+                data-toggle="pill"
+                href="#v-pills-settings"
+                role="tab"
+                aria-controls="v-pills-settings"
+                aria-selected="false"
+              >
+                <i class="bi bi-box-arrow-right mr-2"></i>
+                <span class="font-weight-bold small text-uppercase"
+                  >Log out</span
+                ></a
+              >
             </div>
           </div>
 
-          <div class="right">
-            <form action="add" id="form">
-              <label for="name">Restoran's name:</label>
-              <input type="name" id="nameRestoran" />
-              <p>*Please , fill out Name:</p>
+          <!------------- Tabs content ------------->
 
-              <div class="imageDiv">
-                <input type="file" id="file" />
-                <p>*Please , choose a file</p>
-                <div class="image">
-                  <img src="./assets/img/restoran1.jpg" alt="" />
-                </div>
+          <div class="col-md-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div
+                class="tab-pane fade shadow rounded bg-white show active p-5"
+                id="v-pills-home"
+                role="tabpanel"
+                aria-labelledby="v-pills-home-tab"
+              >
+                <h4 class="font-italic mb-4 heading">Personal information</h4>
+                <form
+                  class="font-italic text-muted mb-2 restoranForm backgroundTheme"
+                >
+                  <label for="nameRestoran">Full Name :</label>
+                  <input type="text" id="nameRestoran" required />
+
+                  <label for="email">E-mail :</label>
+                  <input type="email" id="email" required />
+
+                  <label for="email">Password :</label>
+                  <input type="password" id="password" required />
+
+                  <input type="submit" value="Save" class="save saveRestoran" />
+                </form>
               </div>
 
-              <h5>Menu:</h5>
-              <div class="menuDiv">
+              <!----------- Restoran ----------->
+              <div
+                class="tab-pane fade shadow rounded bg-white p-5"
+                id="v-pills-profile"
+                role="tabpanel"
+                aria-labelledby="v-pills-profile-tab"
+              >
+                <h4 class="font-italic mb-4 heading">
+                  Edit Your Restoran's information
+                </h4>
+                <form
+                  class="font-italic text-muted mb-2 restoranForm backgroundTheme"
+                >
+                  <label for="nameRestoran">Restaurant Name:</label>
+                  <input type="text" id="nameRestoran" required />
 
-                <div class="menuItems">
-                  <div class="menuImageDiv">
-                    <div class="img">
-                      <img src="./assets/img/popular1.png" alt="" />
-                    </div>
-                    <input type="file" />
-                  </div>
-                  <label for="name">Name:</label>
-                  <input type="name" id="name" />
-                  <p>*Please , fill out Name:</p>
-  
-                  <label for="cost">Cost:</label>
-                  <input type="cost" id="cost" />
-                  <p>*Please , fill out Name:</p>
-                </div>
-                
-                <div class="menuItems">
-                  <div class="menuImageDiv">
-                    <div class="img">
-                      <img src="./assets/img/popular1.png" alt="" />
-                    </div>
-                    <input type="file" />
-                  </div>
-                  <label for="name">Name:</label>
-                  <input type="name" id="name" />
-                  <p>*Please , fill out Name:</p>
-  
-                  <label for="cost">Cost:</label>
-                  <input type="cost" id="cost" />
-                  <p>*Please , fill out Name:</p>
-                </div>
-                <div class="menuItems">
-                  <div class="menuImageDiv">
-                    <div class="img">
-                      <img src="./assets/img/popular1.png" alt="" />
-                    </div>
-                    <input type="file" />
-                  </div>
-                  <label for="name">Name:</label>
-                  <input type="name" id="name" />
-                  <p>*Please , fill out Name:</p>
-  
-                  <label for="cost">Cost:</label>
-                  <input type="cost" id="cost" />
-                  <p>*Please , fill out Name:</p>
-                </div>
+                  <label for="tel">Phone Number:</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="077-000-00-00"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    required
+                  />
+                  <label for="location">Location:</label>
+                  <input type="text" id="locationRestoran" required />
 
+                  <label for="worktime">Work Time:</label>
+                  <input
+                    type="time"
+                    id="workTime"
+                    name="appt"
+                    min="09:00"
+                    max="18:00"
+                    required
+                  />
+
+                  <label for="file">Add Restaurant's photos</label>
+                  <div class="displayFile">
+                    <input type="file" id="file" required />
+                    <button class="plus addFile">+</button>
+                  </div>
+
+                  <input type="submit" value="Save" class="save saveRestoran" />
+                </form>
               </div>
-                
 
-              <!-- <label for="cost">Cost:</label>
-              <input type="cost" id="cost" />
-              <p>*Please , fill out Cost</p> -->
+              <!--------------- Menu --------------->
 
-              <input type="submit" id="submit" />
-            </form>
+              <div
+                class="tab-pane fade shadow rounded bg-white p-5"
+                id="v-pills-messages"
+                role="tabpanel"
+                aria-labelledby="v-pills-messages-tab"
+              >
+                <div class="backgroundTheme">
+                  <h4 class="font-italic mb-4 heading">Include the Menu:</h4>
+                  <!-- Hot Dishes -->
+                  <h5>Hot Dishes</h5>
+                  <table class="font-italic mb-2">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>About</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="number">1</td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            value="Baked Chicken Wings and Legs"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            id="about"
+                            value="4 Paces Chicken"
+                          />
+                        </td>
+                        <td><input type="text" id="cost" value="$30" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="plus addTab">+</button>
+
+                  <!-- Cold Dishes -->
+                  <h5>Cold Dishes</h5>
+                  <table class="font-italic mb-2">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>About</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="number">1</td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            value="Baked Chicken Wings and Legs"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            id="about"
+                            value="4 Paces Chicken"
+                          />
+                        </td>
+                        <td><input type="text" id="cost" value="$30" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="plus addTab">+</button>
+
+                  <!-- Salads -->
+                  <h5>Salads</h5>
+                  <table class="font-italic mb-2">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>About</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="number">1</td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            value="Baked Chicken Wings and Legs"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            id="about"
+                            value="4 Paces Chicken"
+                          />
+                        </td>
+                        <td><input type="text" id="cost" value="$30" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="plus addTab">+</button>
+
+                  <!-- Desserts -->
+                  <h5>Desserts</h5>
+                  <table class="font-italic mb-2">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>About</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="number">1</td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            value="Baked Chicken Wings and Legs"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            id="about"
+                            value="4 Paces Chicken"
+                          />
+                        </td>
+                        <td><input type="text" id="cost" value="$30" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="plus addTab">+</button>
+
+                  <!-- Beverages -->
+                  <h5>Beverages</h5>
+                  <table class="font-italic mb-2">
+                    <thead>
+                      <tr>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>About</th>
+                        <th>Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td id="number">1</td>
+                        <td>
+                          <input
+                            id="name"
+                            type="text"
+                            value="Baked Chicken Wings and Legs"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="text"
+                            id="about"
+                            value="4 Paces Chicken"
+                          />
+                        </td>
+                        <td><input type="text" id="cost" value="$30" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="plus addTab">+</button>
+
+                  <input type="submit" value="Save" class="save saveMenu" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <button><a href="./restorans.html"></a></button>
       </div>
     </section>
 
@@ -171,28 +417,15 @@
       <div class="container">
         <div class="footer-center">
           <h5>©2023 <span>ReservQ</span>. All rights reserved</h5>
-          <!-- <div class="first">
-            <div class="img">
-              <img src="./assets/img/footer-logo.svg" alt="" />
-            </div>
-            <p>
-              At ReservQ, we invite you to embark on a journey of taste and
-              delight.Our tables are more than just places.
-            </p>
-            <div class="icons">
-              <i class="bi bi-instagram"></i>
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-twitter"></i
-              ><i class="bi bi-youtube"></i>
-            </div>
-          </div>
-
-          <div class="second">
-
-          </div> -->
         </div>
       </div>
     </footer>
+
+    <!-- Js codes -->
+    <script src="./assets/js/admin.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -202,13 +435,11 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 
     <script src="./assets/js/script.js"></script>
-    <script>
+    <!-- <script>
       AOS.init();
-    </script>
-
-    <script src="./assets/js/admin.js"></script>
+    </script> -->
   </body>
 </html>
