@@ -140,17 +140,12 @@ nav .nav-center .menu ul a:hover::after {
   scale: 1;
   transition: all 0.3s ease;
 }
-nav .nav-center .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-nav .nav-center .login :first-child {
+nav .nav-center #logIn {
   background-color: #F01543;
   border: 1px solid #F01543;
+  cursor: pointer;
 }
-nav .nav-center .login :first-child:hover {
+nav .nav-center #logIn:hover {
   background-color: white;
   color: #F01543;
 }
@@ -596,12 +591,27 @@ footer h5 span {
   }
 }
 @media screen and (max-width: 992px) {
-  nav .nav-center .menu,
-  nav .nav-center .login {
+  nav .nav-center #logIn {
     display: none;
   }
   nav .nav-center .list {
     display: flex;
+  }
+  nav .nav-center .menu ul {
+    position: fixed;
+    flex-direction: column;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    left: -300px;
+    background: #fff;
+    transition: all 0.5s ease;
+  }
+  nav .nav-center .menu ul a {
+    color: #000;
+  }
+  nav .nav-center .menu.active ul {
+    left: 0;
   }
   #banner .banner-center .banner-btns {
     width: 100%;

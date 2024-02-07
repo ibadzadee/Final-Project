@@ -1,25 +1,19 @@
 let nav = document.querySelector("nav");
-window.addEventListener("scroll" , ()=>{
-    if (window.scrollY > 50) {
-        nav.style.position = "sticky"
-        nav.style.background = "#0D0C28";
-        nav.style.padding = "8px 0px";
-      } 
-      else {
-        nav.style.position = "absolute"
-        nav.style.background = "";
-        nav.style.opacity = "";
-        nav.style.padding = "";
-      }
-})
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    nav.style.position = "sticky";
+    nav.style.background = "#0D0C28";
+    nav.style.padding = "8px 0px";
+  } else {
+    nav.style.position = "absolute";
+    nav.style.background = "";
+    nav.style.opacity = "";
+    nav.style.padding = "";
+  }
+});
 
-let logInButton = document.querySelector('#logIn')
-let signUpButton = document.querySelector('#signUp')
-
-logInButton.addEventListener("click" , ()=>{
-  window.location = './register.html'
-})
-
-signUpButton.addEventListener("click" , ()=>{
-  window.location = './register.html'
-})
+const menu = document.querySelector(".menu");
+const menuIcon = document.querySelector(".list");
+menuIcon.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});

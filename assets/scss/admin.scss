@@ -28,7 +28,8 @@ body {
     margin: 20px 0px;
     text-align: center;
 }
-.mb-5{
+
+.mb-5 {
     margin-bottom: 0 !important;
 }
 
@@ -38,6 +39,7 @@ body {
     color: white;
     text-shadow: 0 0 10px red;
 }
+
 .nav-pills-custom .nav-link {
     color: #aaa;
     background: #fff;
@@ -80,7 +82,8 @@ body {
     }
 
     input[type="submit"] {
-        margin: 0px 200px;
+        width: 200px;
+        margin: auto;
         margin-top: 20px;
     }
 
@@ -189,10 +192,12 @@ table {
     padding: 5px 10px;
     background-color: white;
     border-radius: 999px;
-    &:hover{
+
+    &:hover {
         background-color: $red;
         transition: all 0.5s ease;
-        a{
+
+        a {
             color: white;
         }
     }

@@ -139,7 +139,8 @@ body {
   align-items: center;
 }
 .restoranForm input[type=submit] {
-  margin: 0px 200px;
+  width: 200px;
+  margin: auto;
   margin-top: 20px;
 }
 .restoranForm .saveRestoran:hover {

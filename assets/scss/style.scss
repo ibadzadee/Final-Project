@@ -82,18 +82,14 @@ nav {
             }
         }
 
-        .login {
-            @include display;
-            gap: 10px;
+        #logIn {
+            background-color: $red;
+            border: 1px solid $red;
+            cursor: pointer;
 
-            :first-child {
-                background-color: $red;
-                border: 1px solid $red;
-
-                &:hover {
-                    background-color: white;
-                    color: $red;
-                }
+            &:hover {
+                background-color: white;
+                color: $red;
             }
         }
 
@@ -641,21 +637,44 @@ footer {
         width: 299px;
         height: 204px;
     }
-    #faq .right{
+
+    #faq .right {
         display: none;
     }
 }
 
 @media screen and (max-width:992px) {
     nav .nav-center {
-
-        .menu,
-        .login {
+        
+        #logIn {
             display: none;
         }
 
         .list {
             display: flex;
+        }
+
+        .menu {
+            ul {
+                position: fixed;
+                flex-direction: column;
+                height: 100vh;
+                width: 250px;
+                top: 0;
+                left: -300px;
+                background: #fff;
+                transition: all 0.5s ease;
+
+                a {
+                    color: #000;
+                }
+            }
+
+            &.active {
+                ul {
+                    left: 0;
+                }
+            }
         }
     }
 
@@ -696,8 +715,9 @@ footer {
             height: 228px;
         }
     }
-    #customer .customer-center #bottom{
-        grid-template-columns: repeat(2 , auto);
+
+    #customer .customer-center #bottom {
+        grid-template-columns: repeat(2, auto);
         gap: 50px;
     }
 }
@@ -733,8 +753,9 @@ footer {
 
         }
     }
-    #customer .customer-center #bottom{
-        grid-template-columns: repeat(1 , auto);
+
+    #customer .customer-center #bottom {
+        grid-template-columns: repeat(1, auto);
     }
 }
 
@@ -742,27 +763,28 @@ footer {
     #restaurant .rest-center .bottom {
         display: flex;
         flex-direction: column;
+
         .cards {
             width: 90%;
-            .img{
+
+            .img {
                 width: 100%;
                 height: 330px;
             }
         }
-        
+
     }
-    
+
 }
 
-@media screen and (max-width:424px){
-    #restaurant .rest-center .bottom .cards .img{
+@media screen and (max-width:424px) {
+    #restaurant .rest-center .bottom .cards .img {
         height: 243px;
     }
 }
 
-@media screen and (max-width:371px){
-    #restaurant .rest-center .bottom .cards .img{
+@media screen and (max-width:371px) {
+    #restaurant .rest-center .bottom .cards .img {
         height: 200px;
     }
 }
-
