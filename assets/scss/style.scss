@@ -20,6 +20,30 @@
     }
 }
 
+// <!---------------From end to top btn------------------>
+#toTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 10px 20px;
+    background-color: $red ;
+    color: white;
+    font-size: 800;
+    font-size: 20px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    scale: 0;
+    transition: all 0.5s ease;
+
+    &:hover {
+        opacity: 0.9;
+        transition: all 0.5s ease;
+        transform: scale(1.1);
+    }
+}
+
 // <!------------------ Navbar ------------------>
 nav {
     width: 100%;
@@ -59,6 +83,7 @@ nav {
                     color: white;
                     font-weight: 500;
                     position: relative;
+                    text-shadow: 0 0 10px snow;
 
                     &::after {
                         position: absolute;
@@ -645,7 +670,7 @@ footer {
 
 @media screen and (max-width:992px) {
     nav .nav-center {
-        
+
         #logIn {
             display: none;
         }

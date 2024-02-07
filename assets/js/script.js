@@ -17,3 +17,20 @@ const menuIcon = document.querySelector(".list");
 menuIcon.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
+
+// <!--------------From end to top btn----------------->
+let topBtn = document.querySelector("#toTop");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    topBtn.style.scale = "1";
+  } else {
+    topBtn.style.scale = "";
+  }
+});
+
+topBtn.addEventListener("click", () => {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+});

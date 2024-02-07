@@ -12,10 +12,16 @@ signBtn.addEventListener("click", (e) => {
     email: emailInp,
     password: passInp,
   };
-  axios.post(url, obj).then((res) => {
-    console.log(res.data);
-    alert('successfully signed up');
-  });
+  // if(emailInp.trim() || passInp.trim() || nameInp.trim() === ""){
+  //   alert("Please be careful!")
+  // }
+  // else{
+    axios.post(url, obj).then((res) => {
+      console.log(res.data);
+      alert('successfully signed up');
+    });
+
+  // }
 });
 
 let loginBtn = document.querySelector("#login");
