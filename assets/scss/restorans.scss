@@ -5,163 +5,50 @@
 
 
 #banner.restorans {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
         url(../img/restoran1.jpg);
     @include image;
-}
 
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    .banner-center {
+        @include display;
 
-// ---------------------Section2--------------------------
-#sec2 {
-    .top {
-        display: flex;
-    }
-
-    .bottom {
-        width: 100%;
-        margin-top: 50px;
-        display: flex;
-        flex-wrap: wrap;
-
-        .items {
-            padding: 20px 30px;
-            border-radius: 20px;
-            background-color: rgba(240, 248, 255, 0.3);
-            backdrop-filter: blur(10.5px);
-            @include display;
-            flex-direction: column;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-
-            .img,
-            h5,
-            p {
-                position: relative;
-                z-index: 2;
-            }
-
-            &:before {
-                content: "";
-                @include display;
-                background: $red;
-                position: absolute;
-                top: 0;
-                left: -100%;
-                width: 100%;
-                height: 100%;
-                font-size: 30px;
-                font-weight: 600;
-                transition: left 0.7s;
-                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-            }
-
-            &:hover {
-                &::before {
-                    left: 0;
-                }
-
-                h5,
-                p {
-                    color: white;
-                    transition: all 0.5s ease;
-                }
-            }
-
-            .img {
-                width: 110px;
-                height: 110px;
-                border-radius: 9999px;
-                padding: 20px;
-                background-color: white;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
-            }
-
-            h5 {
-                font-size: 22px;
-                font-weight: 700;
-                padding: 15px 0px;
-                color: $dark-blue;
-            }
-
-            p {
-                position: relative;
-                color: rgb(79, 77, 77);
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 9999px;
-                    background-color: $star;
-                    left: -20px;
-                    top: 50%;
-                    transform: translateY(-50%);
-
-                }
-            }
+        #restoranName {
+            text-align: center;
+            text-shadow: 0 0 10px $red;
+            color: snow;
         }
     }
 }
 
-// ---------------------Populars--------------------------
-
-#restaurant.populars {
-    background-image: none;
-    background-color: $gray;
-
-    #name {
-        color: $dark-blue;
-        margin-bottom: 0;
-    }
-
-    .info {
+//  ------------------------- Menu -------------------------
+#menu{
+    width: 100%;
+    padding: 100px 0px;
+    .menu-center{
+        width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        padding-bottom: 1px solid $red;
-        padding: 10px 20px;
-
-        .p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            p {
-                color: $dark-blue;
-            }
-
-            i {
-                color: $red;
-                font-size: 19px;
-            }
-        }
-
-        .p2 {
-            padding-bottom: 15px;
-            border-bottom: 1px solid $red;
-        }
-
-        #cost {
-            @include display;
-            font-size: 25px;
-            padding: 10px;
-        }
+.menu-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    .menu-items{
+        @include display(flex-start , center);
     }
-
-    .cards:hover {
-        #name {
-            color: $red;
-            transition: all 0.5s ease;
+    .image{
+        width: 100px;
+        height: 100px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }
-
-
+    }
+} 

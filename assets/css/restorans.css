@@ -67,140 +67,50 @@
 }
 
 #banner.restorans {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/restoran1.jpg);
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/restoran1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+#banner.restorans .banner-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#banner.restorans .banner-center #restoranName {
+  text-align: center;
+  text-shadow: 0 0 10px #F01543;
+  color: snow;
+}
 
-#sec2 .top {
-  display: flex;
-}
-#sec2 .bottom {
+#menu {
   width: 100%;
-  margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
+  padding: 100px 0px;
 }
-#sec2 .bottom .items {
-  padding: 20px 30px;
-  border-radius: 20px;
-  background-color: rgba(240, 248, 255, 0.3);
-  -webkit-backdrop-filter: blur(10.5px);
-          backdrop-filter: blur(10.5px);
+#menu .menu-center {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
 }
-#sec2 .bottom .items .img,
-#sec2 .bottom .items h5,
-#sec2 .bottom .items p {
-  position: relative;
-  z-index: 2;
-}
-#sec2 .bottom .items:before {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #F01543;
-  position: absolute;
-  top: 0;
-  left: -100%;
+#menu .menu-center .menu-div {
   width: 100%;
-  height: 100%;
-  font-size: 30px;
-  font-weight: 600;
-  transition: left 0.7s;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
 }
-#sec2 .bottom .items:hover::before {
-  left: 0;
+#menu .menu-center .menu-div .menu-items {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-#sec2 .bottom .items:hover h5,
-#sec2 .bottom .items:hover p {
-  color: white;
-  transition: all 0.5s ease;
+#menu .menu-center .menu-div .image {
+  width: 100px;
+  height: 100px;
 }
-#sec2 .bottom .items .img {
-  width: 110px;
-  height: 110px;
-  border-radius: 9999px;
-  padding: 20px;
-  background-color: white;
-}
-#sec2 .bottom .items .img img {
+#menu .menu-center .menu-div .image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-#sec2 .bottom .items h5 {
-  font-size: 22px;
-  font-weight: 700;
-  padding: 15px 0px;
-  color: #0D0C28;
-}
-#sec2 .bottom .items p {
-  position: relative;
-  color: rgb(79, 77, 77);
-}
-#sec2 .bottom .items p::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 9999px;
-  background-color: #ffb23e;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#restaurant.populars {
-  background-image: none;
-  background-color: #f9fafb;
-}
-#restaurant.populars #name {
-  color: #0D0C28;
-  margin-bottom: 0;
-}
-#restaurant.populars .info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-bottom: 1px solid #F01543;
-  padding: 10px 20px;
-}
-#restaurant.populars .info .p {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-#restaurant.populars .info .p p {
-  color: #0D0C28;
-}
-#restaurant.populars .info .p i {
-  color: #F01543;
-  font-size: 19px;
-}
-#restaurant.populars .info .p2 {
-  padding-bottom: 15px;
-  border-bottom: 1px solid #F01543;
-}
-#restaurant.populars .info #cost {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  padding: 10px;
-}
-#restaurant.populars .cards:hover #name {
-  color: #F01543;
-  transition: all 0.5s ease;
 }/*# sourceMappingURL=restorans.css.map */

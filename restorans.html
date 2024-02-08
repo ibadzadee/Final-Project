@@ -29,210 +29,43 @@
     <link rel="stylesheet" href="./assets/css/restorans.css" />
   </head>
   <body>
-    <!-------------- Navbar ---------------->
-    <nav class="otherPages">
-      <div class="container">
-        <!-- <div class="nav-center"> -->
-        <div class="nav-center">
-          <div class="logo">
-            <img src="./assets/img/footer-logo.svg" alt="" />
-          </div>
-          <div class="menu">
-            <ul>
-              <li><a href="./restorans.html">Home</a></li>
-              <li><a href="./menu.html">Menu</a></li>
-              <li><a href="">Pages</a></li>
-            </ul>
-          </div>
-          <div class="login">
-            <button class="button" id="logIn" taget ="_blank">Log In</button>
-            <button class="button" id="signUp" taget ="_blank">Sign Up</button>
-          </div>
-          <i class="bi bi-list list"></i>
-        </div>
-        <!-- </div> -->
-      </div>
-    </nav>
-
     <!------------------ Banner ------------------>
     <div id="banner" class="restorans">
       <div class="container">
-        <div class="banner-center">
-          <h1>The Easy Way to Manage Your <span>Restaurant</span></h1>
-          <div class="p">
-            <p>Unlock Your Restaurant's Potential.</p>
-            <p>Smarter Restaurant Management Starts Here.</p>
-          </div>
-          <div class="banner-btns" data-aos="fade-up" data-aos-duration="3000">
-            <button class="button"><i class="bi bi-truck"></i>Delivery</button>
-            <button class="button">
-              <i class="bi bi-geo-alt-fill"></i>Pick Up
-            </button>
-            <button class="button">
-              <i class="bi bi-house-heart-fill"></i>In Restaurant
-            </button>
-          </div>
-        </div>
+        <div class="banner-center"><h1 id="restoranName">Spice Avenue</h1></div>
       </div>
     </div>
+    <!------------------ Contact ------------------>
+    <section id="contact"></section>
 
-    <!--------------- Section-2 --------------->
-    <section id="sec2">
+    <!------------------ Menu ------------------>
+    <section id="menu">
       <div class="container">
-        <div class="sec2-center">
-          <div class="top"><h2>Our Categories</h2></div>
-          <div class="bottom" data-aos="fade-up" data-aos-duration="3000">
-            <div class="items">
-              <div class="img">
-                <img src="./assets/img/burger.png" alt="" />
+        <div class="menu-center">
+          
+          <div class="menu-div">
+            <h3>Hot Dishes</h3>
+            <div class="menu-items">
+              <div class="image">
+                <img src="./assets/img/popular1.png" alt="" />
               </div>
-              <h5>Delish Burger</h5>
-              <p>25 items</p>
-            </div>
-
-            <div class="items">
-              <div class="img">
-                <img src="./assets/img/burger.png" alt="" />
+              <div class="text">
+                <h5 id="name">Baked Chicken Wings and Legs</h5>
+                <p id="about">4 Piece Chicken , Spicy Sauce</p>
               </div>
-              <h5>Delish Burger</h5>
-              <p>25 items</p>
-            </div>
-
-            <div class="items">
-              <div class="img">
-                <img src="./assets/img/burger.png" alt="" />
-              </div>
-              <h5>Delish Burger</h5>
-              <p>25 items</p>
-            </div>
-
-            <div class="items">
-              <div class="img">
-                <img src="./assets/img/burger.png" alt="" />
-              </div>
-              <h5>Delish Burger</h5>
-              <p>25 items</p>
-            </div>
-
-            <div class="items">
-              <div class="img">
-                <img src="./assets/img/burger.png" alt="" />
-              </div>
-              <h5>Delish Burger</h5>
-              <p>25 items</p>
+              <h4 id="cost">$30.00</h4>
             </div>
           </div>
+
         </div>
       </div>
     </section>
-
-    <!---------------- Populars ---------------->
-    <section id="restaurant" class="populars">
-      <div class="container">
-        <div class="rest-center">
-          <div class="top">
-            <h2>Our Featured & Newest Restaurant</h2>
-          </div>
-
-          <div
-            class="bottom owl-carousel"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
-            <div class="cards">
-              <div class="img">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <h4 id="name">Baked Chicken Wings and Legs</h4>
-              <div class="info">
-                <div class="p">
-                  <i class="bi bi-check-circle"></i>
-                  <p>4 Piece Chicken</p>
-                </div>
-                <div class="p p2">
-                  <i class="bi bi-check-circle"></i>
-                  <p>Spicy Sauce</p>
-                </div>
-                <h5 id="cost">$35.00</h5>
-              </div>
-            </div>
-
-            <div class="cards">
-              <div class="img">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <h4 id="name">Baked Chicken Wings and Legs</h4>
-              <div class="info">
-                <div class="p">
-                  <i class="bi bi-check-circle"></i>
-                  <p>4 Piece Chicken</p>
-                </div>
-                <div class="p p2">
-                  <i class="bi bi-check-circle"></i>
-                  <p>Spicy Sauce</p>
-                </div>
-                <h5 id="cost">$35.00</h5>
-              </div>
-            </div>
-
-            <div class="cards">
-              <div class="img">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <h4 id="name">Baked Chicken Wings and Legs</h4>
-              <div class="info">
-                <div class="p">
-                  <i class="bi bi-check-circle"></i>
-                  <p>4 Piece Chicken</p>
-                </div>
-                <div class="p p2">
-                  <i class="bi bi-check-circle"></i>
-                  <p>Spicy Sauce</p>
-                </div>
-                <h5 id="cost">$35.00</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- flipping card -->
-    <!-- <section class="flippingCard">
-      <div id="card1" class="card">
-        <figure class="front">
-          <div id="menu">details</div>
-        </figure>
-        <figure class="back">
-          <div id="menu">details</div>
-        </figure>
-      </div>
-    </section> -->
 
     <!---------------- Footer ---------------->
     <footer>
       <div class="container">
         <div class="footer-center">
           <h5>©2023 <span>ReservQ</span>. All rights reserved</h5>
-          <!-- <div class="first">
-            <div class="img">
-              <img src="./assets/img/footer-logo.svg" alt="" />
-            </div>
-            <p>
-              At ReservQ, we invite you to embark on a journey of taste and
-              delight.Our tables are more than just places.
-            </p>
-            <div class="icons">
-              <i class="bi bi-instagram"></i>
-              <i class="bi bi-facebook"></i>
-              <i class="bi bi-twitter"></i
-              ><i class="bi bi-youtube"></i>
-            </div>
-          </div>
-
-          <div class="second">
-
-          </div> -->
         </div>
       </div>
     </footer>
