@@ -1,11 +1,9 @@
 let nav = document.querySelector("nav");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
-    nav.style.position = "sticky";
     nav.style.background = "#0D0C28";
     nav.style.padding = "8px 0px";
   } else {
-    nav.style.position = "absolute";
     nav.style.background = "";
     nav.style.opacity = "";
     nav.style.padding = "";
@@ -34,3 +32,46 @@ topBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+
+function flipCard(card) {
+    card.classList.toggle('flipped');
+}
+
+
+
+
+// // DropDown Menu
+// const button = document.querySelector('button');
+// const menu = document.querySelector('.menu');
+
+// button.addEventListener('click', () => {
+//     menu.classList.toggle('activated');
+// });
+
+// const menuButtons = document.querySelectorAll('.menu__button');
+
+// const menuButtonsArray = Array.from(menuButtons);
+
+// menuButtonsArray.forEach(button => {
+
+//     button.addEventListener('click', () => {
+
+//        closeAnotherButtons(button);       
+//        button.classList.toggle('activated');       
+              
+//     });
+// }); 
+
+// function closeAnotherButtons(activeButton) {
+
+//     menuButtonsArray.forEach(button => {
+        
+//         if(button != activeButton) {        
+//             if(button.classList.contains('activated')) {
+//                 button.classList.remove('activated');           
+//             } 
+//         }
+
+//     });
+// } 

@@ -5,9 +5,40 @@
 .button {
     padding: 10px 25px;
     border-radius: 10px;
-    border: 1px solid white;
-    color: white;
-    background-color: transparent;
+    border: 1px solid transparent;
+    // background-color: transparent;background-color: rgba(240, 248, 255, 0.3);
+    backdrop-filter: blur(10.5px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: $dark-blue;
+    font-size: 18px;
+    font-weight: 500;
+
+    &:before {
+        content: "";
+        @include display;
+        background: $red;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        font-size: 30px;
+        font-weight: 600;
+        transition: left 0.7s;
+        transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        z-index: -1;
+    }
+
+    &:hover {
+        color: white;
+
+        &::before {
+            left: 0;
+        }
+    }
+
 
     button {
         @include display;
@@ -45,10 +76,11 @@
 }
 
 // <!------------------ Navbar ------------------>
+
 nav {
     width: 100%;
     padding: 20px 0px;
-    position: absolute;
+    position: fixed;
     z-index: 9999;
     top: 0;
     left: 0;
@@ -79,7 +111,7 @@ nav {
                 justify-content: center !important;
                 align-items: center !important;
 
-                a {
+                li a {
                     color: white;
                     font-weight: 500;
                     position: relative;
@@ -98,12 +130,88 @@ nav {
                     }
 
                     &:hover {
+                        transition: all 0.5s ease;
+
                         &::after {
                             scale: 1;
                             transition: all 0.3s ease;
                         }
                     }
                 }
+
+                .dropbtn {
+                    color: white;
+                    font-size: 16px;
+                    border-radius: 10px 10px 10px 10px;
+                    box-shadow: 0px 0px 100px rgba(190, 200, 255, 0.6);
+
+                    // i{
+                    //     margin-top: 50%;
+                    //     transform: translateY(-50%);
+                    // }
+
+                    .up {
+                        display: none;
+                    }
+
+                    // &:hover {
+                    // background-color: none !important;
+                    //     .down {
+                    //         display: none;
+                    //     }
+
+                    //     .up {
+                    //         visibility: visible;
+                    //     }
+                    // }
+                }
+
+                .dropdown {
+                    color: black;
+                    position: relative;
+                    display: inline-block;
+                    border-radius: 10px 10px 10px 10px;
+                    z-index: 1;
+
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    min-width: 150px;
+                    z-index: 1;
+                    border-radius: 0px 0px 14px 14px;
+                    box-shadow: 0px 0px 100px rgba(190, 200, 255, 0.25);
+                }
+
+                .dropdown-content a {
+                    color: white;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                    border-radius: 10px;
+                    margin: 5px;
+                }
+
+                .dropdown-content a:hover {
+                    background-color: $dark-blue;
+                }
+
+                /* Show the dropdown menu on hover */
+                .dropdown:hover .dropdown-content {
+                    display: block;
+                }
+
+                .dropdown:hover .dropbtn {
+                    border-radius: 10px 10px 0px 0px;
+                    border-bottom: none;
+
+                    &:after {
+                        background-color: transparent;
+                    }
+                }
+
             }
         }
 
@@ -125,8 +233,19 @@ nav {
             font-size: 40px;
         }
 
+
+        .button-register{
+            color: snow !important;
+            &::before{
+                background-color: snow;
+            }
+            &:hover{
+                color: $red !important;
+            }
+        }
     }
 }
+
 
 // <!------------- Banner ------------->
 #banner {
@@ -322,53 +441,87 @@ nav {
     padding: 100px 0px;
     background-color: white;
     background-image: url(../img/traditional-bg.png);
-    // background-color: red;
 
     .rest-center {
         width: 100%;
 
         .top {
-            @include display;
-            flex-direction: column;
+            @include display(space-between, center);
+            margin-bottom: 20px;
 
             h2 {
-                font-size: 55px;
+                font-size: 50px;
                 text-align: center;
                 color: $background;
             }
 
-            .categories {
-                margin: 50px 0px;
-                border: 1px solid $red;
-                border-radius: 20px;
-                padding: 15px 20px;
+            // .see-more {
+            //     background-color: rgba(240, 248, 255, 0.3);
+            //     backdrop-filter: blur(10.5px);
+            //     position: relative;
+            //     overflow: hidden;
+            //     transition: all 0.3s ease;
+            //     color: $dark-blue;
+            //     font-size: 18px;
+            //     font-weight: 500;
 
-                ul {
-                    @include display;
-                    gap: 20px;
-                    width: 100%;
-                    flex-wrap: wrap;
+            //     &:before {
+            //         content: "";
+            //         @include display;
+            //         background: $red;
+            //         position: absolute;
+            //         top: 0;
+            //         left: -100%;
+            //         width: 100%;
+            //         height: 100%;
+            //         font-size: 30px;
+            //         font-weight: 600;
+            //         transition: left 0.7s;
+            //         transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            //         z-index: -1;
+            //     }
 
-                    li {
+            //     &:hover {
+            //         color: white;
 
-                        border-radius: 10px;
-                        padding: 10px;
+            //         &::before {
+            //             left: 0;
+            //         }
+            //     }
+            // }
 
-                        &:first-child {
-                            background-color: $red;
+            // .categories {
+            //     margin: 50px 0px;
+            //     border: 1px solid $red;
+            //     border-radius: 20px;
+            //     padding: 15px 20px;
 
-                            a {
-                                color: snow;
-                            }
-                        }
+            //     ul {
+            //         @include display;
+            //         gap: 20px;
+            //         width: 100%;
+            //         flex-wrap: wrap;
 
-                        a {
-                            color: #262e49;
-                        }
-                    }
+            //         li {
 
-                }
-            }
+            //             border-radius: 10px;
+            //             padding: 10px;
+
+            //             &:first-child {
+            //                 background-color: $red;
+
+            //                 a {
+            //                     color: snow;
+            //                 }
+            //             }
+
+            //             a {
+            //                 color: #262e49;
+            //             }
+            //         }
+
+            //     }
+            // }
         }
 
         .bottom {
@@ -395,6 +548,7 @@ nav {
                     height: 260px;
                     border-top-left-radius: 20px;
                     border-top-right-radius: 20px;
+                    // border-radius: 20px;
                     overflow: hidden;
 
                     img {
@@ -414,9 +568,9 @@ nav {
 
                 h4 {
                     margin: 30px 10px;
-                    text-align: center;
                     color: $red;
                     font-style: oblique;
+                    padding: 0px 10px;
                 }
 
                 .star {
@@ -437,6 +591,59 @@ nav {
         }
     }
 }
+
+#restaurant.populars {
+    background-image: none;
+    background-color: $gray;
+
+    #name {
+        color: $dark-blue;
+        margin-bottom: 0;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 1px solid $red;
+        padding: 10px 20px;
+
+        .p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            p {
+                color: $dark-blue;
+            }
+
+            i {
+                color: $red;
+                font-size: 19px;
+            }
+        }
+
+        .p2 {
+            padding-bottom: 15px;
+            border-bottom: 1px solid $red;
+        }
+
+        // #cost {
+        //     @include display;
+        //     font-size: 25px;
+        //     padding: 10px;
+        // }
+    }
+
+    .cards:hover {
+        #name {
+            color: $red;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+
 
 
 // <!------------------------ CUSTOMER ------------------------>
@@ -559,12 +766,11 @@ nav {
         display: grid;
         grid-template-columns: repeat(2, auto);
         justify-content: center;
-        align-items: center;
+        align-content: center;
         gap: 20px;
 
-        li {
+        div {
             width: 300px;
-            position: relative;
 
             img {
                 width: 100%;
@@ -691,7 +897,13 @@ footer {
                 transition: all 0.5s ease;
 
                 a {
-                    color: #000;
+                    color: #000 !important;
+                }
+
+                .dropdown-content {
+                    a {
+                        color: white !important;
+                    }
                 }
             }
 

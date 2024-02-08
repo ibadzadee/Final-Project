@@ -69,9 +69,38 @@
 .button {
   padding: 10px 25px;
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #0D0C28;
+  font-size: 18px;
+  font-weight: 500;
+}
+.button:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F01543;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  transition: left 0.7s;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  z-index: -1;
+}
+.button:hover {
   color: white;
-  background-color: transparent;
+}
+.button:hover::before {
+  left: 0;
 }
 .button button {
   display: flex;
@@ -109,7 +138,7 @@
 nav {
   width: 100%;
   padding: 20px 0px;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -141,14 +170,15 @@ nav .nav-center .menu ul {
   display: flex;
   justify-content: center !important;
   align-items: center !important;
+  /* Show the dropdown menu on hover */
 }
-nav .nav-center .menu ul a {
+nav .nav-center .menu ul li a {
   color: white;
   font-weight: 500;
   position: relative;
   text-shadow: 0 0 10px snow;
 }
-nav .nav-center .menu ul a::after {
+nav .nav-center .menu ul li a::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -159,9 +189,58 @@ nav .nav-center .menu ul a::after {
   left: 0;
   scale: 0;
 }
-nav .nav-center .menu ul a:hover::after {
+nav .nav-center .menu ul li a:hover {
+  transition: all 0.5s ease;
+}
+nav .nav-center .menu ul li a:hover::after {
   scale: 1;
   transition: all 0.3s ease;
+}
+nav .nav-center .menu ul .dropbtn {
+  color: white;
+  font-size: 16px;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 0px 100px rgba(190, 200, 255, 0.6);
+}
+nav .nav-center .menu ul .dropbtn .up {
+  display: none;
+}
+nav .nav-center .menu ul .dropdown {
+  color: black;
+  position: relative;
+  display: inline-block;
+  border-radius: 10px 10px 10px 10px;
+  z-index: 1;
+}
+nav .nav-center .menu ul .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  min-width: 150px;
+  z-index: 1;
+  border-radius: 0px 0px 14px 14px;
+  box-shadow: 0px 0px 100px rgba(190, 200, 255, 0.25);
+}
+nav .nav-center .menu ul .dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 10px;
+  margin: 5px;
+}
+nav .nav-center .menu ul .dropdown-content a:hover {
+  background-color: #0D0C28;
+}
+nav .nav-center .menu ul .dropdown:hover .dropdown-content {
+  display: block;
+}
+nav .nav-center .menu ul .dropdown:hover .dropbtn {
+  border-radius: 10px 10px 0px 0px;
+  border-bottom: none;
+}
+nav .nav-center .menu ul .dropdown:hover .dropbtn:after {
+  background-color: transparent;
 }
 nav .nav-center #logIn {
   background-color: #F01543;
@@ -177,6 +256,15 @@ nav .nav-center .list {
   color: white;
   cursor: pointer;
   font-size: 40px;
+}
+nav .nav-center .button-register {
+  color: snow !important;
+}
+nav .nav-center .button-register::before {
+  background-color: snow;
+}
+nav .nav-center .button-register:hover {
+  color: #F01543 !important;
 }
 
 #banner {
@@ -346,41 +434,14 @@ nav .nav-center .list {
 }
 #restaurant .rest-center .top {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  margin-bottom: 20px;
 }
 #restaurant .rest-center .top h2 {
-  font-size: 55px;
+  font-size: 50px;
   text-align: center;
   color: #000929;
-}
-#restaurant .rest-center .top .categories {
-  margin: 50px 0px;
-  border: 1px solid #F01543;
-  border-radius: 20px;
-  padding: 15px 20px;
-}
-#restaurant .rest-center .top .categories ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  flex-wrap: wrap;
-}
-#restaurant .rest-center .top .categories ul li {
-  border-radius: 10px;
-  padding: 10px;
-}
-#restaurant .rest-center .top .categories ul li:first-child {
-  background-color: #F01543;
-}
-#restaurant .rest-center .top .categories ul li:first-child a {
-  color: snow;
-}
-#restaurant .rest-center .top .categories ul li a {
-  color: #262e49;
 }
 #restaurant .rest-center .bottom {
   width: 100%;
@@ -422,9 +483,9 @@ nav .nav-center .list {
 }
 #restaurant .rest-center .bottom .cards h4 {
   margin: 30px 10px;
-  text-align: center;
   color: #F01543;
   font-style: oblique;
+  padding: 0px 10px;
 }
 #restaurant .rest-center .bottom .cards .star {
   position: absolute;
@@ -440,6 +501,42 @@ nav .nav-center .list {
 }
 #restaurant .rest-center .bottom .cards .star i {
   color: #ffb23e;
+}
+
+#restaurant.populars {
+  background-image: none;
+  background-color: #f9fafb;
+}
+#restaurant.populars #name {
+  color: #0D0C28;
+  margin-bottom: 0;
+}
+#restaurant.populars .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 1px solid #F01543;
+  padding: 10px 20px;
+}
+#restaurant.populars .info .p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#restaurant.populars .info .p p {
+  color: #0D0C28;
+}
+#restaurant.populars .info .p i {
+  color: #F01543;
+  font-size: 19px;
+}
+#restaurant.populars .info .p2 {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #F01543;
+}
+#restaurant.populars .cards:hover #name {
+  color: #F01543;
+  transition: all 0.5s ease;
 }
 
 #customer {
@@ -538,14 +635,13 @@ nav .nav-center .list {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: center;
-  align-items: center;
+  align-content: center;
   gap: 20px;
 }
-#faq .right li {
+#faq .right div {
   width: 300px;
-  position: relative;
 }
-#faq .right li img {
+#faq .right div img {
   width: 100%;
   border-radius: 10px;
 }
@@ -631,7 +727,10 @@ footer h5 span {
     transition: all 0.5s ease;
   }
   nav .nav-center .menu ul a {
-    color: #000;
+    color: #000 !important;
+  }
+  nav .nav-center .menu ul .dropdown-content a {
+    color: white !important;
   }
   nav .nav-center .menu.active ul {
     left: 0;

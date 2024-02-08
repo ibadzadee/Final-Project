@@ -40,12 +40,21 @@
             <ul>
               <li><a href="./index.html">Home</a></li>
               <li><a href="">Restaurants</a></li>
-              <li><a href="">Pages</a></li>
+              <li class="dropdown">
+                <a href="" class="dropbtn"
+                  >Pages <i class="bi bi-caret-down-fill down"></i>
+                  <i class="bi bi-caret-up-fill up"></i
+                ></a>
+                <div class="dropdown-content">
+                  <a href="./contact.html">Contact Us</a>
+                  <a href="./about.html">About Us</a>
+                </div>
+              </li>
               <li><a href="./admin.html">User Dashboard</a></li>
             </ul>
           </div>
 
-          <a href="./register.html" class="button" id="logIn" target="_blank"
+          <a href="./register.html" class="button button-register" id="logIn" target="_blank"
             >Log In / Sign Up</a
           >
 
@@ -176,11 +185,12 @@
     </section>
 
     <!---------------- Restaurant ---------------->
-    <div id="restaurant">
+    <!-- <div id="restaurant">
       <div class="container">
         <div class="rest-center">
           <div class="top">
             <h2>Our Restaurants</h2>
+            <button class="button see-more"><p>See More</p></button>
             <div class="categories">
               <ul>
                 <li><a href="">All Category</a></li>
@@ -255,9 +265,95 @@
               </div>
             </div>
           </div>
+
+
+          
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <section id="restaurant" class="populars">
+      <div class="container">
+        <div class="rest-center">
+          <div class="top">
+            <h2>Our Restaurants</h2>
+            <button class="button">See More</button>
+          </div>
+
+          <div
+            class="bottom owl-carousel"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
+            <div class="cards">
+              <div class="img">
+                <img src="./assets/img/faq-1.png" alt="" />
+              </div>
+              <h4 id="name">Spice Avenue</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>New York City, USA</p>
+                </div>
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>SMonday-Saturday: 11:00 AM - 11:00 PM, Sunday: 12:00 PM - 9:00 PM</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>070-000-00-00</p>
+                </div>
+                <button class="button">Visit Restaurant</button>
+              </div>
+            </div>
+
+            <div class="cards">
+              <div class="img">
+                <img src="./assets/img/faq-1.png" alt="" />
+              </div>
+              <h4 id="name">Le Jardin Français</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Paris, France</p>
+                </div>
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Monday-Friday: 10:00 AM - 10:00 PM, Saturday-Sunday: 12:00 PM - 11:00 PM</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>077-000-00-00</p>
+                </div>
+                <button class="button">Visit Restaurant</button>
+              </div>
+            </div>
+
+            <div class="cards">
+              <div class="img">
+                <img src="./assets/img/faq-1.png" alt="" />
+              </div>
+              <h4 id="name">The Green Leaf Bistro</h4>
+              <div class="info">
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Melbourne, Australia</p>
+                </div>
+                <div class="p">
+                  <i class="bi bi-check-circle"></i>
+                  <p>Every day: 9:00 AM - 8:00 PM</p>
+                </div>
+                <div class="p p2">
+                  <i class="bi bi-check-circle"></i>
+                  <p>070-000-00-00</p>
+                </div>
+                <button class="button">Visit Restaurant</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!----------------------- CUSTOMER ----------------------->
     <section id="customer">
@@ -486,12 +582,12 @@
             </div>
           </div>
           <!-- Right -->
-          <ul class="right">
-            <li id="li1"><img src="./assets/img/faq-1.png" alt="" /></li>
-            <li id="li2"><img src="./assets/img/faq-1.png" alt="" /></li>
-            <li id="li3"><img src="./assets/img/faq-1.png" alt="" /></li>
-            <li id="li4"><img src="./assets/img/faq-1.png" alt="" /></li>
-          </ul>
+          <div class="right">
+            <div id="li1"><img src="./assets/img/faq-1.png" alt="" /></div>
+            <div id="li2"><img src="./assets/img/faq-1.png" alt="" /></div>
+            <div id="li3"><img src="./assets/img/faq-1.png" alt="" /></div>
+            <div id="li4"><img src="./assets/img/faq-1.png" alt="" /></div>
+          </div>
         </div>
       </div>
     </section>

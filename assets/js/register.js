@@ -2,8 +2,10 @@ let form = document.querySelector("#form");
 let url = `http://localhost:3000/users`;
 let signBtn = document.querySelector("#signUp2");
 
-signBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+console.log(signBtn);
+
+signBtn.addEventListener("submit", (e) => {
+  event.preventDefault();
   let emailInp = document.querySelector("#email").value;
   let passInp = document.querySelector("#password").value;
   let nameInp = document.querySelector("#name").value;
@@ -12,33 +14,34 @@ signBtn.addEventListener("click", (e) => {
     email: emailInp,
     password: passInp,
   };
-  // if(emailInp.trim() || passInp.trim() || nameInp.trim() === ""){
-  //   alert("Please be careful!")
-  // }
-  // else{
+  if (emailInp.trim() || passInp.trim() || nameInp.trim() === "") {
+    alert("Please be careful!");
+  } else {
     axios.post(url, obj).then((res) => {
       console.log(res.data);
-      alert('successfully signed up');
+      alert("successfully signed up");
     });
-
-  // }
+  }
 });
 
 let loginBtn = document.querySelector("#login");
+console.log(loginBtn);
 
-loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+loginBtn.addEventListener("submit", () => {
+  event.preventDefault();
   let emailLogin = document.querySelector("#emailLogin").value;
   let passLogin = document.querySelector("#passwordLogin").value;
 
-  fetch("http://localhost:3000/users", {})
+  console.log(emailLogin);
+  fetch("http://localhost:3000/users")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
 
-      let currentUserInfo = data.find((user) => user.email == emailLogin.trim());
+      let currentUserInfo = data.find((user) => user.email == emailLogin);
+      console.log(currentUserInfo);
       if (currentUserInfo) {
-        if (currentUserInfo.password == passLogin.trim()) {
+        if (currentUserInfo.password == passLogin) {
           localStorage.setItem("currentUser", JSON.stringify(currentUserInfo));
           window.location = "./admin.html";
         } else {
@@ -50,28 +53,20 @@ loginBtn.addEventListener("click", (e) => {
     });
 });
 
+const signUpButton = document.getElementById("signUp");
+const signInButton = document.getElementById("signIn");
+const container = document.getElementById("container");
 
-
-
-
-const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-
-signUpButton.addEventListener('click', () => {
-    container.classList.add("right-panel-active");
+signUpButton.addEventListener("click", () => {
+  container.classList.add("right-panel-active");
 });
 
-
-signInButton.addEventListener('click', () => {
-    container.classList.remove("right-panel-active");
+signInButton.addEventListener("click", () => {
+  container.classList.remove("right-panel-active");
 });
 
-
-
-// let respMenu = document.querySelector('#respMenu') 
-// let register = document.querySelector('#register') 
+// let respMenu = document.querySelector('#respMenu')
+// let register = document.querySelector('#register')
 // window.addEventListener("resize", () => {
 //   if (window.Width > 768) {
 //     respMenu.style.visibility = "hidden";

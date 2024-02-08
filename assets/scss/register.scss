@@ -11,7 +11,8 @@ body {
 
 #respLogin {
 	font-family: "Montserrat", sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);	display: flex;
+	background: url("../img/login.jpg");
+	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -297,9 +298,8 @@ button.ghost {
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: url("../img/login.jpg");
 	display: none;
-	// scale: 0;
 
 	.main {
 		width: 350px;
@@ -400,11 +400,11 @@ button.ghost {
 
 
 
-// @media screen and (max-width:768px) {
-// 	#respLogin{
-// 		scale:0;
-// 	}
-// 	#register{
-// 		scale:1;
-// 	}
-// }
+@media screen and (min-width:768px) and (max-width:1024px) {
+	#respLogin{
+		display: none;
+	}
+	#register{
+		display: flex;
+	}
+}
