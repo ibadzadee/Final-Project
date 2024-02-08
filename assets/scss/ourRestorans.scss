@@ -1,0 +1,192 @@
+@import '../mixin/mixin';
+@import '../variable/variable';
+@import '../reset/reset';
+@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300');
+
+
+nav {
+    background-color: $dark-blue
+}
+
+#banner {
+    background-image: url(../img/contactBanner.png);
+    @include image;
+    @include display;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 150px;
+    text-align: center;
+}
+
+// ---------------- Menu --------------
+// flipping card--
+#ourRestorans {
+	background: url("../img/login.jpg");
+    
+    .ourRestorans-center {
+        width: 100%;
+        @include display;
+        padding: 100px 0px;
+        gap: 20px;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(3.5px);
+    }
+    .bottomFlip{
+        @include display;
+        width: 100%;
+        @include display;
+        gap: 20px;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(3.5px);
+        border-radius: 20px;
+    }
+}
+
+.flippingCard {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    // margin: 0 auto 40px;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    -o-transform-origin: right center;
+    transform-origin: right center;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.card.flipped {
+    -webkit-transform: translateX(-100%) rotateY(-180deg);
+    -moz-transform: translateX(-100%) rotateY(-180deg);
+    -o-transform: translateX(-100%) rotateY(-180deg);
+    transform: translateX(-100%) rotateY(-180deg);
+
+}
+
+.card figure {
+    // display: block;
+    height: 100%;
+    width: 100%;
+    // line-height: 260px;
+    color: white;
+    // text-align: center;
+    // font-weight: bold;
+    // font-size: 140px;
+    position: absolute;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    // overflow: hidden;
+}
+
+// ------------------ Front ------------------
+
+.card .front {
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+    .img{
+        width: 400px;
+        height: 200px;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    #name {
+        margin: 20px 10px;
+        color: $dark-blue;
+        margin: 20px 20px;
+        margin-bottom: 0;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: 1px solid $red;
+        padding: 10px 20px;
+        
+        .p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            p {
+                color: $dark-blue;
+            }
+            
+            i {
+                color: $red;
+                font-size: 19px;
+            }
+        }
+        
+        .p2 {
+            padding-bottom: 15px;
+            border-bottom: 1px solid $red;
+        }
+        
+    }
+    &:hover {
+        img{
+            transition: all 0.5s ease;
+            transform: scale(1.1);
+        }
+        #name {
+            color: $red;
+            transition: all 0.5s ease;
+        }
+    }
+}
+
+// ------------------ Back ------------------
+
+.card .back {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3, 5px);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    border-radius: 20px;
+    @include display;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    animation: image;
+
+    .barcode{
+        width: 300px;
+        height: 300px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

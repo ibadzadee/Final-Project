@@ -34,10 +34,6 @@ topBtn.addEventListener("click", () => {
 });
 
 
-function flipCard(card) {
-    card.classList.toggle('flipped');
-}
-
 
 
 
