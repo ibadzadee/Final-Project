@@ -1,6 +1,6 @@
-@import '../mixin/mixin';
-@import '../variable/variable';
-@import '../reset/reset';
+@import './mixin/mixin';
+@import './variable/variable';
+@import './reset/reset';
 
 
 
@@ -9,6 +9,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
         url(../img/restoran1.jpg);
     @include image;
+    padding-top: 100px;
 
     // position: fixed;
     // top: 0;
@@ -23,32 +24,190 @@
         }
     }
 }
+//  ------------------------- Contact -------------------------
+#contact{
+    width: 100%;
+    background-color: lightblue;
+    padding: 50px 0px;
+    .contact-item{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 15px;
+    }
+}
+
+
+
+
+
 
 //  ------------------------- Menu -------------------------
-#menu{
+#menu {
     width: 100%;
     padding: 100px 0px;
-    .menu-center{
+    background-image: url(../img/blurBack.jpg);
+    @include image;
+
+    .menu-center {
         width: 100%;
         display: flex;
         flex-direction: column;
-.menu-div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-    .menu-items{
-        @include display(flex-start , center);
-    }
-    .image{
-        width: 100px;
-        height: 100px;
-        img{
+        gap: 50px;
+
+        h2 {
+            margin-bottom: 50px;
+            font-size: 50px;
+            text-align: center;
+            color: $dark-blue;
+        }
+
+        .menu-div {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: flex;
+            flex-direction: column;
+            border: 2px dashed;
+            border-radius: 20px;
+            padding: 50px;
+            background-color: white;
+
+            h3 {
+                margin-bottom: 40px;
+                font-size: 40px;
+            }
+
+            .menu-items {
+                @include display(space-between, center);
+                // background-color: red;
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                cursor: text;
+
+                &:hover .right {
+                    transition: all 0.5s ease;
+                    background-color: aliceblue;
+                }
+
+                .image {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 20px;
+                    padding: 10px 0px;
+                    cursor: pointer;
+
+                    img {
+                        border-radius: 20px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .right {
+                    width: 100%;
+                    @include display(space-between, flex-start);
+                    // background-color: aliceblue;
+                    z-index: 1;
+                    padding: 20px;
+                }
+
+                .text {
+                    padding-right: 10px;
+                    width: 400px;
+                    text-wrap: wrap;
+                    word-wrap: break-word;
+
+                    #name {
+                        font-size: 22px;
+
+                    }
+
+                    p {
+                        color: gray;
+                        font-size: 16px;
+                        margin-top: 20px;
+                        // background-color: red;
+                    }
+                }
+            }
+
+            #cost {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 400px;
+                    height: 2px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 100px;
+                    border-bottom: 2px dotted;
+                    z-index: 2;
+                }
+
+            }
         }
     }
 }
-    }
-} 
+
+// <!------------------ Image Carousel ------------------>
+  
+  .mycard {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  
+  .owl-carousel{
+    padding: 50px;
+    background-color: red;
+  }
+  .mycard-footer {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    /* padding: 10px; */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .mycard-footer p {
+    text-align: center;
+  }
+  
+  .detail {
+    width: 100px;
+    background-color: #fda403;
+    border: 0;
+    padding: 10px;
+    color: white;
+  }
+  
+  .owl-dots {
+    text-align: center;
+    padding-top: 18px;
+  }
+  .owl-dots button.owl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #ccc;
+    margin: 0 6px;
+  }
+  .owl-dots button.owl-dot.active {
+    background-color: #fda403;
+  }
+  .owl-dots button.owl-dot:focus {
+    outline: none;
+  }
+  
+  
+  @media screen and (min-width: 1320px) {
+      .container {
+          max-width: 1140px !important;
+      }
+  }

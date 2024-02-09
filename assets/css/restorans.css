@@ -72,6 +72,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 100px;
 }
 #banner.restorans .banner-center {
   display: flex;
@@ -84,33 +85,172 @@
   color: snow;
 }
 
+#contact {
+  width: 100%;
+  background-color: lightblue;
+  padding: 50px 0px;
+}
+#contact .contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 15px;
+}
+
 #menu {
   width: 100%;
   padding: 100px 0px;
+  background-image: url(../img/blurBack.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #menu .menu-center {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 50px;
+}
+#menu .menu-center h2 {
+  margin-bottom: 50px;
+  font-size: 50px;
+  text-align: center;
+  color: #0D0C28;
 }
 #menu .menu-center .menu-div {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  border: 2px dashed;
+  border-radius: 20px;
+  padding: 50px;
+  background-color: white;
+}
+#menu .menu-center .menu-div h3 {
+  margin-bottom: 40px;
+  font-size: 40px;
 }
 #menu .menu-center .menu-div .menu-items {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: text;
 }
-#menu .menu-center .menu-div .image {
-  width: 100px;
-  height: 100px;
+#menu .menu-center .menu-div .menu-items:hover .right {
+  transition: all 0.5s ease;
+  background-color: aliceblue;
 }
-#menu .menu-center .menu-div .image img {
+#menu .menu-center .menu-div .menu-items .image {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+#menu .menu-center .menu-div .menu-items .image img {
+  border-radius: 20px;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+#menu .menu-center .menu-div .menu-items .right {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  padding: 20px;
+}
+#menu .menu-center .menu-div .menu-items .text {
+  padding-right: 10px;
+  width: 400px;
+  text-wrap: wrap;
+  word-wrap: break-word;
+}
+#menu .menu-center .menu-div .menu-items .text #name {
+  font-size: 22px;
+}
+#menu .menu-center .menu-div .menu-items .text p {
+  color: gray;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#menu .menu-center .menu-div #cost {
+  position: relative;
+}
+#menu .menu-center .menu-div #cost::before {
+  position: absolute;
+  content: "";
+  width: 400px;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 100px;
+  border-bottom: 2px dotted;
+  z-index: 2;
+}
+
+.mycard {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.owl-carousel {
+  padding: 50px;
+  background-color: red;
+}
+
+.mycard-footer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  /* padding: 10px; */
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.mycard-footer p {
+  text-align: center;
+}
+
+.detail {
+  width: 100px;
+  background-color: #fda403;
+  border: 0;
+  padding: 10px;
+  color: white;
+}
+
+.owl-dots {
+  text-align: center;
+  padding-top: 18px;
+}
+
+.owl-dots button.owl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background: #ccc;
+  margin: 0 6px;
+}
+
+.owl-dots button.owl-dot.active {
+  background-color: #fda403;
+}
+
+.owl-dots button.owl-dot:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 1320px) {
+  .container {
+    max-width: 1140px !important;
+  }
 }/*# sourceMappingURL=restorans.css.map */

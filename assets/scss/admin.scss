@@ -1,6 +1,7 @@
-@import '../mixin/mixin';
-@import '../variable/variable';
-@import '../reset/reset';
+@import './mixin/mixin';
+@import './variable/variable';
+@import './reset/reset';
+
 
 body {
     background: linear-gradient(to left, #1d1d1a, #95a696) !important;
