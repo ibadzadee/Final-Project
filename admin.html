@@ -40,7 +40,7 @@
   </head>
   <body>
     <!-------------- Navbar ---------------->
-    <nav class="otherPages">
+    <nav>
       <div class="container">
         <!-- <div class="nav-center"> -->
         <div class="nav-center">
@@ -83,11 +83,11 @@
     <section class="py-5 header">
       <div class="container py-4">
         <header class="text-center mb-5 pb-5 text-white">
-          <div class="goPage">
+          <button class="goPage button">
             <a href="./restorans.html" target="_blank"
               >Go to the Restoran Page</a
             >
-          </div>
+          </button>
         </header>
 
         <div class="row">
@@ -178,10 +178,8 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-home-tab"
               >
-                <h4 class="font-italic mb-4 heading">Personal information</h4>
-                <form
-                  class="font-italic text-muted mb-2 restoranForm backgroundTheme"
-                >
+                <h4 class="mb-4 heading">Personal information</h4>
+                <form class="text-muted mb-2 restoranForm backgroundTheme">
                   <label for="nameRestoran">Full Name :</label>
                   <input type="text" id="nameRestoran" required />
 
@@ -202,12 +200,8 @@
                 role="tabpanel"
                 aria-labelledby="v-pills-profile-tab"
               >
-                <h4 class="font-italic mb-4 heading">
-                  Edit Your Restoran's information
-                </h4>
-                <form
-                  class="font-italic text-muted mb-2 restoranForm backgroundTheme"
-                >
+                <h4 class="mb-4 heading">Edit Your Restoran's information</h4>
+                <form class="text-muted mb-2 restoranForm backgroundTheme">
                   <label for="nameRestoran">Restaurant Name:</label>
                   <input type="text" id="nameRestoran" required />
 
@@ -245,16 +239,16 @@
               <!--------------- Menu --------------->
 
               <div
-                class="tab-pane fade shadow rounded bg-white p-5"
+                class="tab-pane fade shadow rounded p-4"
                 id="v-pills-messages"
                 role="tabpanel"
                 aria-labelledby="v-pills-messages-tab"
               >
-                <div class="backgroundTheme">
-                  <h4 class="font-italic mb-4 heading">Include the Menu:</h4>
+                <div>
+                  <h4 class="mb-4 heading">Include the Menu:</h4>
                   <!-- Hot Dishes -->
                   <h5>Hot Dishes</h5>
-                  <table class="font-italic mb-2">
+                  <table class="mb-2" data-key="1">
                     <thead>
                       <tr>
                         <th>№</th>
@@ -262,6 +256,7 @@
                         <th>Name</th>
                         <th>About</th>
                         <th>Cost</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -274,25 +269,26 @@
                           <input
                             id="name"
                             type="text"
-                            value="Baked Chicken Wings and Legs"
+                            
                           />
                         </td>
                         <td>
                           <input
                             type="text"
                             id="about"
-                            value="4 Paces Chicken"
+                        
                           />
                         </td>
-                        <td><input type="text" id="cost" value="$30" /></td>
+                        <td><input type="text" id="cost"  /></td>
+                        <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="plus addTab">+</button>
+                  <button class="plus addTab"data-key="1">+</button>
 
                   <!-- Cold Dishes -->
                   <h5>Cold Dishes</h5>
-                  <table class="font-italic mb-2">
+                  <table class="mb-2"data-key="2">
                     <thead>
                       <tr>
                         <th>№</th>
@@ -300,6 +296,7 @@
                         <th>Name</th>
                         <th>About</th>
                         <th>Cost</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -323,14 +320,15 @@
                           />
                         </td>
                         <td><input type="text" id="cost" value="$30" /></td>
+                        <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="plus addTab" data-key = "1">+</button>
+                  <button class="plus addTab" data-key="2">+</button>
 
                   <!-- Salads -->
                   <h5>Salads</h5>
-                  <table class="font-italic mb-2">
+                  <table class="mb-2"data-key="3">
                     <thead>
                       <tr>
                         <th>№</th>
@@ -338,6 +336,7 @@
                         <th>Name</th>
                         <th>About</th>
                         <th>Cost</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -361,14 +360,15 @@
                           />
                         </td>
                         <td><input type="text" id="cost" value="$30" /></td>
+                        <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="plus addTab">+</button>
+                  <button class="plus addTab"data-key="3">+</button>
 
                   <!-- Desserts -->
                   <h5>Desserts</h5>
-                  <table class="font-italic mb-2">
+                  <table class="mb-2"data-key="4">
                     <thead>
                       <tr>
                         <th>№</th>
@@ -376,6 +376,7 @@
                         <th>Name</th>
                         <th>About</th>
                         <th>Cost</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -399,14 +400,15 @@
                           />
                         </td>
                         <td><input type="text" id="cost" value="$30" /></td>
+                        <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="plus addTab">+</button>
+                  <button class="plus addTab"data-key="4">+</button>
 
                   <!-- Beverages -->
                   <h5>Beverages</h5>
-                  <table class="font-italic mb-2">
+                  <table class="mb-2"data-key="5">
                     <thead>
                       <tr>
                         <th>№</th>
@@ -414,6 +416,7 @@
                         <th>Name</th>
                         <th>About</th>
                         <th>Cost</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -437,21 +440,44 @@
                           />
                         </td>
                         <td><input type="text" id="cost" value="$30" /></td>
+                        <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="plus addTab">+</button>
+                  <button class="plus addTab"data-key="5">+</button>
 
                   <input type="submit" value="Save" class="save saveMenu" />
                 </div>
               </div>
-
-
+              
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal" id="deleteModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Do you confirm delete?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="confirmDelete">
+              Delete
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!---------------- Footer ---------------->
     <footer>

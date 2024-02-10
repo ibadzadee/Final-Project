@@ -32,7 +32,12 @@
   margin-bottom: 0;
 }
 
+nav {
+  background-color: #0D0C28;
+}
+
 .otherPages {
+  background-color: transparent !important;
   box-shadow: 0 0 10px 1px black;
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
@@ -276,6 +281,9 @@ nav .nav-center .list {
   position: relative;
   z-index: 10;
   color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 #banner .banner-center {
   display: flex;

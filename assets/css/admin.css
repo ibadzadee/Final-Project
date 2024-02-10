@@ -32,7 +32,12 @@
   margin-bottom: 0;
 }
 
+nav {
+  background-color: #0D0C28;
+}
+
 .otherPages {
+  background-color: transparent !important;
   box-shadow: 0 0 10px 1px black;
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
@@ -66,8 +71,70 @@
   margin-bottom: 50px;
 }
 
+.button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #0D0C28;
+  font-size: 18px;
+  font-weight: 500;
+}
+.button:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F01543;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  transition: left 0.7s;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  z-index: -1;
+}
+.button:hover {
+  color: white;
+}
+.button:hover::before {
+  left: 0;
+}
+.button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover {
+  background-color: #F01543;
+  box-shadow: 0 0 4px 1px snow;
+  transition: all 0.5s ease;
+}
+
+.button-register {
+  color: snow !important;
+}
+.button-register::before {
+  background-color: snow;
+}
+.button-register:hover {
+  color: #F01543 !important;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0px 32px;
+}
+
 body {
-  background: linear-gradient(to left, #1d1d1a, #95a696) !important;
+  background: url("../img/login.jpg");
   min-height: 100vh;
 }
 
@@ -183,6 +250,14 @@ body {
   border-radius: 20px;
 }
 
+.rounded {
+  border-radius: 20px !important;
+}
+
+#v-pills-messages {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -191,6 +266,7 @@ table {
   text-align: center;
   background-color: white;
   margin-top: 6px;
+  box-sizing: 9999px;
 }
 table th,
 table td {
@@ -205,6 +281,10 @@ table td input {
   width: 100%;
   text-align: center;
 }
+table thead tr {
+  background-color: aliceblue;
+  background-color: rgba(140, 128, 128, 0.3);
+}
 table td button {
   padding: 10px 20px;
   background: #acacac;
@@ -212,6 +292,15 @@ table td button {
 }
 table #number {
   font-weight: bold;
+}
+table i {
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+table i:hover {
+  transition: all 0.5s ease;
+  opacity: 0.7;
 }
 
 .addTab {
@@ -249,7 +338,7 @@ table #number {
   color: #F01543;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .nav-pills-custom .nav-link::before {
     content: "";
     display: block;
@@ -262,4 +351,35 @@ table #number {
     transform: translateY(-50%);
     opacity: 0;
   }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+.modal .modal-dialog {
+  position: relative;
+  margin: auto;
+}
+.modal .modal-dialog .modal-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.modal .modal-dialog .modal-content .modal-body {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.modal .modal-dialog .modal-content .modal-body,
+.modal .modal-dialog .modal-content .modal-footer {
+  padding: 20px;
 }/*# sourceMappingURL=admin.css.map */

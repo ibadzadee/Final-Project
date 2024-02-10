@@ -2,9 +2,13 @@
 @import './variable/variable';
 @import './reset/reset';
 
+.container {
+    max-width: 1400px;
+    padding: 0px 32px;
+}
 
 body {
-    background: linear-gradient(to left, #1d1d1a, #95a696) !important;
+    background: url("../img/login.jpg");
     min-height: 100vh;
 }
 
@@ -134,6 +138,15 @@ body {
 
 
 //-------------- Edit Menu--------------
+.rounded {
+    border-radius: 20px !important;
+}
+
+#v-pills-messages {
+    // background-color: rgba(140, 128, 128, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -142,6 +155,7 @@ table {
     text-align: center;
     background-color: white;
     margin-top: 6px;
+    box-sizing: 9999px;
 
     th,
     td {
@@ -159,6 +173,21 @@ table {
         }
     }
 
+    thead tr {
+        background-color: aliceblue;
+
+        background-color: rgba(140, 128, 128, 0.3);
+        // color: crimson;
+
+    }
+
+    // tbody tr {
+    //     background-color: aliceblue;
+    //     input{
+    //         background-color: aliceblue;
+    //     }
+    // }
+
     td button {
         padding: 10px 20px;
         background: #acacac;
@@ -167,6 +196,17 @@ table {
 
     #number {
         font-weight: bold;
+    }
+
+    i {
+        color: red;
+        cursor: pointer;
+        font-size: 18px;
+
+        &:hover {
+            transition: all 0.5s ease;
+            opacity: 0.7;
+        }
     }
 }
 
@@ -212,7 +252,7 @@ table {
 
 
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .nav-pills-custom .nav-link::before {
         content: '';
         display: block;
@@ -226,3 +266,38 @@ table {
         opacity: 0;
     }
 }
+
+
+// modal
+.modal {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999; 
+    .modal-dialog {
+      position: relative;
+      margin: auto;
+      .modal-content {
+        background-color: #fff; 
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        .modal-body{
+            margin-top: 20px;
+            @include display;
+            font-size: 25px;
+
+        }
+        .modal-body,
+        .modal-footer {
+          padding: 20px;
+        }
+      }
+    }
+  }
+  
+  

@@ -32,7 +32,12 @@
   margin-bottom: 0;
 }
 
+nav {
+  background-color: #0D0C28;
+}
+
 .otherPages {
+  background-color: transparent !important;
   box-shadow: 0 0 10px 1px black;
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
@@ -64,6 +69,63 @@
 .loginPage #form input, .signupPage #form input {
   width: 100%;
   margin-bottom: 50px;
+}
+
+.button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  color: #0D0C28;
+  font-size: 18px;
+  font-weight: 500;
+}
+.button:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F01543;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  transition: left 0.7s;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  z-index: -1;
+}
+.button:hover {
+  color: white;
+}
+.button:hover::before {
+  left: 0;
+}
+.button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover {
+  background-color: #F01543;
+  box-shadow: 0 0 4px 1px snow;
+  transition: all 0.5s ease;
+}
+
+.button-register {
+  color: snow !important;
+}
+.button-register::before {
+  background-color: snow;
+}
+.button-register:hover {
+  color: #F01543 !important;
 }
 
 #banner.restorans {

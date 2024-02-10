@@ -2,64 +2,6 @@
 @import './variable/variable';
 @import './reset/reset';
 
-.button {
-    padding: 10px 25px;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    // background-color: transparent;background-color: rgba(240, 248, 255, 0.3);
-    backdrop-filter: blur(10.5px);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    color: $dark-blue;
-    font-size: 18px;
-    font-weight: 500;
-
-    &:before {
-        content: "";
-        @include display;
-        background: $red;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        font-size: 30px;
-        font-weight: 600;
-        transition: left 0.7s;
-        transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-        z-index: -1;
-    }
-
-    &:hover {
-        color: white;
-
-        &::before {
-            left: 0;
-        }
-    }
-
-
-    button {
-        @include display;
-    }
-
-    &:hover {
-        background-color: $red;
-        box-shadow: 0 0 4px 1px snow;
-        transition: all 0.5s ease;
-    }
-}
-
-.button-register{
-    color: snow !important;
-    &::before{
-        background-color: snow;
-    }
-    &:hover{
-        color: $red !important;
-    }
-}
 
 // <!---------------From end to top btn------------------>
 #toTop {
@@ -257,6 +199,7 @@ nav {
     position: relative;
     z-index: 10;
     color: white;
+    @include image;
 
     .banner-center {
         display: flex;
