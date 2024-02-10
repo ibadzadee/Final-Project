@@ -280,6 +280,7 @@ table td input {
   width: 100%;
   text-align: center;
   height: 100%;
+  padding: 10px 0px;
 }
 table thead tr {
   background-color: rgba(140, 128, 128, 0.3);
@@ -344,6 +345,8 @@ table i:hover {
   background-color: #007bff;
   color: #fff;
   border-radius: 5px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 .custom-file-upload:hover {

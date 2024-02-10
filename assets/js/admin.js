@@ -21,95 +21,104 @@ logoutBtn.addEventListener("click", () => {
   window.location = `./register.html`;
 });
 
-// ------------- Add Table -------------
-// var addButtons = document.querySelectorAll('.addTab');
+// ------------------ Add 3 point ------------------
+document.querySelectorAll('input[type="text"]').forEach((input) => {
+  const originalText = input.value;
+  const maxLength = 15;
 
-// addButtons.forEach(function(addButton) {
-//     addButton.addEventListener('click', function() {
-//         var table = this.parentElement.querySelector('table tbody');
-
-//         var newRow = document.createElement('tr');
-
-//         var inputs = table.querySelectorAll('input');
-//         var isEmpty = false;
-//         inputs.forEach(function(input) {
-//             if (input.value === "") {
-//                 isEmpty = true;
-//             }
-//         });
-
-//         if (isEmpty) {
-//             alert("Lütfen tüm alanları doldurun.");
-//         } else {
-//             newRow.innerHTML = `
-//                 <td id="number"></td>
-//                 <td>
-//                     <input type="file" />
-//                 </td>
-//                 <td>
-//                     <input type="text" value="" />
-//                 </td>
-//                 <td>
-//                     <input type="text" value="" />
-//                 </td>
-//                 <td>
-//                     <input type="text" value="" />
-//                 </td>
-//             `;
-
-//             table.appendChild(newRow);
-//         }
-//     });
-// });
-
-
-
-
+  if (originalText.length > maxLength) {
+    input.value = originalText.substring(0, maxLength) + "...";
+    input.addEventListener("focus", () => {
+      input.value = originalText;
+    });
+    input.addEventListener("blur", () => {
+      input.value = originalText.substring(0, maxLength) + "...";
+    });
+  }
+});
 
 // -------------Delete button---Modal-------------
 const deleteButtons = document.querySelectorAll(".bi-trash3-fill");
 const deleteModal = document.getElementById("deleteModal");
 const confirmDeleteButton = document.getElementById("confirmDelete");
-const closeModalButtons = document.querySelectorAll('[data-dismiss="modal"], .modal');
+const closeModalButtons = document.querySelectorAll(
+  '[data-dismiss="modal"], .modal'
+);
 
 deleteButtons.forEach((deleteButton) => {
-    deleteButton.addEventListener("click", () => {
-        deleteModal.style.display = "block";
-        confirmDeleteButton.onclick = () => {
-            deleteButton.parentElement.parentElement.remove();
-            deleteModal.style.display = "none";
-        };
-    });
+  deleteButton.addEventListener("click", () => {
+    deleteModal.style.display = "block";
+    confirmDeleteButton.onclick = () => {
+      deleteButton.parentElement.parentElement.remove();
+      deleteModal.style.display = "none";
+    };
+  });
 });
 
 closeModalButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        deleteModal.style.display = "none";
-    });
+  button.addEventListener("click", () => {
+    deleteModal.style.display = "none";
+  });
 });
 
 
+// ------------------------ Add Table ------------------------
+
+// document.querySelectorAll('.addTab').forEach((button) => {
+//   button.addEventListener('click', () => {
+//     const key = button.getAttribute('data-key');
+//     const table = document.querySelector(`table[data-key="${key}"]`);
+    
+//     if (table) {
+//       const tbody = table.querySelector('tbody');
+//       let allInputsFilled = true;
+
+//       tbody.querySelectorAll('tr').forEach((row) => {
+//         const inputs = row.querySelectorAll('input[type="text"]');
+        
+//         inputs.forEach((input) => {
+//           if (input.value.trim()  === '') {
+//             allInputsFilled = false;
+//             return;
+//           }
+//         });
+//       });
+
+//       if (!allInputsFilled) {
+//         alert('Please fill in all fields before adding a new row.');
+//         return;
+//       }
+
+//       const rowCount = tbody.querySelectorAll('tr').length + 1;
+//       const newRow = document.createElement('tr');
+//       newRow.innerHTML = `
+//         <td>${rowCount}</td>
+//         <td>
+//           <label for="fileMenu${key}" class="custom-file-upload">Choose image</label>
+//           <input id="fileMenu${key}" type="file" style="display: none">
+//         </td>
+//         <td><input type="text" id="name"></td>
+//         <td><input type="text" id="about"></td>
+//         <td><input type="text" id="cost"></td>
+//         <td><i class="bi bi-trash3-fill"></i></td>
+//       `;
+      
+//       tbody.appendChild(newRow);
+//     }
+//   });
+// });
 
 
-
-
-// ------------------------Add Table------------------------
-
-// Add buttons
 let addButtons = document.querySelectorAll(".addTab");
 
-// Add event listener to each add button
 addButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    let key = button.getAttribute("data-key"); // Button's data-key attribute value
+    let key = button.getAttribute("data-key"); 
 
-    // Find the table corresponding to the button's data-key
     let table = document.querySelector(`table[data-key="${key}"]`);
     if (table) {
-      // Find the tbody element inside the table
       let tbody = table.querySelector("tbody");
 
-      // Check if all inputs in all rows are filled
       let allInputsFilled = true;
       let rows = tbody.querySelectorAll("tr");
       rows.forEach((row) => {
@@ -122,21 +131,17 @@ addButtons.forEach((button) => {
         });
       });
 
-      // If any input is empty, show alert and return
       if (!allInputsFilled) {
         alert("Please fill in all fields before adding a new row.");
         return;
       }
 
-      // Get the number of existing rows
       let rowCount = tbody.querySelectorAll("tr").length;
 
-      // Create a new row (tr)
       let newRow = document.createElement("tr");
 
-      // Create table data (td) elements for each column
       let numberCell = document.createElement("td");
-      numberCell.textContent = rowCount + 1; // Increment the row number
+      numberCell.textContent = rowCount + 1; 
       newRow.appendChild(numberCell);
 
       let fileCell = document.createElement("td");
@@ -159,27 +164,7 @@ addButtons.forEach((button) => {
       deleteCell.innerHTML = '<i class="bi bi-trash3-fill"></i>';
       newRow.appendChild(deleteCell);
 
-      // Append the new row to the table body
       tbody.appendChild(newRow);
     }
   });
-});
-
-
-
-
-// Metni kısalt ve üç nokta ekle
-document.querySelectorAll('input[type="text"]').forEach((input) => {
-  const originalText = input.value;
-  const maxLength = 15; 
-
-  if (originalText.length > maxLength) {
-    input.value = originalText.substring(0, maxLength) + "...";
-    input.addEventListener("focus", () => {
-      input.value = originalText;
-    });
-    input.addEventListener("blur", () => {
-      input.value = originalText.substring(0, maxLength) + "...";
-    });
-  }
 });
