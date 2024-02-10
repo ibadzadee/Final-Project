@@ -62,21 +62,6 @@ logoutBtn.addEventListener("click", () => {
 //     });
 // });
 
-// Metni kısalt ve üç nokta ekle
-document.querySelectorAll('input[type="text"]').forEach((input) => {
-  const originalText = input.value;
-  const maxLength = 15; // Dilediğiniz bir uzunluk belirleyebilirsiniz
-
-  if (originalText.length > maxLength) {
-    input.value = originalText.substring(0, maxLength) + "...";
-    input.addEventListener("focus", () => {
-      input.value = originalText;
-    });
-    input.addEventListener("blur", () => {
-      input.value = originalText.substring(0, maxLength) + "...";
-    });
-  }
-});
 
 
 
@@ -178,4 +163,23 @@ addButtons.forEach((button) => {
       tbody.appendChild(newRow);
     }
   });
+});
+
+
+
+
+// Metni kısalt ve üç nokta ekle
+document.querySelectorAll('input[type="text"]').forEach((input) => {
+  const originalText = input.value;
+  const maxLength = 15; 
+
+  if (originalText.length > maxLength) {
+    input.value = originalText.substring(0, maxLength) + "...";
+    input.addEventListener("focus", () => {
+      input.value = originalText;
+    });
+    input.addEventListener("blur", () => {
+      input.value = originalText.substring(0, maxLength) + "...";
+    });
+  }
 });
