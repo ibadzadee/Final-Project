@@ -319,5 +319,31 @@ table {
     }
   }
   
-
+// LinkTab
+.linkTab{
+    display: flex;
+    flex-direction: column;
+    h4{
+        margin-bottom: 20px;
+    }
+    a{
+        margin-bottom: 50px;
+        color: blue;
+        &:hover{
+            color: $red;
+            transition: all 0.5s ease;
+        }
+    }
+    .img{
+        margin-top: 20px;
+        width: 250px;
+        height: 250px;
+        margin-bottom: 100px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
   

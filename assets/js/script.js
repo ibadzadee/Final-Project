@@ -4,7 +4,7 @@ window.addEventListener("scroll", () => {
     nav.style.background = "#0D0C28";
     nav.style.padding = "8px 0px";
   } else {
-    nav.style.background = "";
+    nav.style.background= "";
     nav.style.opacity = "";
     nav.style.padding = "";
   }
