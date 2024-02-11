@@ -2,15 +2,23 @@
   "users": [
     {
       "id": 1,
-      "name": "Sara Ibadzade",
+      "name": " Sara Ibadzade",
       "email": "sara.ibadzade@gmail.com",
       "password": "12345",
       "restaurant": {
         "name": "Le Jardin Français",
         "phone": "070-000-00-00",
-        "photos": ["./assets/img/faq-1.png" , "./assets/img/faq-1.png"],
+        "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png"
+        ],
         "location": "Paris, France",
-        "workTime": "10:00 AM - 10:00 PM, 12:00 PM - 11:00 PM",
+        "workTime": [
+          "12:27",
+          "12:27",
+          "23:33",
+          "17:27"
+        ],
         "menu": {
           "hotDishes": [
             {
@@ -85,20 +93,25 @@
         }
       }
     },
-
-
-
     {
       "name": "Sara",
       "email": "sara@gmail.com",
       "password": "12345",
-      "id": 32,
+      "id": 2,
       "restaurant": {
         "name": "Spice Avenue",
         "phone": "070-000-00-00",
-        "photos": ["./assets/img/faq-1.png" , "./assets/img/faq-1.png"],
+        "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png"
+        ],
         "location": "New York City, USA",
-        "workTime": " 11:00 AM - 11:00 PM, 12:00 PM - 9:00 PM",
+        "workTime": [
+          "12:27",
+          "12:27",
+          "23:33",
+          "17:27"
+        ],
         "menu": {
           "hotDishes": [
             {
@@ -173,8 +186,6 @@
         }
       }
     },
-
-
     {
       "name": "Mirze",
       "email": "youthprojects22@gmail.com",
@@ -183,9 +194,17 @@
       "restaurant": {
         "name": "The Green Leaf Bistro",
         "phone": "070-000-00-00",
-        "photos": ["./assets/img/faq-1.png" , "./assets/img/faq-1.png"],
+        "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png"
+        ],
         "location": "Melbourne, Australia",
-        "workTime": "9:00 AM - 8:00 PM , 9:00 AM - 8:00 PM",
+        "workTime": [
+          "12:27",
+          "12:27",
+          "23:33",
+          "17:27"
+        ],
         "menu": {
           "hotDishes": [
             {
@@ -260,19 +279,25 @@
         }
       }
     },
-
-    
     {
       "name": "Elekber",
       "email": "sadiqlielekber@gmail.com",
       "password": "12345",
-      "id": 33,
+      "id": 4,
       "restaurant": {
         "name": "Spicy",
         "phone": "1",
-        "photos": ["./assets/img/faq-1.png" , "./assets/img/faq-1.png"],
+        "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png"
+        ],
         "location": "a",
-        "workTime": "10-00",
+        "workTime": [
+          "12:27",
+          "12:27",
+          "23:33",
+          "17:27"
+        ],
         "menu": {
           "hotDishes": [
             {

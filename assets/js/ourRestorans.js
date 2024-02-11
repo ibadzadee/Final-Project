@@ -50,8 +50,10 @@ fetch(`http://localhost:3000/users`)
             </div>
             <div class="p">
               <i class="bi bi-calendar-week"></i>
-              <p>${element.restaurant.workTime}</p>
-            </div>
+              <div class="worktime">
+              <p>Monday-Saturday: ${element.restaurant.workTime[0]} AM - ${element.restaurant.workTime[1]} PM,</p>
+              <p>Sunday: 12:00 PM- 9:00 PM</p>
+            </div>            </div>
             <div class="p p2">
               <i class="bi bi-telephone"></i>
               <p>${element.restaurant.phone}</p>

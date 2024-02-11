@@ -83,9 +83,26 @@ body {
 
     .displayFile {
         width: 100%;
-        @include display(space-between, center);
+        display: flex;
+        align-items:  flex-start;
+        gap: 20px;
     }
-
+    .addFile{
+        margin-top: 12px;
+    }
+    .imageDiv{
+        @include display;
+        flex-direction: column;
+        .img{
+            width: 100px;
+            height: 100px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
     input[type="submit"] {
         width: 200px;
         margin: auto;
