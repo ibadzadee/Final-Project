@@ -1,15 +1,4 @@
 
-// <!---------------- Flipping Card ---------------->
-// $( function() {
-//     $('.cards button').click( function( event ) {
-//       $( event.currentTarget ).toggleClass('flipped');
-//     });
-    
-//   });
-
-
-
-
 // <!---------------- Image Carousel ---------------->
 
 let arr = [];
@@ -49,11 +38,17 @@ fetch("http://localhost:3000/users/")
   const printData = () => {
     arr.forEach(element=>{
       carouselContainer.innerHTML+= `
-      <div class="mycard">
-      <div class="mycard-header">
+      <dv class="mycard">
         <img src="./assets/img/faq-1.png" />
-      </div>
-    </div>
+    </dv>
       `
     })
   }
+
+    
+  fetch("http://localhost:3000/users/1")
+  .then(response => response.json())
+  .then(data => {
+      console.log("Hot dishes of restaurant with id 1:", data.restaurant.menu.hotDishes[0].name);
+      console.log();
+  })
