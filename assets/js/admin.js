@@ -210,6 +210,10 @@ let sundayEndTime = document.querySelector("#sundayEndTime");
 let photos = [];
 let fileInp = document.querySelector("#fileInp");
 let img = document.querySelector("#imgRestoran");
+// let fileInp = document.querySelector(`#${unicId}`);
+// let img = document.querySelector(`#${unicId}`);
+// let unicId = uuidv4();
+
 
 if (id) {
   fetch(url + id)
@@ -355,6 +359,20 @@ if (id) {
     });
 }
 
+//------- Choose File-------
+
+fileInp.addEventListener("input", (e) => {
+  let file = e.target.files[0];
+  if (file) {
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      img.src = reader.result;
+    };
+  }
+});
+
+
 editRestoranForm.addEventListener("submit", (e) => {
   e.preventDefault();
   axios.get(url + id).then((res) => {
@@ -365,6 +383,9 @@ editRestoranForm.addEventListener("submit", (e) => {
         ...data.restaurant,
         name: nameRestoran.value,
         phone: phone.value,
+        photos:[
+          img.src
+        ],
         location: locationRestoran.value,
         workTime: [
           monToSatStartTime.value,
