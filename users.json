@@ -8,93 +8,21 @@
     },
     {
       "name": "Sara ibadzade",
-      "email": "sara.ibadzade@gmail.com",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "name": "Sara ibadzade",
       "email": "sara@gmail.com",
-      "password": "yeni1",
-      "id": 3
-    },
-    {
-      "name": "Sara ibadzade",
-      "email": "sara.ibadzade@gmail.com",
       "password": "12345",
-      "id": 4
+      "id": 32
     },
     {
       "name": "Mirze",
       "email": "youthprojects22@gmail.com",
       "password": "12345",
-      "id": 5
+      "id": 3
     },
     {
       "name": "Sara ibadzade",
-      "email": "12345",
+      "email": "sadiqlielekber@gmail.com",
       "password": "12345",
-      "id": 6
-    },
-    {
-      "name": "Sara ibadzade",
-      "email": "youthprojects22@gmail.com",
-      "password": "12345",
-      "id": 7
-    },
-    {
-      "name": "Sara ibadzade",
-      "email": "youthprojects22@gmail.com",
-      "password": "12",
-      "id": 8
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 9
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 14
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 15
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 16
+      "id": 33
     }
   ]
 }

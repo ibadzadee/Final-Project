@@ -128,11 +128,6 @@ nav {
   color: #F01543 !important;
 }
 
-.container {
-  max-width: 1400px;
-  padding: 0px 32px;
-}
-
 body {
   background: url("../img/login.jpg");
   min-height: 100vh;

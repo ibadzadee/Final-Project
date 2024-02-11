@@ -1,6 +1,6 @@
-// @import '../mixin/mixin';
+@import './mixin/mixin';
 @import './variable/variable';
-// @import '../reset/reset';
+// @import './reset/reset';
 body {
 	padding: 0;
 	margin: 0;
@@ -12,6 +12,7 @@ body {
 #respLogin {
 	font-family: "Montserrat", sans-serif;
 	background: url("../img/login.jpg");
+	@include image;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -72,7 +73,7 @@ a {
 }
 
 .form-container form {
-	background: black;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) !important;
 	display: flex;
 	flex-direction: column;
 	padding: 0 50px;
@@ -80,8 +81,6 @@ a {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	backdrop-filter: (3.5px);
-
 }
 
 .social-container {
@@ -400,7 +399,7 @@ button.ghost {
 
 
 
-@media screen and (min-width:768px) and (max-width:1024px) {
+@media screen and (max-width:768px) {
 	#respLogin{
 		display: none;
 	}

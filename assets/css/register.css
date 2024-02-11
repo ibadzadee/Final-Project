@@ -8,6 +8,9 @@ body {
 #respLogin {
   font-family: "Montserrat", sans-serif;
   background: url("../img/login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +62,7 @@ a {
 }
 
 .form-container form {
-  background: black;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e) !important;
   display: flex;
   flex-direction: column;
   padding: 0 50px;
@@ -67,8 +70,6 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  -webkit-backdrop-filter: 3.5px;
-          backdrop-filter: 3.5px;
 }
 
 .social-container {
@@ -359,7 +360,7 @@ button.ghost {
   transform: scale(0.6);
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   #respLogin {
     display: none;
   }
