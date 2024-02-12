@@ -39,6 +39,7 @@ seeMoreBtn.addEventListener("click", () => {
   window.location = "./ourRestorans.html";
 });
 
+
 // <!-------------- Fetch Data----------------->
 
 const url = `http://localhost:3000/users`;

@@ -331,12 +331,12 @@
                         <th>Delete</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="tbodyHot">
+                      <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu" class="custom-file-upload"
-                            >Choose image</label
+                            >image</label
                           >
                           <input
                             id="fileMenu"
@@ -346,7 +346,7 @@
                         </td>
                         <td>
                           <input
-                            id="name"
+                            class="name nameHot"
                             type="text"
                             value="Baked Chicken Wings and Legs"
                           />
@@ -354,13 +354,13 @@
                         <td>
                           <input
                             type="text"
-                            id="about"
+                            class="about aboutHot"
                             value="4 Paces Chicken"
                           />
                         </td>
-                        <td><input type="text" id="cost" value="30" /></td>
+                        <td><input type="text" class="cost costHot" value="30" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                   <button class="plus addTab" data-key="1">+</button>
@@ -378,28 +378,28 @@
                         <th>Delete</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="tbodyCold" style="overflow-x: scroll;">
+                      <!-- <tr>
                         <td id="number">1</td>
                         <td>
-                          <label for="fileMenu" class="custom-file-upload"
-                            >Choose image</label
+                          <label for="fileMenu2" class="custom-file-upload"
+                            >image</label
                           >
                           <input
-                            id="fileMenu"
+                            id="fileMenu2"
                             type="file"
                             style="display: none"
                           />
                         </td>
                         <td>
-                          <input id="name" type="text" />
+                          <input class="name nameCold" type="text" />
                         </td>
                         <td>
-                          <input type="text" id="about" />
+                          <input type="text" class="about aboutCold" />
                         </td>
-                        <td><input type="text" id="cost" /></td>
+                        <td><input type="text" class="cost costCold" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                   <button class="plus addTab" data-key="2">+</button>
@@ -421,22 +421,22 @@
                       <tr>
                         <td id="number">1</td>
                         <td>
-                          <label for="fileMenu" class="custom-file-upload"
-                            >Choose image</label
+                          <label for="fileMenu3" class="custom-file-upload"
+                            >image</label
                           >
                           <input
-                            id="fileMenu"
+                            id="fileMenu3"
                             type="file"
                             style="display: none"
                           />
                         </td>
                         <td>
-                          <input id="name" type="text" />
+                          <input class="name nameSalads" type="text" />
                         </td>
                         <td>
-                          <input type="text" id="about" />
+                          <input type="text" class="about aboutSalads" />
                         </td>
-                        <td><input type="text" id="cost" /></td>
+                        <td><input type="text" class="cost costSalads" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
@@ -460,22 +460,22 @@
                       <tr>
                         <td id="number">1</td>
                         <td>
-                          <label for="fileMenu" class="custom-file-upload"
-                            >Choose image</label
+                          <label for="fileMenu4" class="custom-file-upload"
+                            >image</label
                           >
                           <input
-                            id="fileMenu"
+                            id="fileMenu4"
                             type="file"
                             style="display: none"
                           />
                         </td>
                         <td>
-                          <input id="name" type="text" />
+                          <input class="name nameDesserts" type="text" />
                         </td>
                         <td>
-                          <input type="text" id="about" />
+                          <input type="text" class="about aboutDesserts" />
                         </td>
-                        <td><input type="text" id="cost" /></td>
+                        <td><input type="text" class="cost costDesserts" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
@@ -499,22 +499,22 @@
                       <tr>
                         <td id="number">1</td>
                         <td>
-                          <label for="fileMenu" class="custom-file-upload"
-                            >Choose image</label
+                          <label for="fileMenu5" class="custom-file-upload"
+                            >image</label
                           >
                           <input
-                            id="fileMenu"
+                            id="fileMenu5"
                             type="file"
                             style="display: none"
                           />
                         </td>
                         <td>
-                          <input id="name" type="text" />
+                          <input class="name nameBeverages" type="text" />
                         </td>
                         <td>
-                          <input type="text" id="about" />
+                          <input type="text" class="about aboutBeverages" />
                         </td>
-                        <td><input type="text" id="cost" /></td>
+                        <td><input type="text" class="cost costBeverages" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
@@ -574,13 +574,17 @@
     </div>
 
     <!---------------- Footer ---------------->
-    <footer>
+    <!-- <footer>
       <div class="container">
         <div class="footer-center">
-          <h5>©2023 <span>ReservQ</span>. All rights reserved</h5>
+          <h3>The Easy Way to Manage Your Restaurant</h3>
         </div>
       </div>
-    </footer>
+      <div class="container">
+        
+        <h5>©2023 <span>ReservQ</span>. All rights reserved</h5>
+      </div>
+    </footer> -->
 
     <!-- Js codes -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

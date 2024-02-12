@@ -1,8 +1,6 @@
 // ------------- Fetch Data -------------
 const url = `http://localhost:3000/users/`;
-let id = localStorage.getItem("currentUser")
-  ? JSON.parse(localStorage.getItem("currentUser")).id
-  : null;
+
 let contactSection = document.querySelector("#contactSection");
 let restoranName = document.querySelector("#restoranName");
 let hotDishes = document.querySelector("#hotDishes");
@@ -10,7 +8,8 @@ let coldDishes = document.querySelector("#coldDishes");
 let salads = document.querySelector("#salads");
 let desserts = document.querySelector("#desserts");
 let beverages = document.querySelector("#beverages");
-
+let id = new URLSearchParams(window.location.search).get("id");
+console.log(id);
 fetch(url + id)
   .then((response) => response.json())
   .then((data) => {
@@ -146,7 +145,6 @@ fetch(url + id)
 // <!---------------- Image Carousel ---------------->
 
 let arr = [];
-
 fetch(url + id)
   .then((res) => res.json())
   .then((data) => {

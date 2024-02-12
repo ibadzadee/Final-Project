@@ -82,17 +82,17 @@ document.querySelectorAll(".addTab").forEach((button) => {
         });
       });
 
-      if (!allInputsFilled) {
-        alert("Please fill in all fields before adding a new row.");
-        return;
-      }
+      // if (!allInputsFilled) {
+      //   alert("Please fill in all fields before adding a new row.");
+      //   return;
+      // }
       let unique = uuidv4();
       const rowCount = tbody.querySelectorAll("tr").length + 1;
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
         <td>${rowCount}</td>
         <td>
-          <label for="${unique}" class="custom-file-upload">Choose image</label>
+          <label for="${unique}" class="custom-file-upload">image</label>
           <input type="file" id="${unique}" style="display : none" >
         </td>
         <td><input type="text" ></td>
@@ -160,27 +160,11 @@ if (id) {
   fetch(url + id)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       (namePersonal.value = data.name),
         (email.value = data.email),
         (password.value = data.password);
-      // personalForm.innerHTML += `
-      // <label for="namePersonal">Full Name :</label>
-      // <input type="text" id="namePersonal" required value =" ${data.name}" />
-
-      // <label for="email">E-mail :</label>
-      // <input type="email" id="email" required  value = "${data.email}"/>
-
-      // <label for="email">Password :</label>
-      // <input type="text" id="password" required value = "${data.password}"/>
-
-      // <input type="submit" value="Save" class="save saveRestoran" />
-      // `;
       const originalData = data;
-      // Change Data
-      // let namePersonal = document.querySelector("#namePersonal");
-      // let email = document.querySelector("#email");
-      // let password = document.querySelector("#password");
       personalForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
@@ -207,10 +191,10 @@ let monToSatStartTime = document.querySelector("#monToSatStartTime");
 let monToSatEndTime = document.querySelector("#monToSatEndTime");
 let sundayStartTime = document.querySelector("#sundayStartTime");
 let sundayEndTime = document.querySelector("#sundayEndTime");
-let photos = [];
 // let fileInp = document.querySelector("#fileInp");
 let img = document.querySelectorAll(".imgSrcAll");
 let imageDivAll = document.querySelector(`.imageDivAll`);
+let PhotoArr = [];
 
 // let img = document.querySelector(`#${unicId}`);
 // let unicId = uuidv4();
@@ -219,7 +203,7 @@ if (id) {
   fetch(url + id)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       nameRestoran.value = data.restaurant.name;
       phone.value = data.restaurant.phone;
       locationRestoran.value = data.restaurant.location;
@@ -227,7 +211,8 @@ if (id) {
       monToSatEndTime.value = data.restaurant.workTime[1];
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
-      let unique = uuidv4();
+      let uId = uuidv4();
+      let unique = uId.substring(1,uId.length-1);
 
       let lengthPhotos = data.restaurant.photos;
       lengthPhotos.forEach((elem) => {
@@ -244,30 +229,32 @@ if (id) {
         </div>  
         `;
       });
-      console.log(lengthPhotos);
-      let i = 0;
-      img.forEach((element) => {
-        element.src = data.restaurant.photos[i];
-        i++;
+      // console.log(lengthPhotos);
+      // let i = 0;
+      img.forEach((element, index) => {
+        element.src = data.restaurant.photos[index];
+        // i++;
       });
+      //------- Choose File-------
+      if(lengthPhotos.length>0){
+        document.getElementById(`${unique}`).addEventListener("input", (e) => {
+          let file = e.target.files[0];
+          if (file) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+              img.forEach((element) => {
+                element.src = reader.result;
+                PhotoArr.push(element.src)
+              });
+            };
+          }
+        });
+      }
     });
 }
+console.log();
 
-//------- Choose File-------
-
-// let fileInp = document.querySelector(`#${unique}`);
-// fileInp.addEventListener("input", (e) => {
-//   let file = e.target.files[0];
-//   if (file) {
-//     let reader = new FileReader();
-//     reader.readAsDataURL(file);
-//     reader.onload = function () {
-//       img.forEach((element) => {
-//         element.src = reader.result;
-//       });
-//     };
-//   }
-// });
 let addFile = document.querySelector(".addFile");
 
 addFile.addEventListener("click", () => {
@@ -299,7 +286,7 @@ editRestoranForm.addEventListener("submit", (e) => {
           ...data.restaurant,
           name: nameRestoran.value,
           phone: phone.value,
-          photos: [element.src],
+          photos: PhotoArr,
           location: locationRestoran.value,
           workTime: [
             monToSatStartTime.value,
@@ -319,8 +306,155 @@ editRestoranForm.addEventListener("submit", (e) => {
   });
 });
 
-// Edit Menu:
-// "10:00 AM - 10:00 PM, 12:00 PM - 11:00 PM"
+// ---------------- Edit Restoran ----------------
+//
+//
+// let nameHot = document.querySelectorAll('.nameHot');
+// let aboutHot = document.querySelector('.aboutHot')
+// let costHot = document.querySelector('.costHot');
+// fetch(url + id)
+//   .then((res) => res.json())
+//   .then((data) => {
+//     // console.log(data);
+//     data.restaurant.menu.hotDishes.forEach(elem=>{
+//       console.log(elem);
+
+//     })
+//   });
+
+// document.querySelector('.saveMenu').addEventListener('click', (e) => {
+//   e.preventDefault()
+//   let hotDishesData = [];
+//   document.querySelectorAll('.nameHot').forEach((nameInput, index) => {
+//       let dish = {
+//           name: nameInput.value,
+//           about: document.querySelectorAll('.aboutHot')[index].value,
+//           cost: document.querySelectorAll('.costHot')[index].value
+
+//       };
+//       hotDishesData.push(dish);
+//   });
+//   let updatedData = {
+//     ...existingData,
+//     hotDishes: [...existingData.hotDishes, ...hotDishesData],
+//     // Diğer tabloların verileri de buraya eklenecek
+// };
+// axios.put(url+id, updatedData )
+
+//   let requestBody = {
+//     hotDishes: hotDishesData,
+// };
+// });
+
+// ---------------HotDishes Datas---------------
+let existingData;
+let tBodyHot = document.querySelector("#tbodyHot");
+let tBodyCold = document.querySelector("#tbodyCold");
+
+axios.get(url + id).then((res) => {
+  data = res.data;
+  existingData = data;
+  let unique = uuidv4();
+  data.restaurant.menu.hotDishes.forEach((elem, index) => {
+    tBodyHot.innerHTML += `
+   <tr>
+   <td id="number">${index + 1}</td>
+   <td>
+     <label for="${unique}" class="custom-file-upload"
+       >image</label
+     >
+     <input
+       id="${unique}"
+       type="file"
+       style="display: none"
+     />
+   </td>
+   <td>
+     <input
+       class="name nameHot"
+       type="text"
+       value="${elem.name}"
+     />
+   </td>
+   <td>
+     <input
+       type="text"
+       class="about aboutHot"
+       value="${elem.about}"
+     />
+   </td>
+   <td><input type="text" class="cost costHot" value="${elem.cost}" /></td>
+   <td><i class="bi bi-trash3-fill"></i></td>
+ </tr>`;
+  });
+  console.log(data.restaurant.menu.coldDishes.length);
+  data.restaurant.menu.coldDishes.forEach((elem, index) => {
+    tBodyCold.innerHTML += `
+   <tr>
+   <td id="number">${index + 1}</td>
+   <td>
+     <label for="${unique}" class="custom-file-upload"
+       >image</label
+     >
+     <input
+       id="${unique}"
+       type="file"
+       style="display: none"
+     />
+   </td>
+   <td>
+     <input
+       class="name nameHot"
+       type="text"
+       value="${elem.name}"
+     />
+   </td>
+   <td>
+     <input
+       type="text"
+       class="about aboutHot"
+       value="${elem.about}"
+     />
+   </td>
+   <td><input type="text" class="cost costHot" value="${elem.cost}" /></td>
+   <td><i class="bi bi-trash3-fill"></i></td>
+ </tr>`;
+  });
+});
+
+// ----------------Send Menu----------------
+let saveMenu = document.querySelector(".saveMenu");
+console.log(saveMenu);
+saveMenu.addEventListener("click", (e) => {
+  e.preventDefault();
+  let hotDishesData = [];
+  document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
+    let dish = {
+      name: nameInput.value,
+      about: document.querySelectorAll(".aboutHot")[index].value,
+      cost: document.querySelectorAll(".costHot")[index].value,
+    };
+    hotDishesData.push(dish);
+  });
+
+  console.log(hotDishesData);
+  let obj = {
+    ...existingData,
+    restaurant: {
+      ...existingData.restaurant,
+      menu: {
+        ...existingData.restaurant.menu,
+        hotDishes: hotDishesData,
+      },
+    },
+  };
+
+  axios.put(url + id, obj).then((res) => {
+    window.location.reload();
+  });
+});
+
+//
 // ------GOPAGE------
 let goPageBtn = document.querySelector("#goPageLink");
 goPageBtn.addEventListener("click", () => {
@@ -333,5 +467,5 @@ link.addEventListener("click", () => {
   window.location = `./restorans.html?name=${user}`;
 });
 
-let barode = document.querySelector('#barode');
-barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://e-restaurants.netlify.app/` 
+let barcode = document.querySelector("#barcode");
+barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://./restorans.html?name=${user}/`;

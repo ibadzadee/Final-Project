@@ -213,6 +213,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  gap: 5px;
 }
 .restoranForm .imageDiv .img {
   width: 100px;
@@ -337,8 +338,6 @@ table i:hover {
 .goPage {
   margin-top: 70px;
   margin-bottom: 0;
-  margin-left: 100%;
-  transform: translateX(-100%);
   border: 1px solid white;
   width: 250px;
   padding: 5px 10px;
@@ -370,6 +369,8 @@ table i:hover {
 
 .custom-file-upload:hover {
   background-color: #0056b3;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
 }
 
 @media (min-width: 1200px) {
