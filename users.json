@@ -8,7 +8,15 @@
       "restaurant": {
         "name": "Le Jardin Français",
         "phone": "070-000-00-00",
+        "backgroundPhoto": "./assets/img/restoran1.jpg",
         "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
           "./assets/img/faq-1.png",
           "./assets/img/faq-1.png"
         ],
@@ -23,15 +31,21 @@
           "hotDishes": [
             {
               "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
+              "name": "Sara",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
+            },
+            {
+              "images": "./assets/img/popular1.png",
+              "name": "Baked Chicken Wings and Legs",
+              "about": "4 Piece Chicken , Spicy Sauce",
+              "cost": 30.00
             }
           ],
           "coldDishes": [
@@ -39,13 +53,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 10.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "salads": [
@@ -53,13 +67,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "desserts": [
@@ -67,13 +81,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "beverages": [
@@ -81,13 +95,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ]
         }
@@ -118,13 +132,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "coldDishes": [
@@ -132,13 +146,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "salads": [
@@ -146,13 +160,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "desserts": [
@@ -160,13 +174,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "beverages": [
@@ -174,13 +188,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ]
         }
@@ -211,13 +225,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "coldDishes": [
@@ -225,13 +239,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "salads": [
@@ -239,13 +253,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "desserts": [
@@ -253,13 +267,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "beverages": [
@@ -267,13 +281,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ]
         }
@@ -304,13 +318,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "coldDishes": [
@@ -318,13 +332,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "salads": [
@@ -332,13 +346,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "desserts": [
@@ -346,13 +360,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ],
           "beverages": [
@@ -360,13 +374,13 @@
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             },
             {
               "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30.00"
+              "cost": 30.00
             }
           ]
         }

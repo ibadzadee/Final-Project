@@ -197,11 +197,16 @@ body {
 .restoranForm .displayFile {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 20px;
 }
 .restoranForm .addFile {
   margin-top: 12px;
+}
+.restoranForm .imageDivAll {
+  display: flex !important;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 .restoranForm .imageDiv {
   display: flex;

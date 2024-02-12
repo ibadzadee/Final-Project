@@ -145,10 +145,10 @@ menuIcon.addEventListener("click", () => {
 });
 
 // ---------------- Fetch Data -----------------
-const url = `http://localhost:3000/users/`;
-let id = localStorage.getItem("currentUser")
-  ? JSON.parse(localStorage.getItem("currentUser")).id
-  : null;
+  const url = `http://localhost:3000/users/`;
+  let id = localStorage.getItem("currentUser")
+    ? JSON.parse(localStorage.getItem("currentUser")).id
+    : null;
 
 // ---------------- Personal Information: ----------------
 const personalForm = document.querySelector(".personalForm");
@@ -208,12 +208,12 @@ let monToSatEndTime = document.querySelector("#monToSatEndTime");
 let sundayStartTime = document.querySelector("#sundayStartTime");
 let sundayEndTime = document.querySelector("#sundayEndTime");
 let photos = [];
-let fileInp = document.querySelector("#fileInp");
-let img = document.querySelector("#imgRestoran");
-// let fileInp = document.querySelector(`#${unicId}`);
+// let fileInp = document.querySelector("#fileInp");
+let img = document.querySelectorAll(".imgSrcAll");
+let imageDivAll = document.querySelector(`.imageDivAll`);
+
 // let img = document.querySelector(`#${unicId}`);
 // let unicId = uuidv4();
-
 
 if (id) {
   fetch(url + id)
@@ -227,165 +227,79 @@ if (id) {
       monToSatEndTime.value = data.restaurant.workTime[1];
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
-      // let uniqueId = uuidv4();
-      // editRestoranForm.innerHTML += `
-      // <label for="nameRestoran">Restaurant Name:</label>
-      //  <input type="text" id="nameRestoran" required value = "${data.restaurant.name}" />
-      //  <label for="tel">Phone Number:</label>
-      //  <input
-      //    type="tel"
-      //    id="phone"
-      //    placeholder="077-000-00-00"
-      //    pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-      //    required
-      //    value ="${data.restaurant.phone}"
-      //  />
-      //  <label for="location">Location:</label>
-      //  <input type="text" id="locationRestoran" required value = "${data.restaurant.location}" />
+      let unique = uuidv4();
 
-      //  <!------------- Hours ------------->
-
-      //  <label>Monday - Saturday Work Hours:</label>
-      //  <div>
-      //    <label for="monToSatStartTime">Start Time:</label>
-      //    <input
-      //      type="time"
-      //      id="monToSatStartTime"
-      //      name="monToSatStartTime"
-      //      min="00:00"
-      //      max="23:59"
-      //      required
-      //      value="${data.restaurant.workTime[0]}"
-      //    />
-      //    <label for="monToSatEndTime">End Time:</label>
-      //    <input
-      //      type="time"
-      //      id="monToSatEndTime"
-      //      name="monToSatEndTime"
-      //      min="00:00"
-      //      max="23:59"
-      //      required
-      //      value="${data.restaurant.workTime[1]}"
-      //    />
-      //  </div>
-      //  <label>Sunday Work Hours:</label>
-      //  <div>
-      //    <label for="sundayStartTime">Start Time:</label>
-      //    <input
-      //      type="time"
-      //      id="sundayStartTime"
-      //      name="sundayStartTime"
-      //      min="00:00"
-      //      max="23:59"
-      //      required
-      //      value="${data.restaurant.workTime[2]}"
-      //    />
-      //    <label for="sundayEndTime">End Time:</label>
-      //    <input
-      //      type="time"
-      //      id="sundayEndTime"
-      //      name="sundayEndTime"
-      //      min="00:00"
-      //      max="23:59"
-      //     required
-      //     value="${data.restaurant.workTime[3]}"
-      //   />
-      //   </div>
-      //     <label for="file">Add Restaurant's photos</label>
-      //     <div class="displayFile">
-
-      //     <div class="imageDiv">
-      //       <label for="fileInp" class="custom-file-upload">Choose image</label>
-      //       <input id="fileInp" type="file" style="display: none" />
-      //       <div class="img"><img id ="imgRestoran" src="" alt="image"></div>
-      //     </div>
-
-      //     <button class="plus addFile">+</button>
-      //   </div>
-
-      //     <input type="submit" value="Save" class="save saveRestoran" />
-      //   `;
-      // let nameRestoran = document.querySelector("#nameRestoran").value;
-      // let phone = document.querySelector("#phone").value;
-      // let location = document.querySelector("#locationRestoran").value;
-      // let monToSatStartTime =
-      //   document.querySelector("#monToSatStartTime").value;
-      // let monToSatEndTime = document.querySelector("#monToSatEndTime").value;
-      // let sundayStartTime = document.querySelector("#sundayStartTime").value;
-      // let sundayEndTime = document.querySelector("#sundayEndTime").value;
-      // let photos = [];
-      // let fileInp = document.querySelector("#fileInp");
-      // let img = document.querySelector("#imgRestoran");
-
-      // fileInp.addEventListener("input", () => {
-      //   let file = e.target.files[0];
-      //   if (file) {
-      //     let reader = new FileReader();
-      //     reader.readAsDataURL(file);
-      //     reader.onload = function () {
-      //       img.src = reader.result;
-      //       console.log(img.src);
-      //     };
-      //   }
-      // });
-
-      // const originalData = data;
-      // // Change Data
-      // editRestoranForm.addEventListener("submit", (e) => {
-      //   e.preventDefault();
-
-      //   let obj = {
-      //     ...originalData,
-      //     restaurant: {
-      //       ...originalData.restaurant,
-      //       name: nameRestoran,
-      //       phone: phone,
-      //       location: location,
-      //       workTime: [
-      //         monToSatStartTime,
-      //         monToSatEndTime,
-      //         sundayStartTime,
-      //         sundayEndTime,
-      //       ],
-      //       // fileInp: fileInp,
-      //     },
-      //   };
-      //   console.log(obj);
-
-      //   axios.put(url + id, obj).then((res) => {
-      //     // window.location.reload();
-      //   });
-      // });
+      let lengthPhotos = data.restaurant.photos;
+      lengthPhotos.forEach((elem) => {
+        imageDivAll.innerHTML += `
+        <div class="imageDivAll">
+        <div class="imageDiv">
+          <label for="${unique}" class="custom-file-upload"
+            >Choose image</label
+          >
+          <input id="${unique}" type="file" style="display: none" />
+          <div class="img">
+            <img id="imgRestoran" class="imgSrcAll" src="${elem}" alt="image" />
+          </div>
+        </div>  
+        `;
+      });
+      console.log(lengthPhotos);
+      let i = 0;
+      img.forEach((element) => {
+        element.src = data.restaurant.photos[i];
+        i++;
+      });
     });
-}
-
-//------- Choose File-------
-
-fileInp.addEventListener("input", (e) => {
-  let file = e.target.files[0];
-  if (file) {
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      img.src = reader.result;
-    };
   }
+  
+  //------- Choose File-------
+  
+  // let fileInp = document.querySelector(`#${unique}`);
+  // fileInp.addEventListener("input", (e) => {
+  //   let file = e.target.files[0];
+  //   if (file) {
+  //     let reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = function () {
+  //       img.forEach((element) => {
+  //         element.src = reader.result;
+  //       });
+  //     };
+  //   }
+  // });
+  let addFile = document.querySelector(".addFile");
+  
+  addFile.addEventListener("click", () => {
+  let unicId = uuidv4();
+  imageDivAll.innerHTML += `
+  <div class="imageDiv">
+  <label for="${unicId}" class="custom-file-upload">Choose image</label>
+  <input id="${unicId}" type="file" style="display: none" />
+  <div class="img">
+    <img id="imgRestoran" src="" alt="image" />
+  </div>
+  </div>
+`;
 });
 
-
+// Send AllData
 editRestoranForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+  let i = 0;
+  img.forEach((element) => {
+    element.src = data.restaurant.photos[i];
+    i++;
+    e.preventDefault();
   axios.get(url + id).then((res) => {
     let data = res.data;
+    // let arrPhotos = [];
     let obj = {
       ...data,
       restaurant: {
         ...data.restaurant,
         name: nameRestoran.value,
         phone: phone.value,
-        photos:[
-          img.src
-        ],
+        photos: [element.src],
         location: locationRestoran.value,
         workTime: [
           monToSatStartTime.value,
@@ -396,8 +310,14 @@ editRestoranForm.addEventListener("submit", (e) => {
         // fileInp: fileInp,
       },
     };
+    // if(img.src !==''){
     axios.put(url + id, obj);
+    // }else{
+    //   alert("please choose a new image")
+    // }
   });
+  });
+  
 });
 
 // Edit Menu:

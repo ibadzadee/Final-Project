@@ -131,6 +131,7 @@ nav {
 #banner.restorans {
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/restoran1.jpg);
+  background-image: url(../img/blurBack.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

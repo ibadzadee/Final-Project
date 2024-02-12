@@ -85,11 +85,16 @@ body {
     .displayFile {
         width: 100%;
         display: flex;
-        align-items:  flex-start;
+        align-items:  flex-end;
         gap: 20px;
     }
     .addFile{
         margin-top: 12px;
+    }
+    .imageDivAll{
+        display: flex !important;
+        gap: 20px;
+        flex-wrap: wrap;
     }
     .imageDiv{
         @include display;

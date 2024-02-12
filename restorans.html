@@ -38,29 +38,31 @@
     <!------------------ Banner ------------------>
     <div id="banner" class="restorans">
       <div class="container">
-        <div class="banner-center"><h1 id="restoranName">Spice Avenue</h1></div>
+        <div class="banner-center">
+          <h1 id="restoranName">Add your restaurant's Name:</h1>
+        </div>
       </div>
     </div>
     <!------------------ Contact ------------------>
     <section id="contact">
       <div class="container">
-        <div class="contact-center">
+        <div class="contact-center" id="contactSection">
           <div class="contact-item">
             <h5>Location:</h5>
-            <p>Paris , France</p>
+            <!-- <p>Paris , France</p> -->
           </div>
 
           <div class="contact-item">
             <h5>Work Time:</h5>
-            <p>
-              Monday-Friday: 10:00 AM - 10:00 PM, Saturday-Sunday: 12:00 PM -
-              11:00 PM
-            </p>
+            <div class="worktime">
+              <!-- <p>Monday-Saturday: 11:00 AM - 11:00 PM,</p>
+              <p>Sunday: 12:00 PM- 9:00 PM</p> -->
+            </div>
           </div>
 
           <div class="contact-item">
             <h5>Phone Number:</h5>
-            <p>+994-00-000-00-00</p>
+            <!-- <p>+994-00-000-00-00</p> -->
           </div>
         </div>
       </div>
@@ -72,18 +74,23 @@
         <div class="menu-center">
           <h2>Our Menu</h2>
 
-          <!------------------ Menu-DIV ------------------>
-          <div class="menu-div" data-aos="fade-up" data-aos-duration="3000">
+          <!------------------ Menu-DIV Hot------------------>
+          <div
+            class="menu-div"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            id="hotDishes"
+          >
             <h3>Hot Dishes</h3>
 
-            <div class="menu-items">
+            <!-- <div class="menu-items">
               <div class="image">
                 <img src="./assets/img/popular1.png" alt="" />
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -97,8 +104,8 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -110,30 +117,36 @@
               <div class="image">
                 <img src="./assets/img/popular1.png" alt="" />
               </div>
-              <div class="right">
+              <div class="right" id="infoSection">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
                 </div>
               </div>
-            </div>
+            </div> -->
+
           </div>
 
-          <!------------------ Menu-DIV ------------------>
-          <div class="menu-div" data-aos="fade-up" data-aos-duration="3000">
+          <!------------------ Menu-DIV Cold ------------------>
+          <div
+            class="menu-div"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            id="coldDishes"
+          >
             <h3>Cold Dishes</h3>
-
+<!-- 
             <div class="menu-items">
               <div class="image">
                 <img src="./assets/img/popular1.png" alt="" />
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -147,8 +160,8 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -162,28 +175,90 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
+                </div>
+                <div class="cost">
+                  <h4 id="cost">$30.00</h4>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+
+          <!------------------ Menu-DIV Salads ------------------>
+          <div
+            class="menu-div"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            id="salads"
+          >
+            <h3>Salads</h3>
+
+            <!-- <div class="menu-items">
+              <div class="image">
+                <img src="./assets/img/popular1.png" alt="" />
+              </div>
+              <div class="right">
+                <div class="text">
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
                 </div>
               </div>
             </div>
+
+            <div class="menu-items">
+              <div class="image">
+                <img src="./assets/img/popular1.png" alt="" />
+              </div>
+              <div class="right">
+                <div class="text">
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
+                </div>
+                <div class="cost">
+                  <h4 id="cost">$30.00</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-items">
+              <div class="image">
+                <img src="./assets/img/popular1.png" alt="" />
+              </div>
+              <div class="right">
+                <div class="text">
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
+                </div>
+                <div class="cost">
+                  <h4 id="cost">$30.00</h4>
+                </div>
+              </div>
+            </div> -->
+
           </div>
 
           <!------------------ Menu-DIV ------------------>
-          <div class="menu-div" data-aos="fade-up" data-aos-duration="3000">
-            <h3>Hot Dishes</h3>
+          <div
+            class="menu-div"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            id="desserts"
+          >
+            <h3>Desserts</h3>
 
-            <div class="menu-items">
+            <!-- <div class="menu-items">
               <div class="image">
                 <img src="./assets/img/popular1.png" alt="" />
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -197,8 +272,8 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -212,28 +287,33 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
-          <!------------------ Menu-DIV ------------------>
-          <div class="menu-div" data-aos="fade-up" data-aos-duration="3000">
-            <h3>Hot Dishes</h3>
+          <!------------------ Menu-DIV Beverages ------------------>
+          <div
+            class="menu-div"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            id="beverages"
+          >
+            <h3>Beverages</h3>
 
-            <div class="menu-items">
+            <!-- <div class="menu-items">
               <div class="image">
                 <img src="./assets/img/popular1.png" alt="" />
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -247,8 +327,8 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
@@ -262,64 +342,14 @@
               </div>
               <div class="right">
                 <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
+                  <h5 class="name">Baked Chicken Wings and Legs</h5>
+                  <p class="about">4 Piece Chicken , Spicy Sauce</p>
                 </div>
                 <div class="cost">
                   <h4 id="cost">$30.00</h4>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!------------------ Menu-DIV ------------------>
-          <div class="menu-div" data-aos="fade-up" data-aos-duration="3000">
-            <h3>Hot Dishes</h3>
-
-            <div class="menu-items">
-              <div class="image">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <div class="right">
-                <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
-                </div>
-                <div class="cost">
-                  <h4 id="cost">$30.00</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="menu-items">
-              <div class="image">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <div class="right">
-                <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
-                </div>
-                <div class="cost">
-                  <h4 id="cost">$30.00</h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="menu-items">
-              <div class="image">
-                <img src="./assets/img/popular1.png" alt="" />
-              </div>
-              <div class="right">
-                <div class="text">
-                  <h5 id="name">Baked Chicken Wings and Legs</h5>
-                  <p id="about">4 Piece Chicken , Spicy Sauce</p>
-                </div>
-                <div class="cost">
-                  <h4 id="cost">$30.00</h4>
-                </div>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -327,7 +357,7 @@
 
     <!---------------- Carousel ---------------->
     <div class="container-center">
-      <div class="row"style="--bs-gutter-x : 0">
+      <div class="row" style="--bs-gutter-x: 0">
         <div class="col">
           <div class="owl-carousel"></div>
         </div>
@@ -373,5 +403,10 @@
 
     <script src="./assets/js/restorans.js"></script>
 
+    <!-- for stop the problem: -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/default-passive-events"
+    ></script>
   </body>
 </html>
