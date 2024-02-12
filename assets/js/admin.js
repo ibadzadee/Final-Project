@@ -145,10 +145,10 @@ menuIcon.addEventListener("click", () => {
 });
 
 // ---------------- Fetch Data -----------------
-  const url = `http://localhost:3000/users/`;
-  let id = localStorage.getItem("currentUser")
-    ? JSON.parse(localStorage.getItem("currentUser")).id
-    : null;
+const url = `http://localhost:3000/users/`;
+let id = localStorage.getItem("currentUser")
+  ? JSON.parse(localStorage.getItem("currentUser")).id
+  : null;
 
 // ---------------- Personal Information: ----------------
 const personalForm = document.querySelector(".personalForm");
@@ -251,26 +251,26 @@ if (id) {
         i++;
       });
     });
-  }
-  
-  //------- Choose File-------
-  
-  // let fileInp = document.querySelector(`#${unique}`);
-  // fileInp.addEventListener("input", (e) => {
-  //   let file = e.target.files[0];
-  //   if (file) {
-  //     let reader = new FileReader();
-  //     reader.readAsDataURL(file);
-  //     reader.onload = function () {
-  //       img.forEach((element) => {
-  //         element.src = reader.result;
-  //       });
-  //     };
-  //   }
-  // });
-  let addFile = document.querySelector(".addFile");
-  
-  addFile.addEventListener("click", () => {
+}
+
+//------- Choose File-------
+
+// let fileInp = document.querySelector(`#${unique}`);
+// fileInp.addEventListener("input", (e) => {
+//   let file = e.target.files[0];
+//   if (file) {
+//     let reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = function () {
+//       img.forEach((element) => {
+//         element.src = reader.result;
+//       });
+//     };
+//   }
+// });
+let addFile = document.querySelector(".addFile");
+
+addFile.addEventListener("click", () => {
   let unicId = uuidv4();
   imageDivAll.innerHTML += `
   <div class="imageDiv">
@@ -290,35 +290,48 @@ editRestoranForm.addEventListener("submit", (e) => {
     element.src = data.restaurant.photos[i];
     i++;
     e.preventDefault();
-  axios.get(url + id).then((res) => {
-    let data = res.data;
-    // let arrPhotos = [];
-    let obj = {
-      ...data,
-      restaurant: {
-        ...data.restaurant,
-        name: nameRestoran.value,
-        phone: phone.value,
-        photos: [element.src],
-        location: locationRestoran.value,
-        workTime: [
-          monToSatStartTime.value,
-          monToSatEndTime.value,
-          sundayStartTime.value,
-          sundayEndTime.value,
-        ],
-        // fileInp: fileInp,
-      },
-    };
-    // if(img.src !==''){
-    axios.put(url + id, obj);
-    // }else{
-    //   alert("please choose a new image")
-    // }
+    axios.get(url + id).then((res) => {
+      let data = res.data;
+      // let arrPhotos = [];
+      let obj = {
+        ...data,
+        restaurant: {
+          ...data.restaurant,
+          name: nameRestoran.value,
+          phone: phone.value,
+          photos: [element.src],
+          location: locationRestoran.value,
+          workTime: [
+            monToSatStartTime.value,
+            monToSatEndTime.value,
+            sundayStartTime.value,
+            sundayEndTime.value,
+          ],
+          // fileInp: fileInp,
+        },
+      };
+      // if(img.src !==''){
+      axios.put(url + id, obj);
+      // }else{
+      //   alert("please choose a new image")
+      // }
+    });
   });
-  });
-  
 });
 
 // Edit Menu:
 // "10:00 AM - 10:00 PM, 12:00 PM - 11:00 PM"
+// ------GOPAGE------
+let goPageBtn = document.querySelector("#goPageLink");
+goPageBtn.addEventListener("click", () => {
+  window.location = `./restorans.html?name=${user}`;
+});
+
+let link = document.querySelector("#getLink");
+link.innerHTML = `restorans.html?name=${user}`;
+link.addEventListener("click", () => {
+  window.location = `./restorans.html?name=${user}`;
+});
+
+let barode = document.querySelector('#barode');
+barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://e-restaurants.netlify.app/` 

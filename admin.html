@@ -41,9 +41,10 @@
       href="https://www.e-restaurants.gr/assets/headerimg/favicon-96x96.png"
     />
 
+    <link rel="stylesheet" href="./assets/css/admin.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <link rel="stylesheet" href="./assets/css/admin.css" />
+    <!-- https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://e-restaurants.netlify.app/ -->
   </head>
   <body>
     <!-------------- Navbar ---------------->
@@ -94,9 +95,7 @@
       <div class="container py-4">
         <header class="text-center mb-5 pb-5 text-white">
           <button class="goPage button">
-            <a href="./restorans.html" target="_blank"
-              >Go to the Restoran Page</a
-            >
+            <a id="goPageLink" target="_blank">Go to the Restoran Page</a>
           </button>
         </header>
 
@@ -290,7 +289,7 @@
                   </div>
                   <label for="file">Add Restaurant's photos</label>
                   <div class="displayFile">
-                     <div class="imageDivAll">
+                    <div class="imageDivAll">
                       <!-- <div class="imageDiv">
                         <label for="fileInp" class="custom-file-upload"
                           >Choose image</label
@@ -535,14 +534,15 @@
               >
                 <div class="linkTab">
                   <h4>LINK:</h4>
-                  <a href="http://127.0.0.1:5500/restorans.html "
+                  <a id = "getLink" href="http://127.0.0.1:5500/restorans.html "
                     >http://127.0.0.1:5500/restorans.html</a
                   >
                   <h4>BARCODE:</h4>
                   <div class="img">
-                    <img src="./assets/img/barkod.png" alt="" />
+                    <img id="barcode" src="" alt="Your Barcode" />
                   </div>
                 </div>
+                <!--  -->
               </div>
               <!-- links end -->
             </div>
@@ -565,8 +565,7 @@
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal"
-            >
+              data-dismiss="modal">
               Cancel
             </button>
           </div>
