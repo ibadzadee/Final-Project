@@ -86,7 +86,7 @@ nav {
     font-size: 18px;
     font-weight: 500;
 
-    &:before {
+    &::before {
         content: "";
         @include display;
         background: $red;

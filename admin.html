@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sara</title>
+    <title>User Dashboard</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -93,10 +93,10 @@
 
     <section class="py-5 header">
       <div class="container py-4">
-        <header class="text-center mb-5 pb-5 text-white">
-          <button class="goPage button">
-            <a id="goPageLink" target="_blank">Go to the Restoran Page</a>
-          </button>
+        <header class="text-center mb-5 pb-5 text-white goPageSection">
+          <a class="button" id="goPageLink" href="" target="_blank"
+            >Go to the Restoran Page</a
+          >
         </header>
 
         <div class="row">
@@ -219,7 +219,7 @@
                 </form>
               </div>
 
-              <!----------- Restoran ----------->
+              <!----------- Edit Restoran ----------->
               <div
                 class="tab-pane fade shadow rounded bg-white p-5"
                 id="v-pills-profile"
@@ -289,17 +289,18 @@
                   </div>
                   <label for="file">Add Restaurant's photos</label>
                   <div class="displayFile">
-                    <div class="imageDivAll">
+                     <div class="imageDivAll"> 
                       <!-- <div class="imageDiv">
-                        <label for="fileInp" class="custom-file-upload"
-                          >Choose image</label
-                        >
+                        <div class="display">
+                        <label for="fileInp" class="custom-file-upload">image</label>
+                        <i class="bi bi-trash3-fill"></i>
+                      </div>
                         <input id="fileInp" type="file" style="display: none" />
                         <div class="img">
-                          <img id="imgRestoran" class="imgSrcAll" src="" alt="image" />
+                          <img id="imgRestoran" class="imgSrcAll" src="" alt="image"/>
                         </div>
                       </div> -->
-                    </div>
+                    </div> 
 
                     <button type="button" class="plus addFile">+</button>
                   </div>
@@ -378,7 +379,7 @@
                         <th>Delete</th>
                       </tr>
                     </thead>
-                    <tbody id="tbodyCold" style="overflow-x: scroll;">
+                    <tbody id="tbodyCold" style="overflow-x: scroll">
                       <!-- <tr>
                         <td id="number">1</td>
                         <td>
@@ -514,7 +515,9 @@
                         <td>
                           <input type="text" class="about aboutBeverages" />
                         </td>
-                        <td><input type="text" class="cost costBeverages" /></td>
+                        <td>
+                          <input type="text" class="cost costBeverages" />
+                        </td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr>
                     </tbody>
@@ -534,9 +537,7 @@
               >
                 <div class="linkTab">
                   <h4>LINK:</h4>
-                  <a id = "getLink" href="http://127.0.0.1:5500/restorans.html "
-                    >http://127.0.0.1:5500/restorans.html</a
-                  >
+                  <a id="getLink" href="" target="_blank"></a>
                   <h4>BARCODE:</h4>
                   <div class="img">
                     <img id="barcode" src="" alt="Your Barcode" />
@@ -565,7 +566,8 @@
             <button
               type="button"
               class="btn btn-secondary"
-              data-dismiss="modal">
+              data-dismiss="modal"
+            >
               Cancel
             </button>
           </div>

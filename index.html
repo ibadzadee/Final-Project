@@ -101,10 +101,11 @@
     <section id="sec2">
       <div class="container">
         <div class="sec2-center">
-          <div class="top"><h2>Our Categories</h2></div>
+          <!-- <div class="top"><h2>Our Categories</h2></div> -->
+          <div class="top"><h2>User-Friendly Interface</h2></div>
 
-          <div
-            class="middle"
+          <!-- <div
+            class="middle top"
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
@@ -158,7 +159,7 @@
                 <p>25 items</p>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="bottom">
             <div
@@ -253,6 +254,72 @@
         </div>
       </div>
     </section>
+    <!---------------- Categories ---------------->
+    <div id="categories">
+      <div class="container">
+        <div class="categories-center">
+          <div class="top"><h2>Our Categories</h2></div>
+
+          <div
+            class="middle top"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
+            <div class="items">
+              <div class="img">
+                <img src="./assets/img/burger.png" alt="" />
+              </div>
+              <div class="about">
+                <h5>Hot Dishes</h5>
+                <p>25 items</p>
+              </div>
+            </div>
+
+            <div class="items">
+              <div class="img">
+                <img src="./assets/img/burger.png" alt="" />
+              </div>
+              <div class="about">
+                <h5>Cold Dishes</h5>
+                <p>25 items</p>
+              </div>
+            </div>
+
+            <div class="items">
+              <div class="img">
+                <img src="./assets/img/burger.png" alt="" />
+              </div>
+              <div class="about">
+                <h5>Salads</h5>
+                <p>25 items</p>
+              </div>
+            </div>
+
+            <div class="items">
+              <div class="img">
+                <img src="./assets/img/burger.png" alt="" />
+              </div>
+              <div class="about">
+                <h5>Desserts</h5>
+                <p>25 items</p>
+              </div>
+            </div>
+
+            <div class="items">
+              <div class="img">
+                <img src="./assets/img/burger.png" alt="" />
+              </div>
+              <div class="about">
+                <h5>Beverages</h5>
+                <p>25 items</p>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!---------------- Restaurant ---------------->
 
@@ -305,6 +372,7 @@
                 </div>
               </div>
 
+              <div class="column">
               <div class="flippingCard">
                 <div id="card1" class="card">
                   <figure class="front card-inner">
@@ -339,6 +407,8 @@
                   </figure>
                 </div>
               </div>
+              <a href="" class = "button button-register">Visit Restaurant</a>
+            </div>
 
               <div class="flippingCard">
                 <div id="card1" class="card">
@@ -369,8 +439,9 @@
                       <img src="./assets/img/barkod.png" alt="" />
                     </div>
                   </figure>
-                </div>
-              </div> -->
+                </div> -->
+              </div>
+
             </div>
           </div>
         </div>
@@ -683,12 +754,19 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script>
+    <!-- <script>
       $(function () {
         $(".card").click(function (event) {
           $(event.currentTarget).toggleClass("flipped");
         });
       });
+    </script> -->
+    <!-- For QR -->
+    <script type="text/javascript">
+      new QRCode(
+        document.getElementById("qrcode"),
+        "http://jindo.dev.naver.com/collie"
+      );
     </script>
   </body>
 </html>

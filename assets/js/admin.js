@@ -212,16 +212,17 @@ if (id) {
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
       let uId = uuidv4();
-      let unique = uId.substring(1,uId.length-1);
+      let unique = uId.substring(1, uId.length - 1);
 
       let lengthPhotos = data.restaurant.photos;
       lengthPhotos.forEach((elem) => {
         imageDivAll.innerHTML += `
         <div class="imageDivAll">
         <div class="imageDiv">
-          <label for="${unique}" class="custom-file-upload"
-            >Choose image</label
-          >
+        <div class="display">
+          <label for="${unique}" class="custom-file-upload">image</label>
+          <i class="bi bi-trash3-fill"></i>
+          </div>
           <input id="${unique}" type="file" style="display: none" />
           <div class="img">
             <img id="imgRestoran" class="imgSrcAll" src="${elem}" alt="image" />
@@ -236,7 +237,7 @@ if (id) {
         // i++;
       });
       //------- Choose File-------
-      if(lengthPhotos.length>0){
+      if (lengthPhotos.length > 0) {
         document.getElementById(`${unique}`).addEventListener("input", (e) => {
           let file = e.target.files[0];
           if (file) {
@@ -245,7 +246,7 @@ if (id) {
             reader.onload = function () {
               img.forEach((element) => {
                 element.src = reader.result;
-                PhotoArr.push(element.src)
+                PhotoArr.push(element.src);
               });
             };
           }
@@ -261,7 +262,10 @@ addFile.addEventListener("click", () => {
   let unicId = uuidv4();
   imageDivAll.innerHTML += `
   <div class="imageDiv">
-  <label for="${unicId}" class="custom-file-upload">Choose image</label>
+  <div class="display">
+  <label for="${unicId}" class="custom-file-upload">image</label>
+  <i class="bi bi-trash3-fill"></i>
+  </div>
   <input id="${unicId}" type="file" style="display: none" />
   <div class="img">
     <img id="imgRestoran" src="" alt="image" />
@@ -384,11 +388,15 @@ axios.get(url + id).then((res) => {
      />
    </td>
    <td><input type="text" class="cost costHot" value="${elem.cost}" /></td>
-   <td><i class="bi bi-trash3-fill"></i></td>
+   <td><i class="bi bi-trash3-fill" onclick="deleteMenuItem(${
+     elem.id
+   })"></i></td>
  </tr>`;
   });
   console.log(data.restaurant.menu.coldDishes.length);
+  // ---------------Cold Dishes---------------
   data.restaurant.menu.coldDishes.forEach((elem, index) => {
+    // console.log(elem.id);
     tBodyCold.innerHTML += `
    <tr>
    <td id="number">${index + 1}</td>
@@ -404,7 +412,7 @@ axios.get(url + id).then((res) => {
    </td>
    <td>
      <input
-       class="name nameHot"
+       class="name nameCold"
        type="text"
        value="${elem.name}"
      />
@@ -412,15 +420,20 @@ axios.get(url + id).then((res) => {
    <td>
      <input
        type="text"
-       class="about aboutHot"
+       class="about aboutCold"
        value="${elem.about}"
      />
    </td>
-   <td><input type="text" class="cost costHot" value="${elem.cost}" /></td>
-   <td><i class="bi bi-trash3-fill"></i></td>
+   <td><input type="text" class="cost costCold" value="${elem.cost}" /></td>
+   <td><i class="bi bi-trash3-fill" onclick="deleteMenuItem(${elem.name} , ${
+      elem.images
+    } ,${elem.about} , ${elem.cost})"></i></td>
  </tr>`;
   });
 });
+
+//------- delete Data from Table--------
+
 
 // ----------------Send Menu----------------
 let saveMenu = document.querySelector(".saveMenu");
@@ -456,16 +469,14 @@ saveMenu.addEventListener("click", (e) => {
 
 //
 // ------GOPAGE------
-let goPageBtn = document.querySelector("#goPageLink");
-goPageBtn.addEventListener("click", () => {
-  window.location = `./restorans.html?name=${user}`;
-});
+let goPageLink = document.querySelector("#goPageLink");
+goPageLink.href = `./restorans.html?id=${id}`;
 
+//
+// ____LInk & BArCode________
 let link = document.querySelector("#getLink");
-link.innerHTML = `restorans.html?name=${user}`;
-link.addEventListener("click", () => {
-  window.location = `./restorans.html?name=${user}`;
-});
+link.href = `/restorans.html?id=${id}`;
+link.innerHTML = `http://127.0.0.1:5500/restorans.html?name=${user}`;
 
 let barcode = document.querySelector("#barcode");
-barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://./restorans.html?name=${user}/`;
+barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https:///restorans.html?id=${id}/`;

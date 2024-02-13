@@ -25,20 +25,27 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" sizes="96x96" href="https://www.e-restaurants.gr/assets/headerimg/favicon-96x96.png">
-    
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="https://www.e-restaurants.gr/assets/headerimg/favicon-96x96.png"
+    />
+
     <link rel="stylesheet" href="./assets/css/style.css" />
 
     <link rel="stylesheet" href="./assets/css/contact.css" />
   </head>
   <body>
     <!-------------- Navbar ---------------->
-    <nav class="otherPages">
+    <nav>
       <div class="container">
         <!-- <div class="nav-center"> -->
         <div class="nav-center">
           <div class="logo">
-            <div class="img"><img src="./assets/img/e-restaurants.logo.me.png" alt="" /></div>
+            <div class="img">
+              <img src="./assets/img/e-restaurants.logo.me.png" alt="" />
+            </div>
             <h5>e-restaurants</h5>
           </div>
           <div class="menu">
@@ -46,10 +53,10 @@
               <li><a href="./index.html">Home</a></li>
               <li><a href="./ourRestorans.html">Restaurants</a></li>
               <li class="dropdown">
-                <div class="dropbtn"
-                  >Pages <i class="bi bi-caret-down-fill down"></i>
-                  <i class="bi bi-caret-up-fill up"></i
-                ></div>
+                <div class="dropbtn">
+                  Pages <i class="bi bi-caret-down-fill down"></i>
+                  <i class="bi bi-caret-up-fill up"></i>
+                </div>
                 <div class="dropdown-content">
                   <a href="./contact.html">Contact Us</a>
                   <a href="./about.html">About Us</a>
@@ -59,7 +66,11 @@
             </ul>
           </div>
 
-          <a href="./register.html" class="button button-register" id="logIn" target="_blank"
+          <a
+            href="./register.html"
+            class="button button-register"
+            id="logIn"
+            target="_blank"
             >Log In / Sign Up</a
           >
 
@@ -70,67 +81,148 @@
 
     <!-- Banner -->
     <!-- <section id="banner">
+      <div class="container">
+
         <h1>Contact Us</h1>
         <p>Home > Contact Us</p>
-    </section> -->
+      </div>
+      </section> -->
 
     <!----------------- ContactUs Page ----------------->
-    <div class="containerRight">
+    <section id="contact">
+      <div class="container">
+        <div class="contact-center">
+      <div class="containerRight">
         <div class="text">Responsive Contact us Form</div>
-        <form action="#">
-           <div class="form-row">
-              <div class="input-data">
-                 <input type="text" required>
-                 <div class="underline"></div>
-                 <label for="">First Name</label>
+        <form
+          action=""
+          id="contactForm"
+          onsubmit="emailSend(); reset(); return false;"
+        >
+          <div class="form-row">
+            <div class="input-data">
+              <input type="text" required name="name" id="name" />
+              <div class="underline"></div>
+              <label for="">First Name</label>
+            </div>
+            <div class="input-data">
+              <input type="password" required name="password" id="password" />
+              <div class="underline"></div>
+              <label for="">Password</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-data">
+              <input type="email" required name="email" id="email" />
+              <div class="underline"></div>
+              <label for="">Email Address</label>
+            </div>
+            <div class="input-data">
+              <input type="text" required name="website" />
+              <div class="underline"></div>
+              <label for="">Website Name</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="input-data textarea">
+              <textarea rows="8" cols="80" required name="message"></textarea>
+              <br />
+              <div class="underline"></div>
+              <label for="">Write your message</label>
+              <br />
+              <div class="form-row submit-btn">
+                <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="send" />
+                </div>
               </div>
-              <div class="input-data">
-                 <input type="text" required>
-                 <div class="underline"></div>
-                 <label for="">Last Name</label>
-              </div>
-           </div>
-           <div class="form-row">
-              <div class="input-data">
-                 <input type="text" required>
-                 <div class="underline"></div>
-                 <label for="">Email Address</label>
-              </div>
-              <div class="input-data">
-                 <input type="text" required>
-                 <div class="underline"></div>
-                 <label for="">Website Name</label>
-              </div>
-           </div>
-           <div class="form-row">
-              <div class="input-data textarea">
-                 <textarea rows="8" cols="80" required></textarea>
-                 <br />
-                 <div class="underline"></div>
-                 <label for="">Write your message</label>
-                 <br />
-                 <div class="form-row submit-btn">
-                    <div class="input-data">
-                       <div class="inner"></div>
-                       <input type="submit" value="submit">
-                    </div>
-                 </div>
-              </div>
-           </div>
+            </div>
+          </div>
         </form>
-     </div>
+      </div>
+      <div class="right">
+        <div class="divs">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div class="text">
+                <h3>Adress</h3>
+                <p><a href="">202 Dog Hill Lane Beloit, KS 67420</a></p>
+            </div>
+        </div>
+        <div class="divs">
+            <i class="bi bi-telephone-fill"></i>
+            <div class="text">
+                <h3>Phone</h3>
+                <p><a href="">+01589634755</a></p>
+            </div>
+        </div>
+        <div class="divs">
+            <i class="bi bi-envelope-fill"></i>
+            <div class="text">
+                <h3>Email</h3>
+                <p><a href="">credesign@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+    </section>
 
     <!---------------- Footer ---------------->
-    <!-- <footer>
+
+    <footer>
       <div class="container">
         <div class="footer-center">
-          <h5>©2023 <span>ReservQ</span>. All rights reserved</h5>
+          <div class="top">
+            <div class="logo">
+              <div class="img">
+                <img src="./assets/img/e-restaurants.logo.me.png" alt="" />
+              </div>
+              <h5>e-restaurants</h5>
+            </div>
+            <ul>
+              <li><a href="">Catalog </a></li>
+              <li><a href="">Delivery </a></li>
+              <li><a href="">About </a></li>
+              <li><a href="">Contacts</a></li>
+            </ul>
+
+            <ul>
+              <li>
+                <a href=""><i class="bi bi-twitter"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-instagram"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-pinterest"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="bi bi-youtube"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </footer> -->
+      <div class="line"></div>
+      <div class="container">
+        <div class="bottom">
+          <p>Created with love by <a href="">Sara Ibadzade</a></p>
+          <div>
+            Powered by
+            <li id="li"><a href="">Webflow</a></li>
+            <li><a href="">Style Guide</a></li>
+            <li><a href="">Licensing</a></li>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Js codes -->
-    <!-- <script src="./assets/js/admin.js"></script> -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./assets/js/contact.js"></script>
 
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> -->
@@ -142,6 +234,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-
   </body>
 </html>

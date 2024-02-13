@@ -84,7 +84,7 @@ nav {
   font-size: 18px;
   font-weight: 500;
 }
-.button:before {
+.button::before {
   content: "";
   display: flex;
   justify-content: center;
@@ -356,96 +356,6 @@ nav .nav-center .list {
   color: #0D0C28;
   text-align: center;
 }
-#sec2 .sec2-center .middle {
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-#sec2 .sec2-center .middle .items {
-  padding: 20px;
-  border-radius: 20px;
-  background-color: rgba(240, 248, 255, 0.3);
-  -webkit-backdrop-filter: blur(10.5px);
-          backdrop-filter: blur(10.5px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-#sec2 .sec2-center .middle .items .about {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-#sec2 .sec2-center .middle .items:before {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #F01543;
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  font-size: 30px;
-  font-weight: 600;
-  transition: left 0.7s;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-  z-index: -1;
-}
-#sec2 .sec2-center .middle .items:hover::before {
-  left: 0;
-}
-#sec2 .sec2-center .middle .items:hover h5,
-#sec2 .sec2-center .middle .items:hover p {
-  color: white;
-  transition: all 0.5s ease;
-}
-#sec2 .sec2-center .middle .items .img {
-  width: 80px;
-  height: 80px;
-  border-radius: 9999px;
-  padding: 10px;
-  background-color: white;
-}
-#sec2 .sec2-center .middle .items .img img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#sec2 .sec2-center .middle .items h5 {
-  font-size: 22px;
-  font-weight: 700;
-  padding: 15px 0px;
-  color: #0D0C28;
-}
-#sec2 .sec2-center .middle .items p {
-  position: relative;
-  color: rgb(79, 77, 77);
-  margin-left: 20px;
-}
-#sec2 .sec2-center .middle .items p::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 9999px;
-  background-color: #ffb23e;
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 #sec2 .sec2-center .bottom {
   display: flex;
   justify-content: center;
@@ -541,6 +451,115 @@ nav .nav-center .list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+#categories {
+  width: 100%;
+  padding-top: 100px;
+  background: url(../img/categories-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#categories .top {
+  width: 100%;
+  padding-bottom: 50px;
+  display: flex;
+}
+#categories .top h2 {
+  font-size: 50px;
+  color: #0D0C28;
+  text-align: center;
+}
+#categories .middle {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#categories .middle .items {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(240, 248, 255, 0.3);
+  -webkit-backdrop-filter: blur(10.5px);
+          backdrop-filter: blur(10.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#categories .middle .items .about {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+#categories .middle .items:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F01543;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 600;
+  transition: left 0.7s;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  z-index: -1;
+}
+#categories .middle .items:hover::before {
+  left: 0;
+}
+#categories .middle .items:hover h5,
+#categories .middle .items:hover p {
+  color: white;
+  transition: all 0.5s ease;
+}
+#categories .middle .items .img {
+  width: 80px;
+  height: 80px;
+  border-radius: 9999px;
+  padding: 10px;
+  background-color: white;
+}
+#categories .middle .items .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#categories .middle .items h5 {
+  font-size: 22px;
+  font-weight: 700;
+  padding: 15px 0px;
+  color: #0D0C28;
+}
+#categories .middle .items p {
+  position: relative;
+  color: rgb(79, 77, 77);
+  margin-left: 20px;
+}
+#categories .middle .items p::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background-color: #ffb23e;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #restaurant {
@@ -673,6 +692,28 @@ nav .nav-center .list {
   -webkit-backdrop-filter: blur(3.5px);
           backdrop-filter: blur(3.5px);
   border-radius: 20px;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.column a {
+  box-shadow: 0 0 10px gray;
+  margin-top: 10px;
+  border: none;
+  color: #ffb23e !important;
+}
+.column a:hover {
+  background-color: #ffb23e !important;
+  color: snow !important;
+  transform: scale(0.9);
+}
+.column a:hover:before {
+  background-color: #ffb23e !important;
+  background: #ffb23e;
 }
 
 .flippingCard {
@@ -1126,6 +1167,15 @@ footer .bottom div #li {
     width: 516px;
     height: 349px;
   }
+  #restaurant .rest-center .bottom .column {
+    margin-bottom: 25px;
+  }
+  #restaurant .rest-center .top {
+    flex-direction: column;
+  }
+  #restaurant .rest-center .top h2 {
+    margin-bottom: 10px;
+  }
   #customer .customer-center #bottom {
     grid-template-columns: repeat(1, auto);
   }
@@ -1142,14 +1192,27 @@ footer .bottom div #li {
     width: 100%;
     height: 330px;
   }
+  #banner .banner-center h1 {
+    font-size: 35px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 424px) {
-  #restaurant .rest-center .bottom .cards .img {
-    height: 243px;
+  #restaurant .rest-center .bottom .flippingCard {
+    width: 300px;
+    height: 500px;
   }
 }
 @media screen and (max-width: 371px) {
   #restaurant .rest-center .bottom .cards .img {
     height: 200px;
+  }
+  #banner .banner-center h1 {
+    font-size: 25px;
+  }
+  #banner .banner-center p {
+    font-size: 16px;
   }
 }/*# sourceMappingURL=style.css.map */

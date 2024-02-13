@@ -85,7 +85,7 @@ nav {
   font-size: 18px;
   font-weight: 500;
 }
-.button:before {
+.button::before {
   content: "";
   display: flex;
   justify-content: center;

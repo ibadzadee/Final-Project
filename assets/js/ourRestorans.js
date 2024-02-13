@@ -1,8 +1,3 @@
-// $(function () {
-//   $(".card").click(function (event) {
-//     $(event.currentTarget).toggleClass("flipped");
-//   });
-// });
 
 
 // ---nav---
@@ -70,5 +65,11 @@ fetch(`http://localhost:3000/users`)
       </div>
     </div>
     `;
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(element =>{
+      element.addEventListener('click' , (e)=>{
+        e.currentTarget.classList.toggle('flipped')
+      })
+    });
     });
   });

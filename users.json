@@ -9,7 +9,17 @@
         "name": "Le Jardin Français",
         "phone": "070-000-00-00",
         "backgroundPhoto": "./assets/img/restoran1.jpg",
-        "photos": [],
+        "photos": [
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png",
+          "./assets/img/faq-1.png"
+        ],
         "location": "Paris, France",
         "workTime": [
           "12:27",
@@ -19,25 +29,23 @@
         ],
         "menu": {
           "hotDishes": [
-            {
+            { "id":1,
+              "images": "./assets/img/popular1.png",
               "name": "Sara",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30"
+              "cost": 30
             },
             {
+              "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30"
+              "cost": 30
             },
             {
+              "images": "./assets/img/popular1.png",
               "name": "Baked Chicken Wings and Legs",
               "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "10"
-            },
-            {
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": "30"
+              "cost": 30
             }
           ],
           "coldDishes": [

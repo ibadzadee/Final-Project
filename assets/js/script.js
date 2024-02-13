@@ -39,19 +39,20 @@ seeMoreBtn.addEventListener("click", () => {
   window.location = "./ourRestorans.html";
 });
 
-
 // <!-------------- Fetch Data----------------->
 
 const url = `http://localhost:3000/users`;
 const section = document.querySelector(".bottomFlip");
 console.log(section);
 const limit = 3;
+
 fetch(`http://localhost:3000/users?_limit=${limit}`)
   .then((res) => res.json())
   .then((data) => {
-    data.forEach((element) => {
-      console.log(element.name);
+    data.forEach((element, index) => {
+      console.log(element);
       section.innerHTML += `
+      <div class="column">
       <div class="flippingCard">
       <div id="card1" class="card">
         <figure class="front card-inner">
@@ -75,17 +76,50 @@ fetch(`http://localhost:3000/users?_limit=${limit}`)
               <i class="bi bi-telephone"></i>
               <p>${element.restaurant.phone}</p>
             </div>
-            <button class="button">Visit Restaurant</button>
+            <button class="button">Get Barcode</button>
           </div>
         </figure>
 
         <figure class="back card-inner">
-          <div class="barcode">
-            <img src="./assets/img/barkod.png" alt="" />
+          <div class="barcode" id=restaurant1>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://./restorans.html?id=${element.id}" alt="barcode" class ="barcodes" />
           </div>
         </figure>
       </div>
     </div>
+    <a class="button button-register" href="./restorans.html?id=${element.id}" target = _blank>Visit Restaurant</a>    
+    </div>
     `;
+      let cards = document.querySelectorAll(".card");
+      cards.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          e.currentTarget.classList.toggle("flipped");
+        });
+      });
+      // let barcodes = document.querySelectorAll(".barcodes");
+      // barcodes.forEach(item=>{
+      //   item.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://./restorans.html?id=${element.id}/`;
+      // });
+      // let links = document.querySelectorAll('.button');
+      // links.forEach(item=>{
+      //   item.href =`./restorans.html?id=${element.id}/`
+      // })
     });
   });
+
+// var qrcode = new qrcode("restaurant1", {
+//   text: "http://127.0.0.1:5500/restorans.html?id=1",
+//   width: 128,
+//   height: 128,
+//   colorDark: "#000000",
+//   colorLight: "#ffffff",
+//   correctLevel: QRCode.CorrectLevel.H,
+// });
+
+
+
+
+// 
+// 
+// 
+//             <a class="button" href="./restorans.html?id=${element.id}" target = _blank>Visit Restaurant</a>

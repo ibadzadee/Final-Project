@@ -85,31 +85,52 @@ body {
     .displayFile {
         width: 100%;
         display: flex;
-        align-items:  flex-end;
+        align-items: flex-end;
         gap: 20px;
     }
-    .addFile{
+
+    .addFile {
         margin-top: 12px;
     }
-    .imageDivAll{
+
+    .imageDivAll {
         display: flex !important;
         gap: 20px;
         flex-wrap: wrap;
     }
-    .imageDiv{
+
+    .imageDiv {
         @include display;
         flex-direction: column;
         gap: 5px;
-        .img{
+        .display{
+            @include display;
+            gap: 10px;
+            i{
+                color: red;
+                margin-top: 10px;
+                cursor: pointer;
+                &:hover{
+                    transition: all 0.5s ease;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .img {
             width: 100px;
             height: 100px;
-            img{
+            border-radius: 10px;
+
+            img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                border-radius: 10px;
             }
         }
     }
+
     input[type="submit"] {
         width: 200px;
         margin: auto;
@@ -250,22 +271,24 @@ table {
 }
 
 
-.goPage {
-    margin-top: 70px;
+#goPageLink {
+    display: block;
     margin-bottom: 0;
     border: 1px solid white;
     width: 250px;
-    padding: 5px 10px;
+    padding:  10px;
     background-color: white;
     border-radius: 999px;
+    margin: 0 auto;
+    margin-top: 70px;
+    color: black;
+    cursor: pointer;
 
     &:hover {
         background-color: $red;
         transition: all 0.5s ease;
+        color: white;
 
-        a {
-            color: white;
-        }
     }
 
     a {
@@ -280,17 +303,17 @@ table {
     padding: 5px;
     cursor: pointer;
     background-color: #007bff;
-    color: #fff;
+    color: #fff !important;
     border-radius: 5px;
     margin-top: 10px;
     font-size: 14px;
-  }
-  
-  .custom-file-upload:hover {
+}
+
+.custom-file-upload:hover {
     background-color: #0056b3;
     transform: scale(0.9);
     transition: all 0.5s ease;
-  }
+}
 
 
 
@@ -313,61 +336,69 @@ table {
 
 // modal
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 100%; 
+    max-width: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999; 
-    .modal-dialog {
-      position: relative;
-      margin: auto;
-      .modal-content {
-        background-color: #fff; 
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        .modal-body{
-            margin-top: 20px;
-            @include display;
-            font-size: 25px;
+    z-index: 9999;
 
+    .modal-dialog {
+        position: relative;
+        margin: auto;
+
+        .modal-content {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            .modal-body {
+                margin-top: 20px;
+                @include display;
+                font-size: 25px;
+
+            }
+
+            .modal-body,
+            .modal-footer {
+                padding: 20px;
+            }
         }
-        .modal-body,
-        .modal-footer {
-          padding: 20px;
-        }
-      }
     }
-  }
-  
+}
+
 // LinkTab
-.linkTab{
+.linkTab {
     display: flex;
     flex-direction: column;
-    h4{
+
+    h4 {
         margin-bottom: 20px;
     }
-    a{
+
+    a {
         margin-bottom: 50px;
         color: blue;
-        &:hover{
+
+        &:hover {
             color: $red;
             transition: all 0.5s ease;
         }
     }
-    .img{
+
+    .img {
         margin-top: 20px;
         width: 250px;
         height: 250px;
         margin-bottom: 100px;
-        img{
+
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
 }
-  
