@@ -10,15 +10,15 @@
         "phone": "070-000-00-00",
         "backgroundPhoto": "./assets/img/restoran1.jpg",
         "photos": [
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png"
+          "./assets/img/photo1.avif",
+          "./assets/img/photo2.avif",
+          "./assets/img/photo3.avif",
+          "./assets/img/photo4.avif",
+          "./assets/img/phoyo5.avif",
+          "./assets/img/photo6.avif",
+          "./assets/img/photo7.avif",
+          "./assets/img/photo8.avif",
+          "./assets/img/photo9.avif"
         ],
         "location": "Paris, France",
         "workTime": [
@@ -115,6 +115,7 @@
       "restaurant": {
         "name": "Spice Avenue",
         "phone": "070-000-00-00",
+        "backgroundPhoto": "./assets/img/photo2.avif",
         "photos": [
           "./assets/img/faq-1.png",
           "./assets/img/faq-1.png"
@@ -208,6 +209,7 @@
       "restaurant": {
         "name": "The Green Leaf Bistro",
         "phone": "070-000-00-00",
+        "backgroundPhoto": "./assets/img/photo7.avif",
         "photos": [
           "./assets/img/faq-1.png",
           "./assets/img/faq-1.png"
@@ -300,7 +302,8 @@
       "id": 4,
       "restaurant": {
         "name": "Spicy",
-        "phone": "1",
+        "phone": "070-000-00-00",
+        "backgroundPhoto": "./assets/img/photo9.avif",
         "photos": [
           "./assets/img/faq-1.png",
           "./assets/img/faq-1.png"

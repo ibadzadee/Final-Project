@@ -148,6 +148,30 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  padding-top: 150px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #banner h1 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 524px) {
+  #banner h1 {
+    font-size: 45px;
+  }
+}
+#banner {
+  background-image: url(../img/contactBanner.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
   text-align: center;
 }
 

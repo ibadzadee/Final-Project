@@ -36,7 +36,7 @@ fetch(`http://localhost:3000/users`)
       <div id="card1" class="card">
         <figure class="front card-inner">
           <div class="img">
-            <img src="${element.restaurant.photos[0]}" alt="" />
+            <img src="${element.restaurant.backgroundPhoto}" alt="" />
           </div>
           <h4 id="name">${element.restaurant.name}</h4>
          <div class="info">

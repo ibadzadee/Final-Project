@@ -321,7 +321,7 @@ nav .nav-center .list {
   -webkit-text-fill-color: transparent;
 }
 #banner .banner-btns {
-  width: 50%;
+  width: 60%;
   padding: 10px 40px;
   background-color: white;
   display: flex;
@@ -932,9 +932,20 @@ nav .nav-center .list {
 }
 #faq .right div {
   width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#faq .right div:hover img {
+  transition: all 0.5s ease;
+  transform: scale(1.1);
 }
 #faq .right div img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 10px;
 }
 #faq .right li:nth-child(2)::after,
@@ -1226,6 +1237,14 @@ footer .bottom div #li {
   }
   #banner .banner-center p {
     text-align: center;
+  }
+  #location .right .item {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #location .right .item .number {
+    display: none;
   }
   footer .footer-center .top {
     flex-direction: column;
