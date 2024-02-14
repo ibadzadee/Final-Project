@@ -33,6 +33,10 @@
   margin-bottom: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 nav {
   background-color: #0D0C28;
 }
@@ -127,23 +131,6 @@ nav {
 }
 .button-register:hover {
   color: #F01543 !important;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F01543;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: gray;
-}
-
-a {
-  cursor: pointer;
 }
 
 nav {

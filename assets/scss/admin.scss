@@ -178,8 +178,8 @@ body {
         margin-top: 20px;
     }
 
-    .saveRestoran:hover {
-        transform: scale(1.1);
+    .saveRestoran {
+        margin-top: 50px !important;
     }
 
     .timeDiv {
@@ -229,11 +229,14 @@ body {
     color: white;
     font-size: 19px;
     border: 1px solid transparent;
+    border-radius:10px ;
 
     &:hover {
         background-color: $red;
         transition: all 0.5s ease;
         opacity: 0.8;
+        box-shadow: 0 0 10px black;
+        transform: scale(1.1);
     }
 }
 
@@ -250,12 +253,29 @@ body {
 .rounded {
     border-radius: 20px !important;
 }
-
+.editMenu{
+    h5{
+        font-weight: 600;
+        color: $star;
+        text-shadow: 0 0 1px black;
+    }
+}
 #v-pills-messages {
     // background-color: rgba(140, 128, 128, 0.3);
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+.table-container {
+    overflow-x: scroll;
+    max-width: 100%;
+    margin-bottom: 25px;
+    background-color: rgba(240, 248, 255 , 0.7);
+    backdrop-filter: blur(3.5px);
+}
+
+.scrollable-table {
+    width: 100%; 
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -273,11 +293,11 @@ table {
     }
 
     td {
-        // width: 50px;
+        // width: 100px;
         padding: 0;
 
         input {
-            width: 100%;
+            // width: 100%;
             text-align: center;
             height: 100%;
             padding: 10px 0px;
@@ -329,9 +349,9 @@ table {
 }
 
 .saveMenu {
-    margin-left: 100%;
-    transform: translateX(-100%);
-    margin-top: 70px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 
@@ -467,8 +487,10 @@ table {
     }
 }
 
-// @media screen and (max-width:992px) {
-//     .admin .admin-center{
-//         flex-direction: column;
-//     }
-// }
+@media screen and (max-width:992px) {
+    .restoranForm .timeDiv{
+        flex-direction: column;
+    }
+}
+
+

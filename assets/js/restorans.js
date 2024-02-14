@@ -124,7 +124,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 cclass="costItem">$${element.cost}</h4>
+          <h4 class="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>

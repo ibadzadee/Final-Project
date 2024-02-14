@@ -14,18 +14,43 @@ signBtn.addEventListener("submit", (e) => {
     email: emailInp,
     password: passInp,
   };
+// ----------------------MODAL js----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
+
+  document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("modalContainer").style.animation =
+      "slideOut 0.5s forwards";
+    setTimeout(function () {
+      document.getElementById("modalContainer").style.display = "none";
+      document.getElementById("modalContainer").style.animation = "";
+    }, 300);
+  });
 
   fetch("http://localhost:3000/users")
     .then((res) => res.json())
     .then((data) => {
       let existingUser = data.find((user) => user.email === emailInp);
       if (existingUser) {
-        alert("This email already exists");
+        modalContent.innerHTML = `This email already exists`;
+        modalContainer.style.background = "red";
+        modalContainer.style.display = "block";
       } else {
-        axios.post(url, obj).then((res) => {
-          console.log(res.data);
-          alert("Successfully Signed Up!");
-        });
+        setTimeout(() => {
+          axios.post(url, obj).then((res) => {
+            window.location.reload();
+          });
+        }, 2500);
+        modalContent.innerHTML = `Successfully Signed Up`;
+        modalContainer.style.background = "";
+        modalContainer.style.display = "block";
       }
     });
 });
@@ -35,6 +60,27 @@ console.log(loginBtn);
 
 loginBtn.addEventListener("submit", (e) => {
   e.preventDefault();
+  // ----------------------MODAL js----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
+
+  document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("modalContainer").style.animation =
+      "slideOut 0.5s forwards";
+    setTimeout(function () {
+      document.getElementById("modalContainer").style.display = "none";
+      document.getElementById("modalContainer").style.animation = "";
+    }, 300);
+  });
+  // 
+  // 
   let emailLogin = document.querySelector("#emailLogin").value;
   let passLogin = document.querySelector("#passwordLogin").value;
 
@@ -51,10 +97,16 @@ loginBtn.addEventListener("submit", (e) => {
           localStorage.setItem("currentUser", JSON.stringify(currentUserInfo));
           window.location = "./admin.html";
         } else {
-          console.log("Wrong password");
+          console.log("wrong Pass");
+          modalContent.innerHTML = `Wrong password!`;
+          modalContainer.style.background = "red";
+          modalContainer.style.display = "block";
         }
       } else {
-        console.log("Wrong email");
+        console.log("wrong Email");
+        modalContent.innerHTML = `Wrong Email!`;
+        modalContainer.style.background = "red";
+        modalContainer.style.display = "block";
       }
     });
 });
@@ -70,9 +122,6 @@ signUpButton.addEventListener("click", () => {
 signInButton.addEventListener("click", () => {
   container.classList.remove("right-panel-active");
 });
-
-
-
 
 // ----------------- Resp < 600px -----------------
 
@@ -124,6 +173,3 @@ loginBtn2.addEventListener("submit", (e) => {
       }
     });
 });
-
-
-

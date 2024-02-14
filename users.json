@@ -385,12 +385,6 @@
           ]
         }
       }
-    },
-    {
-      "name": "new",
-      "email": "new@gmail.com",
-      "password": "12345",
-      "id": 5
     }
   ]
 }

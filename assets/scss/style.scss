@@ -1352,11 +1352,16 @@ footer {
         }
 
     }
-    #banner .banner-center h1{
-        font-size: 35px;
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
+    #banner .banner-center {
+        h1{
+            font-size: 40px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
     }
     footer .footer-center .top{
         flex-direction: column;

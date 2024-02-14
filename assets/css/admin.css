@@ -32,6 +32,10 @@
   margin-bottom: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 nav {
   background-color: #0D0C28;
 }
@@ -126,23 +130,6 @@ nav {
 }
 .button-register:hover {
   color: #F01543 !important;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F01543;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: gray;
-}
-
-a {
-  cursor: pointer;
 }
 
 body {
@@ -297,8 +284,8 @@ body {
   margin: auto;
   margin-top: 20px;
 }
-.restoranForm .saveRestoran:hover {
-  transform: scale(1.1);
+.restoranForm .saveRestoran {
+  margin-top: 50px !important;
 }
 .restoranForm .timeDiv {
   display: flex;
@@ -341,11 +328,14 @@ body {
   color: white;
   font-size: 19px;
   border: 1px solid transparent;
+  border-radius: 10px;
 }
 .save:hover {
   background-color: #F01543;
   transition: all 0.5s ease;
   opacity: 0.8;
+  box-shadow: 0 0 10px black;
+  transform: scale(1.1);
 }
 
 .backgroundTheme {
@@ -360,8 +350,27 @@ body {
   border-radius: 20px !important;
 }
 
+.editMenu h5 {
+  font-weight: 600;
+  color: #ffb23e;
+  text-shadow: 0 0 1px black;
+}
+
 #v-pills-messages {
   background-color: rgba(255, 255, 255, 0.6);
+}
+
+.table-container {
+  overflow-x: scroll;
+  max-width: 100%;
+  margin-bottom: 25px;
+  background-color: rgba(240, 248, 255, 0.7);
+  -webkit-backdrop-filter: blur(3.5px);
+          backdrop-filter: blur(3.5px);
+}
+
+.scrollable-table {
+  width: 100%;
 }
 
 table {
@@ -383,7 +392,6 @@ table td {
   padding: 0;
 }
 table td input {
-  width: 100%;
   text-align: center;
   height: 100%;
   padding: 10px 0px;
@@ -416,9 +424,9 @@ table i:hover {
 }
 
 .saveMenu {
-  margin-left: 100%;
-  transform: translateX(-100%);
-  margin-top: 70px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 #goPageLink {
@@ -533,4 +541,10 @@ table i:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 992px) {
+  .restoranForm .timeDiv {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=admin.css.map */

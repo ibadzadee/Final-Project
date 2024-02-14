@@ -32,6 +32,10 @@
   margin-bottom: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 nav {
   background-color: #0D0C28;
 }
@@ -128,27 +132,9 @@ nav {
   color: #F01543 !important;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F01543;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: gray;
-}
-
-a {
-  cursor: pointer;
-}
-
 #banner.restorans {
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/restoran1.jpg);
-  background-image: url(../img/blurBack.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(../img/blurBack.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

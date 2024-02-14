@@ -39,6 +39,10 @@
     }
 }
 
+a{
+    cursor: pointer;
+}
+
 nav {
     background-color: $dark-blue;
 }
@@ -133,18 +137,17 @@ nav {
 }
 
 
-::-webkit-scrollbar {
-    width: 10px;
-}
+// ::-webkit-scrollbar {
+//     width: 10px;
+// }
 
-::-webkit-scrollbar-thumb {
-    background: $red;
-    border-radius: 10px;
-}
+// ::-webkit-scrollbar-thumb {
+//     background: $red;
+//     border-radius: 10px;
+// }
 
-::-webkit-scrollbar-thumb:hover {
-    background: gray ;
-}
-a{
-    cursor: pointer;
-}
+// ::-webkit-scrollbar-thumb:hover {
+//     background: gray ;
+// }
+
+
