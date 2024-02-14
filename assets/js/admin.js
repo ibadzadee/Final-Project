@@ -107,20 +107,20 @@ document.querySelectorAll(".addTab").forEach((button) => {
 });
 
 // ------------------ Add 3 point ------------------
-document.querySelectorAll('input[type="text"]').forEach((input) => {
-  const originalText = input.value;
-  const maxLength = 15;
+// document.querySelectorAll('input[type="text"]').forEach((input) => {
+//   const originalText = input.value;
+//   const maxLength = 15;
 
-  if (originalText.length > maxLength) {
-    input.value = originalText.substring(0, maxLength) + "...";
-    input.addEventListener("focus", () => {
-      input.value = originalText;
-    });
-    input.addEventListener("blur", () => {
-      input.value = originalText.substring(0, maxLength) + "...";
-    });
-  }
-});
+//   if (originalText.length > maxLength) {
+//     input.value = originalText.substring(0, maxLength) + "...";
+//     input.addEventListener("focus", () => {
+//       input.value = originalText;
+//     });
+//     input.addEventListener("blur", () => {
+//       input.value = originalText.substring(0, maxLength) + "...";
+//     });
+//   }
+// });
 
 // -------------- Nav codes --------------
 
@@ -273,44 +273,80 @@ addFile.addEventListener("click", () => {
 `;
 });
 
+// Choose file for back image:
+let fileInpBack = document.querySelector("#mainPhoto");
+let mainPhotoSrc = document.querySelector("#mainPhotoSrc");
+fileInpBack.addEventListener("input", (e) => {
+  let selectedFile = e.target.files[0];
+  if (selectedFile) {
+    let reader = new FileReader();
+    reader.readAsDataURL(selectedFile);
+    reader.onload = function () {
+      mainPhotoSrc.src = reader.result;
+    };
+  }
+});
+
+
+
+
+
 // Send AllData
 editRestoranForm.addEventListener("submit", (e) => {
   let i = 0;
   // img.forEach((element) => {
   //   element.src = data.restaurant.photos[i];
   //   i++;
-    e.preventDefault();
-    axios.get(url + id).then((res) => {
-      let data = res.data;
-      // let arrPhotos = [];
-      let obj = {
-        ...data,
-        restaurant: {
-          ...data.restaurant,
-          name: nameRestoran.value,
-          phone: phone.value,
-          // backgroundPhoto:,
-          // photos: PhotoArr,
-          location: locationRestoran.value,
-          workTime: [
-            monToSatStartTime.value,
-            monToSatEndTime.value,
-            sundayStartTime.value,
-            sundayEndTime.value,
-          ],
-          // fileInp: fileInp,
-        },
-      };
-      // if(img.src !==''){
-      axios.put(url + id, obj);
-      // }else{
-      //   alert("please choose a new image")
-      // }
-    });
+  e.preventDefault();
+  axios.get(url + id).then((res) => {
+    let data = res.data;
+    // let arrPhotos = [];
+    let obj = {
+      ...data,
+      restaurant: {
+        ...data.restaurant,
+        name: nameRestoran.value,
+        phone: phone.value,
+        backgroundPhoto: mainPhotoSrc.src,
+        // photos: PhotoArr,
+        location: locationRestoran.value,
+        workTime: [
+          monToSatStartTime.value,
+          monToSatEndTime.value,
+          sundayStartTime.value,
+          sundayEndTime.value,
+        ],
+        // fileInp: fileInp,
+      },
+    };
+    // if(img.src !==''){
+    axios.put(url + id, obj);
+    // }else{
+    //   alert("please choose a new image")
+    // }
   });
+});
 // });
 
-// ---------------- Edit Menu ----------------
+// let deleteMainPhoto = document.querySelector('.deleteMainPhoto');
+// deleteMainPhoto.addEventListener('click' , ()=>{
+
+//   axios.delete(url+id+'/backgroundPhoto')
+//   // axios.get(url+id).then((res ,index)=>{
+//   //   let data = res.data;
+//   //   console.log(data);
+//   //   let photo =data.restaurant.backgroundPhoto;
+//   //   photo.remove();
+//   //   // console.log(data.restaurant.backgroundPhoto);
+//   //   // axios.delete(url+id).then(elem=>{
+//   //   //   elem.remove();
+//   //   // })
+//   // })
+// })
+
+
+
+// ------------------------------ Edit Menu -------------------------------
 let existingData;
 let tBodyHot = document.querySelector("#tbodyHot");
 let tBodyCold = document.querySelector("#tbodyCold");

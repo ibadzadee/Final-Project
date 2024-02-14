@@ -20,6 +20,25 @@ let desserts = document.querySelector("#desserts");
 let beverages = document.querySelector("#beverages");
 let id = new URLSearchParams(window.location.search).get("id");
 console.log(id);
+function createMenuItem(item, container) {
+  container.innerHTML += `
+    <div class="menu-items">
+      <div class="image">
+        <img src="${item.images}" alt="" />
+      </div>
+      <div class="right">
+        <div class="text">
+          <h5 class="name">${item.name}</h5>
+          <p class="about">${item.about}</p>
+        </div>
+        <div class="cost">
+          <h4 class="costItem">$${item.cost}</h4>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 fetch(url + id)
   .then((response) => response.json())
   .then((data) => {
@@ -33,124 +52,34 @@ fetch(url + id)
     restoranName.innerHTML = data.restaurant.name;
     contactSection.innerHTML = `
       <div class="contact-item">
-      <h5>Location:</h5>
-      <p>${data.restaurant.location}</p>
-    </div>
+        <h5>Location:</h5>
+        <p>${data.restaurant.location}</p>
+      </div>
 
-    <div class="contact-item">
-      <h5>Work Time:</h5>
-      <div class="worktime">
-      <p>Monday-Saturday: ${data.restaurant.workTime[0]} AM - ${data.restaurant.workTime[1]}  PM,</p>
-      <p>Sunday: ${data.restaurant.workTime[2]}  PM- ${data.restaurant.workTime[3]}  PM</p>
-    </div>
-    </div>
+      <div class="contact-item">
+        <h5>Work Time:</h5>
+        <div class="worktime">
+          <p>Monday-Saturday: ${data.restaurant.workTime[0]} AM - ${data.restaurant.workTime[1]}  PM,</p>
+          <p>Sunday: ${data.restaurant.workTime[2]}  PM- ${data.restaurant.workTime[3]}  PM</p>
+        </div>
+      </div>
 
-    <div class="contact-item">
-      <h5>Phone Number:</h5>
-      <p>${data.restaurant.phone}</p>
-    </div>
+      <div class="contact-item">
+        <h5>Phone Number:</h5>
+        <p>${data.restaurant.phone}</p>
+      </div>
     `;
 
-    // Menu for HotDishes
-    data.restaurant.menu.hotDishes.forEach((element) => {
-      hotDishes.innerHTML += `
-      <div class="menu-items">
-      <div class="image">
-        <img src="${element.images}" alt="" />
-      </div>
-      <div class="right">
-        <div class="text">
-          <h5 class="name">${element.name}</h5>
-          <p class="about">${element.about}</p>
-        </div>
-        <div class="cost">
-          <h4 class="costItem">$${element.cost}</h4>
-        </div>
-      </div>
-    </div>
-      `;
-    });
-
-    // Menu for ColdDishes
-    data.restaurant.menu.coldDishes.forEach((element) => {
-      coldDishes.innerHTML += `
-      <div class="menu-items">
-      <div class="image">
-        <img src="${element.images}" alt="" />
-      </div>
-      <div class="right">
-        <div class="text">
-          <h5 class="name">${element.name}</h5>
-          <p class="about">${element.about}</p>
-        </div>
-        <div class="cost">
-          <h4 class="costItem">$${element.cost}</h4>
-        </div>
-      </div>
-    </div>
-      `;
-    });
-
-    // Menu for Salads
-    data.restaurant.menu.salads.forEach((element) => {
-      salads.innerHTML += `
-      <div class="menu-items">
-      <div class="image">
-        <img src="${element.images}" alt="" />
-      </div>
-      <div class="right">
-        <div class="text">
-          <h5 class="name">${element.name}</h5>
-          <p class="about">${element.about}</p>
-        </div>
-        <div class="cost">
-          <h4 class="costItem">$${element.cost}</h4>
-        </div>
-      </div>
-    </div>
-      `;
-    });
-
-    // Menu for Desserts
-    data.restaurant.menu.desserts.forEach((element) => {
-      desserts.innerHTML += `
-      <div class="menu-items">
-      <div class="image">
-        <img src="${element.images}" alt="" />
-      </div>
-      <div class="right">
-        <div class="text">
-          <h5 class="name">${element.name}</h5>
-          <p class="about">${element.about}</p>
-        </div>
-        <div class="cost">
-          <h4 class="costItem">$${element.cost}</h4>
-        </div>
-      </div>
-    </div>
-      `;
-    });
-
-    // Menu for Beverages
-    data.restaurant.menu.beverages.forEach((element) => {
-      beverages.innerHTML += `
-      <div class="menu-items">
-      <div class="image">
-        <img src="${element.images}" alt="" />
-      </div>
-      <div class="right">
-        <div class="text">
-          <h5 class="name">${element.name}</h5>
-          <p class="about">${element.about}</p>
-        </div>
-        <div class="cost">
-          <h4 class="costItem">$${element.cost}</h4>
-        </div>
-      </div>
-    </div>
-      `;
+    // Menu Items
+    ['hotDishes', 'coldDishes', 'salads', 'desserts', 'beverages'].forEach((menuType) => {
+      data.restaurant.menu[menuType].forEach((element) => {
+        createMenuItem(element, document.getElementById(menuType));
+      });
     });
   });
+
+
+// 
 
 // <!---------------- Image Carousel ---------------->
 
