@@ -533,10 +533,4 @@ table i:hover {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-@media screen and (max-width: 992px) {
-  .admin .admin-center {
-    flex-direction: column;
-  }
 }/*# sourceMappingURL=admin.css.map */
