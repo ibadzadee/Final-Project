@@ -31,6 +31,7 @@ fetch(`http://localhost:3000/users`)
     data.forEach((element) => {
       console.log(element.name);
       section.innerHTML += `
+      <div class="column">
       <div class="flippingCard">
       <div id="card1" class="card">
         <figure class="front card-inner">
@@ -47,24 +48,26 @@ fetch(`http://localhost:3000/users`)
               <i class="bi bi-calendar-week"></i>
               <div class="worktime">
               <p>Monday-Saturday: ${element.restaurant.workTime[0]} AM - ${element.restaurant.workTime[1]} PM,</p>
-              <p>Sunday: 12:00 PM- 9:00 PM</p>
-            </div>            </div>
+              <p>Sunday: ${element.restaurant.workTime[2]} PM- ${element.restaurant.workTime[3]} PM</p>
+            </div>
+            </div>
             <div class="p p2">
               <i class="bi bi-telephone"></i>
               <p>${element.restaurant.phone}</p>
             </div>
-            <button class="button">Visit Restaurant</button>
+            <button class="button">Get Barcode</button>
           </div>
         </figure>
 
         <figure class="back card-inner">
-          <div class="barcode">
-            <img src="./assets/img/barkod.png" alt="" />
+          <div class="barcode" id=restaurant1>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://./restorans.html?id=${element.id}" alt="barcode" class ="barcodes" />
           </div>
         </figure>
       </div>
     </div>
-    `;
+    <a class="button button-register" href="./restorans.html?id=${element.id}" target = _blank>Visit Restaurant</a>    
+    </div>    `;
     let cards = document.querySelectorAll('.card');
     cards.forEach(element =>{
       element.addEventListener('click' , (e)=>{

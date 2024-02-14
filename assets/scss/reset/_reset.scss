@@ -103,7 +103,7 @@ nav {
     }
 
     &:hover {
-        color: white;
+        color: white !important;
 
         &::before {
             left: 0;
@@ -130,4 +130,21 @@ nav {
     &:hover{
         color: $red !important;
     }
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $red;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: gray ;
+}
+a{
+    cursor: pointer;
 }

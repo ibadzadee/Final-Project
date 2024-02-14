@@ -18,6 +18,19 @@ nav {
     padding-top: 150px;
     text-align: center;
 }
+@media screen and (max-width:768px) {
+    #banner h1{
+        font-size: 45px;
+    }
+}
+@media screen and (max-width:524px) {
+    #banner h1{
+        font-size: 45px;
+    }
+     #ourRestorans .ourRestorans-center .bottomFlip .column .flippingCard{
+        width: 300px;
+    }
+}
 
 // ---------------- Menu --------------
 // flipping card--

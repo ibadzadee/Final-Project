@@ -1,3 +1,13 @@
+let mouseIcon = document.querySelector("#toBottom");
+mouseIcon.addEventListener("click", () => {
+    window.scrollTo({
+        top: 800,
+        behavior: 'smooth',
+    });
+});
+
+
+
 // ------------- Fetch Data -------------
 const url = `http://localhost:3000/users/`;
 
@@ -54,7 +64,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 id="cost">$${element.cost}</h4>
+          <h4 class="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>
@@ -74,7 +84,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 id="cost">$${element.cost}</h4>
+          <h4 class="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>
@@ -94,7 +104,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 id="cost">$${element.cost}</h4>
+          <h4 class="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>
@@ -114,7 +124,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 id="cost">$${element.cost}</h4>
+          <h4 cclass="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>
@@ -134,7 +144,7 @@ fetch(url + id)
           <p class="about">${element.about}</p>
         </div>
         <div class="cost">
-          <h4 id="cost">$${element.cost}</h4>
+          <h4 class="costItem">$${element.cost}</h4>
         </div>
       </div>
     </div>

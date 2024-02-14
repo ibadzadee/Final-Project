@@ -102,7 +102,7 @@ nav {
   z-index: -1;
 }
 .button:hover {
-  color: white;
+  color: white !important;
 }
 .button:hover::before {
   left: 0;
@@ -126,6 +126,23 @@ nav {
 }
 .button-register:hover {
   color: #F01543 !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F01543;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+a {
+  cursor: pointer;
 }
 
 #toTop {
@@ -699,6 +716,7 @@ nav .nav-center .list {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 .column a {
   box-shadow: 0 0 10px gray;
@@ -994,11 +1012,28 @@ footer .footer-center .top ul {
   gap: 30px;
 }
 footer .footer-center .top li a {
-  font-weight: 300;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  text-shadow: 0 0 10px #F01543;
+}
+footer .footer-center .top li a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  color: #F01543;
+  background-color: #F01543;
+  bottom: -2px;
+  left: 0;
+  scale: 0;
 }
 footer .footer-center .top li a:hover {
-  transition: all 10s ease;
-  text-decoration: underline;
+  transition: all 0.5s ease;
+}
+footer .footer-center .top li a:hover::after {
+  scale: 1;
+  transition: all 0.3s ease;
 }
 footer .line {
   width: 100%;
@@ -1018,14 +1053,18 @@ footer .bottom {
 }
 footer .bottom p {
   font-size: 20px;
+  display: flex;
+  gap: 10px;
 }
 footer .bottom p a {
   color: #F01543;
   text-decoration: underline !important;
+  display: block;
 }
 footer .bottom p a:hover {
   transition: all 0.5s ease;
   text-shadow: 0 0 10px snow;
+  transform: scale(1.1);
 }
 footer .bottom a {
   color: white;
@@ -1197,6 +1236,12 @@ footer .bottom div #li {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+  }
+  footer .footer-center .top {
+    flex-direction: column;
+  }
+  footer .footer-center .top #columnUl {
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 424px) {

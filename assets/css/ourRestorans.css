@@ -103,7 +103,7 @@ nav {
   z-index: -1;
 }
 .button:hover {
-  color: white;
+  color: white !important;
 }
 .button:hover::before {
   left: 0;
@@ -129,6 +129,23 @@ nav {
   color: #F01543 !important;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F01543;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+a {
+  cursor: pointer;
+}
+
 nav {
   background-color: #0D0C28;
 }
@@ -147,6 +164,19 @@ nav {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  #banner h1 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 524px) {
+  #banner h1 {
+    font-size: 45px;
+  }
+  #ourRestorans .ourRestorans-center .bottomFlip .column .flippingCard {
+    width: 300px;
+  }
+}
 #ourRestorans {
   background: url("../img/login.jpg");
 }

@@ -102,8 +102,6 @@ document.querySelectorAll(".addTab").forEach((button) => {
       `;
 
       tbody.appendChild(newRow);
-
-
     }
   });
 });
@@ -191,7 +189,7 @@ let monToSatStartTime = document.querySelector("#monToSatStartTime");
 let monToSatEndTime = document.querySelector("#monToSatEndTime");
 let sundayStartTime = document.querySelector("#sundayStartTime");
 let sundayEndTime = document.querySelector("#sundayEndTime");
-// let fileInp = document.querySelector("#fileInp");
+let mainPhoto = document.querySelector("#mainPhotoSrc");
 let img = document.querySelectorAll(".imgSrcAll");
 let imageDivAll = document.querySelector(`.imageDivAll`);
 let PhotoArr = [];
@@ -211,6 +209,7 @@ if (id) {
       monToSatEndTime.value = data.restaurant.workTime[1];
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
+      mainPhoto.src = data.restaurant.backgroundPhoto;
       let uId = uuidv4();
       let unique = uId.substring(1, uId.length - 1);
 
@@ -232,7 +231,7 @@ if (id) {
       });
       // console.log(lengthPhotos);
       // let i = 0;
-      img.forEach((element, index) => { 
+      img.forEach((element, index) => {
         element.src = data.restaurant.photos[index];
         // i++;
       });
@@ -277,9 +276,9 @@ addFile.addEventListener("click", () => {
 // Send AllData
 editRestoranForm.addEventListener("submit", (e) => {
   let i = 0;
-  img.forEach((element) => {
-    element.src = data.restaurant.photos[i];
-    i++;
+  // img.forEach((element) => {
+  //   element.src = data.restaurant.photos[i];
+  //   i++;
     e.preventDefault();
     axios.get(url + id).then((res) => {
       let data = res.data;
@@ -290,7 +289,8 @@ editRestoranForm.addEventListener("submit", (e) => {
           ...data.restaurant,
           name: nameRestoran.value,
           phone: phone.value,
-          photos: PhotoArr,
+          // backgroundPhoto:,
+          // photos: PhotoArr,
           location: locationRestoran.value,
           workTime: [
             monToSatStartTime.value,
@@ -308,8 +308,7 @@ editRestoranForm.addEventListener("submit", (e) => {
       // }
     });
   });
-});
-
+// });
 
 // ---------------- Edit Menu ----------------
 let existingData;
@@ -321,7 +320,7 @@ let tBodyBeverages = document.querySelector("#tBodyBeverages");
 
 function populateTableRows(dishes, tbody, dishType) {
   let unique = uuidv4();
-  dishes.forEach((elem, index) => {
+  dishes.forEach((elem, index, obj) => {
     tbody.innerHTML += `
       <tr>
         <td id="number">${index + 1}</td>
@@ -330,74 +329,81 @@ function populateTableRows(dishes, tbody, dishType) {
           <input id="${unique}" type="file" style="display: none" />
         </td>
         <td>
-          <input class="name name${dishType}" type="text" value="${elem.name}" />
+          <input class="name name${dishType}" type="text" value="${
+      elem.name
+    }" />
         </td>
         <td>
-          <input type="text" class="about about${dishType}" value="${elem.about}" />
-        </td>
-        <td><input type="text" class="cost cost${dishType}" value="${elem.cost}" /></td>
-        <td><i class="bi bi-trash3-fill" onclick="deleteMennuItems(${index})"></i></td>
+          <input type="text" class="about about${dishType}" value="${
+      elem.about
+    }" />
+        </td> 
+        <td><input type="text" class="cost cost${dishType}" value="${
+      elem.cost
+    }" /></td>
+        <td><i class="bi bi-trash3-fill" onclick="deleteMenuItems(${
+          index + 1
+        })"></i></td>
       </tr>`;
   });
 }
 axios.get(url + id).then((res) => {
   data = res.data;
 
-  populateTableRows(data.restaurant.menu.hotDishes, tBodyHot, 'Hot');
-  populateTableRows(data.restaurant.menu.coldDishes, tBodyCold, 'Cold');
-  populateTableRows(data.restaurant.menu.salads, tBodySalads, 'Salads');
-  populateTableRows(data.restaurant.menu.desserts, tBodyDesserts, 'Desserts');
-  populateTableRows(data.restaurant.menu.beverages, tBodyBeverages, 'Beverages');
-
+  populateTableRows(data.restaurant.menu.hotDishes, tBodyHot, "Hot");
+  populateTableRows(data.restaurant.menu.coldDishes, tBodyCold, "Cold");
+  populateTableRows(data.restaurant.menu.salads, tBodySalads, "Salads");
+  populateTableRows(data.restaurant.menu.desserts, tBodyDesserts, "Desserts");
+  populateTableRows(
+    data.restaurant.menu.beverages,
+    tBodyBeverages,
+    "Beverages"
+  );
 });
-
-
 
 //------- delete Data from Table--------
-// function deleteMenuItem(id) {
-//   console.log(url+id);
+// function deleteMenuItems(index) {
+//   // axios.delete(`${url}/${id}/restaurant/${index}`)
+//   console.log(`${url}/${id}?/restaurant/${index}`);
+//   // axios.get(url+id).then(res=>{
+//   //   let data = res.data;
+//   //   data.restaurant.menu.hotDishes.forEach((elem , index , obj)=>{
+
+//   //     console.log(obj[index]);
+//   //   })
+//   //   // console.log(index);
+//   // })
 // }
 
-
 // ----------------Send Menu----------------
-let saveMenu = document.querySelector(".saveMenu");
-saveMenu.addEventListener("click", (e) => {
-  // let hotDishesData = [];
-  // document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
-  //   let dish = {
-  //     name: nameInput.value,
-  //     about: document.querySelectorAll(".aboutHot")[index].value,
-  //     cost: document.querySelectorAll(".costHot")[index].value,
-  //   };
-  //   hotDishesData.push(dish);
-  // });
+// let saveMenu = document.querySelector(".saveMenu");
+// let nameHot = document.querySelectorAll(".nameHot");
+// let aboutHot = document.querySelectorAll(".aboutHot");
+// let costHot = document.querySelectorAll(".costHot");
+// let nameHotArr = [];
+// let aboutHotArr = [];
+// let costHotArr = [];
+// saveMenu.addEventListener("click", () => {
+//   nameHot.forEach((elem) => {
+//     nameHotArr.push(elem.value);
+//   });
+// });
+// console.log(nameHotArr);
+// axios.get(url + id).then((res) => {
+//   let data = res.data;
+// });
 
-  // console.log(hotDishesData);
-  // let obj = {
-  //   ...existingData,
-  //   restaurant: {
-  //     ...existingData.restaurant,
-  //     menu: {
-  //       ...existingData.restaurant.menu,
-  //       hotDishes: hotDishesData,
-  //     },
-  //   },
-  // };
+// });
 
-  // axios.put(url + id, obj).then((res) => {
-  //   window.location.reload();
-  // });
-});
-
-let updatedHotDishes = [];
-document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
-    let dish = {
-        name: nameInput.value,
-        about: document.querySelectorAll(".aboutHot")[index].value,
-        cost: document.querySelectorAll(".costHot")[index].value,
-    };
-    updatedHotDishes.push(dish);
-});
+// let updatedHotDishes = [];
+// document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
+//   let dish = {
+//     name: nameInput.value,
+//     about: document.querySelectorAll(".aboutHot")[index].value,
+//     cost: document.querySelectorAll(".costHot")[index].value,
+//   };
+//   updatedHotDishes.push(dish);
+// });
 
 // axios.get(url+id).then(res=>{
 //   let existingData = res.data;
@@ -415,10 +421,8 @@ document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
 
 //     axios.put(url + id, obj)
 //       .then((res) => {
-//         window.location.reload(); 
+//         window.location.reload();
 //       })
-
-
 
 //
 // ------GOPAGE------
@@ -433,6 +437,5 @@ link.innerHTML = `http://127.0.0.1:5500/restorans.html?name=${user}`;
 
 let barcode = document.querySelector("#barcode");
 barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https:///restorans.html?id=${id}/`;
-
 
 console.log("sara");
