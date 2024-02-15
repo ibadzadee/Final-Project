@@ -139,11 +139,38 @@ signBtn2.addEventListener("submit", (e) => {
     email: emailInp,
     password: passInp,
   };
-  axios.post(url, obj).then((res) => {
-    console.log(res.data);
-    alert("successfully signed up");
+  // ----------------------MODAL js----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
+
+  axios.get(url).then(res=>{
+    let data = res.data
+    let existingUser = data.find((user) => user.email === emailInp);
+    if (existingUser) {
+      modalContent.innerHTML = `This email already exists`;
+      modalContainer.style.background = "red";
+      modalContainer.style.display = "block";
+    } else {
+      setTimeout(() => {
+        axios.post(url, obj).then((res) => {
+          window.location.reload();
+        });
+      }, 2500);
+      modalContent.innerHTML = `Successfully Signed Up`;
+      modalContainer.style.background = "";
+      modalContainer.style.display = "block";
+    }
+  })
+  // });
   });
-});
+// });
 
 let loginBtn2 = document.querySelector("#login2");
 console.log(loginBtn);
@@ -158,6 +185,16 @@ loginBtn2.addEventListener("submit", (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+        // ----------------------MODAL js----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
 
       let currentUserInfo = data.find((user) => user.email == emailLogin);
       console.log(currentUserInfo);
@@ -166,10 +203,15 @@ loginBtn2.addEventListener("submit", (e) => {
           localStorage.setItem("currentUser", JSON.stringify(currentUserInfo));
           window.location = "./admin.html";
         } else {
-          console.log("Wrong password");
-        }
+          console.log("wrong Pass");
+          modalContent.innerHTML = `Wrong password!`;
+          modalContainer.style.background = "red";
+          modalContainer.style.display = "block";        }
       } else {
         console.log("Wrong email");
+        modalContent.innerHTML = `Wrong Email!`;
+        modalContainer.style.background = "red";
+        modalContainer.style.display = "block";
       }
     });
 });

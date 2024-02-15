@@ -50,6 +50,7 @@ fetch(url + id)
     bannerSection.style.backgroundPosition = `center`;
 
     restoranName.innerHTML = data.restaurant.name;
+    // restoranName.style.color = data.restaurant.namecolor;
     contactSection.innerHTML = `
       <div class="contact-item">
         <h5>Location:</h5>

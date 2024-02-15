@@ -193,6 +193,7 @@ let mainPhoto = document.querySelector("#mainPhotoSrc");
 let img = document.querySelectorAll(".imgSrcAll");
 let imageDivAll = document.querySelector(`.imageDivAll`);
 let PhotoArr = [];
+// let inputColor = document.querySelector('#textColor')
 
 // let img = document.querySelector(`#${unicId}`);
 // let unicId = uuidv4();
@@ -210,6 +211,7 @@ if (id) {
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
       mainPhoto.src = data.restaurant.backgroundPhoto;
+      // inputColor.value = data.restaurant.nameColor;
       let uId = uuidv4();
       let unique = uId.substring(1, uId.length - 1);
 
@@ -308,6 +310,7 @@ editRestoranForm.addEventListener("submit", (e) => {
         name: nameRestoran.value,
         phone: phone.value,
         backgroundPhoto: mainPhotoSrc.src,
+        // nameColor: inputColor.value,
         // photos: PhotoArr,
         location: locationRestoran.value,
         workTime: [

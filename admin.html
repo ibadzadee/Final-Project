@@ -43,7 +43,6 @@
 
     <link rel="stylesheet" href="./assets/css/admin.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
-
   </head>
   <body>
     <!-------------- Navbar ---------------->
@@ -229,7 +228,9 @@
                 <form
                   class="text-muted mb-2 restoranForm backgroundTheme editRestoran"
                 >
-                  <label class="mainName" for="nameRestoran">Restaurant Name:</label>
+                  <label class="mainName" for="nameRestoran"
+                    >Restaurant Name:</label
+                  >
                   <input type="text" id="nameRestoran" required />
                   <label class="mainName" for="tel">Phone Number:</label>
                   <input
@@ -257,7 +258,9 @@
                       max="23:59"
                       required
                     />
-                    <label for="monToSatEndTime" class="time time2">End Time:</label>
+                    <label for="monToSatEndTime" class="time time2"
+                      >End Time:</label
+                    >
                     <input
                       type="time"
                       id="monToSatEndTime"
@@ -292,20 +295,34 @@
                       required
                     />
                   </div>
-                  <label class="mainName" for="file">Restoran's Main Photo</label>
-                        <div class="mainImageDiv">
-                        <div class="display">
-                        <label for="mainPhoto" class="custom-file-upload">image</label>
-                        <i class="bi bi-trash3-fill deleteMainPhoto"></i>
-                      </div>
-                        <input id="mainPhoto" class="mainPhotoFile" type="file" style="display: none" />
-                        <div class="img">
-                          <img id="mainPhotoSrc" class="" src="" alt="image"/>
-                        </div>
-                      </div>
+                  <label class="mainName" for="file"
+                    >Restoran's Main Photo</label
+                  >
+                  <div class="mainImageDiv">
+                    <div class="display">
+                      <label for="mainPhoto" class="custom-file-upload"
+                        >image</label
+                      >
+                      <i class="bi bi-trash3-fill deleteMainPhoto"></i>
+                    </div>
+                    <input
+                      id="mainPhoto"
+                      class="mainPhotoFile"
+                      type="file"
+                      style="display: none"
+                    />
+                    <div class="img">
+                      <img id="mainPhotoSrc" class="" src="" alt="image" />
+                    </div>
+                  </div>
+                  <!-- <label for="inputColor"
+                    >Choose a color for Restaurant's name:</label
+                  >
+                  <input type="color" id="inputColor" /> -->
 
-
-                  <label class="mainName topName" for="file">Add Restaurant's photos</label>
+                  <label class="mainName topName" for="file"
+                    >Add Restaurant's photos</label
+                  >
                   <div class="displayFile">
                     <div class="imageDivAll">
                       <!-- <div class="imageDiv">
@@ -341,18 +358,18 @@
                   <h5>Hot Dishes</h5>
                   <div class="table-container">
                     <table class="mb-2 scrollable-table" data-key="1">
-                    <thead>
-                      <tr>
-                        <th>№</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>About</th>
-                        <th>Cost($)</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbodyHot">
-                      <!-- <tr>
+                      <thead>
+                        <tr>
+                          <th>№</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>About</th>
+                          <th>Cost($)</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyHot">
+                        <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu" class="custom-file-upload"
@@ -381,27 +398,27 @@
                         <td><input type="text" class="cost costHot" value="30" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr> -->
-                    </tbody>
-                  </table>
-                  <button class="plus addTab" data-key="1">+</button>
+                      </tbody>
+                    </table>
+                    <button class="plus addTab" data-key="1">+</button>
                   </div>
 
                   <!-- Cold Dishes -->
                   <h5>Cold Dishes</h5>
                   <div class="table-container">
                     <table class="mb-2 scrollable-table" data-key="1">
-                    <thead>
-                      <tr>
-                        <th>№</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>About</th>
-                        <th>Cost($)</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbodyCold">
-                      <!-- <tr>
+                      <thead>
+                        <tr>
+                          <th>№</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>About</th>
+                          <th>Cost($)</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbodyCold">
+                        <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu2" class="custom-file-upload"
@@ -422,26 +439,27 @@
                         <td><input type="text" class="cost costCold" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr> -->
-                    </tbody>
-                  </table>
-                  <button class="plus addTab" data-key="2">+</button>
+                      </tbody>
+                    </table>
+                    <button class="plus addTab" data-key="2">+</button>
                   </div>
 
                   <!-- Salads -->
                   <h5>Salads</h5>
                   <div class="table-container">
-                    <table class="mb-2 scrollable-table" data-key="1">                    <thead>
-                      <tr>
-                        <th>№</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>About</th>
-                        <th>Cost($)</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tBodySalads">
-                      <!-- <tr>
+                    <table class="mb-2 scrollable-table" data-key="1">
+                      <thead>
+                        <tr>
+                          <th>№</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>About</th>
+                          <th>Cost($)</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tBodySalads">
+                        <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu3" class="custom-file-upload"
@@ -462,26 +480,27 @@
                         <td><input type="text" class="cost costSalads" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr> -->
-                    </tbody>
-                  </table>
-                  <button class="plus addTab" data-key="3">+</button>
+                      </tbody>
+                    </table>
+                    <button class="plus addTab" data-key="3">+</button>
                   </div>
 
                   <!-- Desserts -->
                   <h5>Desserts</h5>
                   <div class="table-container">
-                    <table class="mb-2 scrollable-table" data-key="1">                    <thead>
-                      <tr>
-                        <th>№</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>About</th>
-                        <th>Cost($)</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tBodyDesserts">
-                      <!-- <tr>
+                    <table class="mb-2 scrollable-table" data-key="1">
+                      <thead>
+                        <tr>
+                          <th>№</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>About</th>
+                          <th>Cost($)</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tBodyDesserts">
+                        <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu4" class="custom-file-upload"
@@ -502,26 +521,27 @@
                         <td><input type="text" class="cost costDesserts" /></td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr> -->
-                    </tbody>
-                  </table>
-                  <button class="plus addTab" data-key="4">+</button>
+                      </tbody>
+                    </table>
+                    <button class="plus addTab" data-key="4">+</button>
                   </div>
 
                   <!-- Beverages -->
                   <h5>Beverages</h5>
                   <div class="table-container">
-                    <table class="mb-2 scrollable-table" data-key="1">                    <thead>
-                      <tr>
-                        <th>№</th>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>About</th>
-                        <th>Cost($)</th>
-                        <th>Delete</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tBodyBeverages">
-                      <!-- <tr>
+                    <table class="mb-2 scrollable-table" data-key="1">
+                      <thead>
+                        <tr>
+                          <th>№</th>
+                          <th>Image</th>
+                          <th>Name</th>
+                          <th>About</th>
+                          <th>Cost($)</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tBodyBeverages">
+                        <!-- <tr>
                         <td id="number">1</td>
                         <td>
                           <label for="fileMenu5" class="custom-file-upload"
@@ -544,10 +564,10 @@
                         </td>
                         <td><i class="bi bi-trash3-fill"></i></td>
                       </tr> -->
-                    </tbody>
-                  </table>
-                  <button class="plus addTab" data-key="5">+</button>
-                </div>
+                      </tbody>
+                    </table>
+                    <button class="plus addTab" data-key="5">+</button>
+                  </div>
 
                   <button type="button" value="Save" class="save saveMenu">
                     Save
@@ -601,7 +621,6 @@
         </div>
       </div>
     </div>
-
 
     <!---------------- Footer ---------------->
     <!-- <footer>

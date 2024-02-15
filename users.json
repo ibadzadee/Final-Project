@@ -123,7 +123,7 @@
               "images": "./assets/img/des4.webp",
               "name": "Profiteroles with Vanilla Ice Cream",
               "about": "Light and airy choux pastry filled with vanilla ice cream, typically drizzled with chocolate sauce.",
-              "cost": 15  
+              "cost": 15
             }
           ],
           "beverages": [
@@ -437,12 +437,6 @@
           ]
         }
       }
-    },
-    {
-      "name": "sdsdc",
-      "email": "wedwedwd@gmail.com",
-      "password": "adsx",
-      "id": 5
     }
   ]
 }
