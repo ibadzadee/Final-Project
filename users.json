@@ -8,17 +8,17 @@
       "restaurant": {
         "name": "Le Jardin Français",
         "phone": "070-000-00-00",
-        "backgroundPhoto": "./assets/img/restoran1.jpg",
+        "backgroundPhoto": "./assets/img/leJardin.jpg",
         "photos": [
-          "./assets/img/photo1.avif",
-          "./assets/img/photo2.avif",
-          "./assets/img/photo3.avif",
-          "./assets/img/photo4.avif",
-          "./assets/img/phoyo5.avif",
-          "./assets/img/photo6.avif",
+          "./assets/img/le1.jpg",
+          "./assets/img/le2.jpg",
+          "./assets/img/le3.jpg",
+          "./assets/img/le4.jpg",
+          "./assets/img/le5.jpg",
+          "./assets/img/le6.avif",
           "./assets/img/photo7.avif",
           "./assets/img/photo8.avif",
-          "./assets/img/photo9.avif"
+          "./assets/img/le7.jpg"
         ],
         "location": "Paris, France",
         "workTime": [
@@ -30,78 +30,120 @@
         "menu": {
           "hotDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Sara",
-              "about": "4 Piece Chicken , Spicy Sauce",
+              "images": "./assets/img/menu1.1.jpg",
+              "name": "Boeuf Bourguignon",
+              "about": "Tender beef cooked in red wine sauce with mushrooms and pearl onions. Served with garlic mashed potatoes.",
               "cost": 30
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/menu2.jpg",
+              "name": "Beef Wellington",
+              "about": "Tender beef fillet wrapped in puff pastry with mushroom duxelles and foie gras.",
+              "cost": 45
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/menu3.jpg",
+              "name": "Ratatouille",
+              "about": " Provencal vegetable stew made with eggplant, zucchini, bell peppers, tomatoes, and herbs.",
+              "cost": 27
+            },
+            {
+              "images": "./assets/img/menu4.jpg",
+              "name": "Duck Confit",
+              "about": " Duck leg slow-cooked in its own fat until tender and served with crispy potatoes.",
+              "cost": 38
             }
           ],
           "coldDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 10
+              "images": "./assets/img/cold.jpg",
+              "name": "Charcuterie Platter",
+              "about": "Assorted cured meats, pâté, cheese, cornichons, and crusty bread served with whole grain mustard.",
+              "cost": 25
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/image6.jpg",
+              "name": "Gazpacho",
+              "about": " Chilled tomato-based soup with cucumbers, bell peppers, onions, garlic, and olive oil.",
+              "cost": 12
+            },
+            {
+              "images": "./assets/img/image7.jpg",
+              "name": "Prosciutto Wrapped Melon",
+              "about": " Sweet melon slices wrapped in salty prosciutto slices, served chilled.",
+              "cost": 18
             }
           ],
           "salads": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
+              "images": "./assets/img/image5.webp",
+              "name": "Caprese Salad",
+              "about": "Sliced tomatoes, fresh mozzarella cheese, and basil leaves drizzled with balsamic glaze.",
+              "cost": 17
+            },
+            {
+              "images": "./assets/img/salad1.jpg",
+              "name": "Greek Salad",
+              "about": "Crisp lettuce, tomatoes, cucumbers, red onions, Kalamata olives, and feta cheese tossed in Greek vinaigrette.",
               "cost": 30
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
+              "images": "./assets/img/salad2.jpg",
+              "name": "Waldorf Salad",
+              "about": "Crisp apples, celery, grapes, and walnuts tossed in a creamy dressing.",
+              "cost": 30
+            },
+            {
+              "images": "./assets/img/salad3.jpg",
+              "name": " Cobb Salad",
+              "about": " Mixed greens topped with grilled chicken, avocado, bacon, hard-boiled eggs, tomatoes, and blue cheese.",
               "cost": 30
             }
           ],
           "desserts": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/des1.webp",
+              "name": "Crème Brûlée:",
+              "about": "A rich custard dessert topped with a contrasting layer of caramelized sugar.",
+              "cost": 10
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/des2.jpg",
+              "name": "Tarte Tatin",
+              "about": " A classic French upside-down apple tart with caramelized apples, typically ",
+              "cost": 12
+            },
+            {
+              "images": "./assets/img/des3.jpg",
+              "name": "Chocolate Fondant",
+              "about": " A warm chocolate cake with a gooey chocolate center, often served with vanilla ice cream. ",
+              "cost": 13
+            },
+            {
+              "images": "./assets/img/des4.webp",
+              "name": "Profiteroles with Vanilla Ice Cream",
+              "about": "Light and airy choux pastry filled with vanilla ice cream, typically drizzled with chocolate sauce.",
+              "cost": 15  
             }
           ],
           "beverages": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/bev1.jpg",
+              "name": "Mango Lassi",
+              "about": " Creamy yogurt drink blended with ripe mangoes and a hint of cardamom.",
+              "cost": 5
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/bev2.jpg",
+              "name": "Sparkling Elderflower Lemonade",
+              "about": "Refreshing lemonade infused with elderflower syrup and sparkling water.",
+              "cost": 4
+            },
+            {
+              "images": "./assets/img/bev3.jpg",
+              "name": "Mint Mojito",
+              "about": "Rum, lime juice, mint leaves, soda water, and simple syrup served over ice.",
+              "cost": 8
             }
           ]
         }
@@ -115,10 +157,17 @@
       "restaurant": {
         "name": "Spice Avenue",
         "phone": "070-000-00-00",
-        "backgroundPhoto": "./assets/img/photo2.avif",
+        "backgroundPhoto": "./assets/img/restoran1.jpg",
         "photos": [
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png"
+          "./assets/img/photo1.avif",
+          "./assets/img/photo2.avif",
+          "./assets/img/photo3.avif",
+          "./assets/img/photo4.avif",
+          "./assets/img/phoyo5.avif",
+          "./assets/img/photo6.avif",
+          "./assets/img/photo7.avif",
+          "./assets/img/photo8.avif",
+          "./assets/img/photo9.avif"
         ],
         "location": "New York City, USA",
         "workTime": [
@@ -209,7 +258,7 @@
       "restaurant": {
         "name": "The Green Leaf Bistro",
         "phone": "070-000-00-00",
-        "backgroundPhoto": "./assets/img/photo7.avif",
+        "backgroundPhoto": "./assets/img/photo2.avif",
         "photos": [
           "./assets/img/faq-1.png",
           "./assets/img/faq-1.png"
@@ -388,6 +437,12 @@
           ]
         }
       }
+    },
+    {
+      "name": "sdsdc",
+      "email": "wedwedwd@gmail.com",
+      "password": "adsx",
+      "id": 5
     }
   ]
 }

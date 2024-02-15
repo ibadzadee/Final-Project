@@ -82,10 +82,10 @@ document.querySelectorAll(".addTab").forEach((button) => {
         });
       });
 
-      // if (!allInputsFilled) {
-      //   alert("Please fill in all fields before adding a new row.");
-      //   return;
-      // }
+      if (!allInputsFilled) {
+        alert("Please fill in all fields before adding a new row.");
+        return;
+      }
       let unique = uuidv4();
       const rowCount = tbody.querySelectorAll("tr").length + 1;
       const newRow = document.createElement("tr");
