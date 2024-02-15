@@ -39,7 +39,6 @@ logoutBtn.addEventListener("click", () => {
   window.location = `./register.html`;
 });
 
-
 // ------------------------ Add Table ------------------------
 
 document.querySelectorAll(".addTab").forEach((button) => {
@@ -74,11 +73,8 @@ document.querySelectorAll(".addTab").forEach((button) => {
     }
 
     renderTables();
-
   });
 });
-
-
 
 // -------------- Nav codes --------------
 
@@ -131,32 +127,32 @@ if (id) {
           password: password.value,
         };
         console.log(obj);
-  //----------------------MODALjs----------------------
-  let modalContent = document.querySelector(".modal-content");
-  let modalContainer = document.getElementById("modalContainer");
-  setTimeout(function () {
-    modalContainer.style.animation = "slideOut 0.5s forwards";
-    setTimeout(function () {
-      modalContainer.style.display = "none";
-      modalContainer.style.animation = "";
-    }, 500);
-  }, 1500);
+        //----------------------MODALjs----------------------
+        let modalContent = document.querySelector(".modal-content");
+        let modalContainer = document.getElementById("modalContainer");
+        setTimeout(function () {
+          modalContainer.style.animation = "slideOut 0.5s forwards";
+          setTimeout(function () {
+            modalContainer.style.display = "none";
+            modalContainer.style.animation = "";
+          }, 500);
+        }, 1500);
 
-  document.querySelector(".close").addEventListener("click", function () {
-    document.getElementById("modalContainer").style.animation =
-      "slideOut 0.5s forwards";
-    setTimeout(function () {
-      document.getElementById("modalContainer").style.display = "none";
-      document.getElementById("modalContainer").style.animation = "";
-    }, 300);
-  });
+        document.querySelector(".close").addEventListener("click", function () {
+          document.getElementById("modalContainer").style.animation =
+            "slideOut 0.5s forwards";
+          setTimeout(function () {
+            document.getElementById("modalContainer").style.display = "none";
+            document.getElementById("modalContainer").style.animation = "";
+          }, 300);
+        });
 
-  // modalContent.innerHTML= "Menu Saved Successfully!";
-  modalContainer.style.display = "flex";
-  setTimeout(() => {
-    axios.post(url+id, obj);
-    window.location.reload();
-  }, 2500);
+        // modalContent.innerHTML= "Menu Saved Successfully!";
+        modalContainer.style.display = "flex";
+        setTimeout(() => {
+          axios.post(url + id, obj);
+          window.location.reload();
+        }, 2500);
       });
     });
 }
@@ -175,7 +171,6 @@ let mainPhoto = document.querySelector("#mainPhotoSrc");
 let img = document.querySelectorAll(".imgSrcAll");
 let imageDivAll = document.querySelector(`.imageDivAll`);
 let PhotoArr = [];
-
 
 function renderPhotos() {
   console.log(photos);
@@ -239,11 +234,9 @@ if (id) {
       sundayEndTime.value = data.restaurant.workTime[3];
       mainPhoto.src = data.restaurant.backgroundPhoto;
 
-
       photos = data.restaurant.photos;
 
       renderPhotos();
-
     });
 }
 console.log();
@@ -295,34 +288,32 @@ editRestoranForm.addEventListener("submit", (e) => {
       },
     };
 
+    //----------------------MODALjs----------------------
+    let modalContent = document.querySelector(".modal-content");
+    let modalContainer = document.getElementById("modalContainer");
+    setTimeout(function () {
+      modalContainer.style.animation = "slideOut 0.5s forwards";
+      setTimeout(function () {
+        modalContainer.style.display = "none";
+        modalContainer.style.animation = "";
+      }, 500);
+    }, 1500);
 
-   //----------------------MODALjs----------------------
-   let modalContent = document.querySelector(".modal-content");
-   let modalContainer = document.getElementById("modalContainer");
-   setTimeout(function () {
-     modalContainer.style.animation = "slideOut 0.5s forwards";
-     setTimeout(function () {
-       modalContainer.style.display = "none";
-       modalContainer.style.animation = "";
-     }, 500);
-   }, 1500);
- 
-   document.querySelector(".close").addEventListener("click", function () {
-     document.getElementById("modalContainer").style.animation =
-       "slideOut 0.5s forwards";
-     setTimeout(function () {
-       document.getElementById("modalContainer").style.display = "none";
-       document.getElementById("modalContainer").style.animation = "";
-     }, 300);
-   });
- 
-   // modalContent.innerHTML= "Menu Saved Successfully!";
-   modalContainer.style.display = "flex";
-   setTimeout(() => {
-     axios.post(url+id, obj);
-     window.location.reload();
-   }, 2500);
+    document.querySelector(".close").addEventListener("click", function () {
+      document.getElementById("modalContainer").style.animation =
+        "slideOut 0.5s forwards";
+      setTimeout(function () {
+        document.getElementById("modalContainer").style.display = "none";
+        document.getElementById("modalContainer").style.animation = "";
+      }, 300);
+    });
 
+    // modalContent.innerHTML= "Menu Saved Successfully!";
+    modalContainer.style.display = "flex";
+    setTimeout(() => {
+      axios.post(url + id, obj);
+      window.location.reload();
+    }, 2500);
   });
 });
 
@@ -334,9 +325,7 @@ let tBodySalads = document.querySelector("#tBodySalads");
 let tBodyDesserts = document.querySelector("#tBodyDesserts");
 let tBodyBeverages = document.querySelector("#tBodyBeverages");
 
-
 function populateTableRows(dishes, tbody, dishType, sort) {
-  
   tbody.innerHTML = "";
   dishes.forEach((elem, index) => {
     let unique = uuidv4();
@@ -344,10 +333,12 @@ function populateTableRows(dishes, tbody, dishType, sort) {
     tbody.innerHTML += `
       <tr>
         <td id="number">${index + 1}</td>
-        <td>
+        <td class = "displayImage">
           <label for="${unique}" class="custom-file-upload">image</label>
           <input id="${unique}" type="file" class="menuimages" style="display: none" data-labindex=${index} data-type='${sort}'/>
-          <img src = "${elem.images}" width="20px" height="20px"/>
+          <img id="displayImg" src = "${
+            elem.images
+          }" width="20px" height="20px"/>
         </td>
         <td>
           <input class="menu name name${dishType}" type="text" data-labindex=${index} data-type='${sort}' value="${
@@ -395,97 +386,93 @@ function populateTableRows(dishes, tbody, dishType, sort) {
           beverages[labIndex][type] = text;
 
           break;
-        default: console.log("Mig");
+        default:
+          console.log("Mig");
           break;
       }
-
     });
   });
 
-  document.querySelectorAll('.menuimages').forEach(photoInp =>{
-
-    photoInp.addEventListener('input', (e)=>{
+  document.querySelectorAll(".menuimages").forEach((photoInp) => {
+    photoInp.addEventListener("input", (e) => {
       let index = e.target.dataset.labindex;
       let arr = e.target.dataset.type;
-
 
       let file = e.target.files[0];
 
       let reader = new FileReader();
 
-      if(file){
-        reader.readAsDataURL(file)
-        reader.onload = () =>{
+      if (file) {
+        reader.readAsDataURL(file);
+        reader.onload = () => {
           e.target.nextElementSibling.src = reader.result;
 
           switch (arr) {
             case "hot":
-              hot[index]['images'] = reader.result;
-    
+              hot[index]["images"] = reader.result;
+
               break;
-    
+
             case "cold":
-              cold[index]['images'] = reader.result;
-    
+              cold[index]["images"] = reader.result;
+
               break;
             case "salad":
-              salad[index]['images'] = reader.result;
-    
+              salad[index]["images"] = reader.result;
+
               break;
             case "desserts":
-              desserts[index]['images'] = reader.result;
-    
+              desserts[index]["images"] = reader.result;
+
               break;
             case "beverages":
-              beverages[index]['images'] = reader.result;
-    
+              beverages[index]["images"] = reader.result;
+
               break;
-            default: console.log("Mig");
+            default:
+              console.log("Mig");
               break;
           }
-
-
-        }
+        };
       }
-    })
-  })
+    });
+  });
 
-  document.querySelectorAll('.deleteRow').forEach(trashBtn=>{
-    trashBtn.addEventListener('click',(e)=>{
+  document.querySelectorAll(".deleteRow").forEach((trashBtn) => {
+    trashBtn.addEventListener("click", (e) => {
       let index = e.target.dataset.labindex;
       let arr = e.target.dataset.type;
 
       switch (arr) {
         case "hot":
-          hot.splice(index,1)
+          hot.splice(index, 1);
 
           break;
 
         case "cold":
-          cold.splice(index,1)
+          cold.splice(index, 1);
 
           break;
         case "salads":
-          salad.splice(index,1)
+          salad.splice(index, 1);
 
           break;
         case "desserts":
-          desserts.splice(index,1)
+          desserts.splice(index, 1);
 
           break;
         case "beverages":
-          beverages.splice(index,1)
+          beverages.splice(index, 1);
 
           break;
-        default: console.log("Mig");
+        default:
+          console.log("Mig");
           break;
       }
-      renderTables()
-
-    })
-  })
+      renderTables();
+    });
+  });
 }
-
 
 function renderTables() {
   populateTableRows(hot, tBodyHot, "Hot", "hot");
@@ -506,8 +493,6 @@ axios.get(url + id).then((res) => {
   renderTables();
 });
 
-
-
 // ----------------Send Menu----------------
 let saveMenu = document.querySelector(".saveMenu");
 saveMenu.addEventListener("click", (e) => {
@@ -518,47 +503,44 @@ saveMenu.addEventListener("click", (e) => {
       ...data,
       restaurant: {
         ...data.restaurant,
-        menu : {
-          hotDishes : hot,
-          coldDishes : cold,
-          salads : salad,
-          desserts : desserts,
-          beverages : beverages
-        }
+        menu: {
+          hotDishes: hot,
+          coldDishes: cold,
+          salads: salad,
+          desserts: desserts,
+          beverages: beverages,
+        },
       },
     };
 
-  //----------------------MODALjs----------------------
-  let modalContent = document.querySelector(".modal-content");
-  let modalContainer = document.getElementById("modalContainer");
-  setTimeout(function () {
-    modalContainer.style.animation = "slideOut 0.5s forwards";
+    //----------------------MODALjs----------------------
+    let modalContent = document.querySelector(".modal-content");
+    let modalContainer = document.getElementById("modalContainer");
     setTimeout(function () {
-      modalContainer.style.display = "none";
-      modalContainer.style.animation = "";
-    }, 500);
-  }, 1500);
+      modalContainer.style.animation = "slideOut 0.5s forwards";
+      setTimeout(function () {
+        modalContainer.style.display = "none";
+        modalContainer.style.animation = "";
+      }, 500);
+    }, 1500);
 
-  document.querySelector(".close").addEventListener("click", function () {
-    document.getElementById("modalContainer").style.animation =
-      "slideOut 0.5s forwards";
-    setTimeout(function () {
-      document.getElementById("modalContainer").style.display = "none";
-      document.getElementById("modalContainer").style.animation = "";
-    }, 300);
-  });
+    document.querySelector(".close").addEventListener("click", function () {
+      document.getElementById("modalContainer").style.animation =
+        "slideOut 0.5s forwards";
+      setTimeout(function () {
+        document.getElementById("modalContainer").style.display = "none";
+        document.getElementById("modalContainer").style.animation = "";
+      }, 300);
+    });
 
-  // modalContent.innerHTML= "Menu Saved Successfully!";
-  modalContainer.style.display = "flex";
-  setTimeout(() => {
-    axios.post(url+id, obj);
-    window.location.reload();
-  }, 2500);
+    // modalContent.innerHTML= "Menu Saved Successfully!";
+    modalContainer.style.display = "flex";
+    setTimeout(() => {
+      axios.post(url + id, obj);
+      window.location.reload();
+    }, 2500);
   });
 });
-
-
-
 
 //
 // ------GOPAGE------
@@ -573,4 +555,3 @@ link.innerHTML = `http://127.0.0.1:5500/restorans.html?name=${user}`;
 
 let barcode = document.querySelector("#barcode");
 barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https:///restorans.html?id=${id}/`;
-
