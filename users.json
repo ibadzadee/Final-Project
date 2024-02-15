@@ -85,19 +85,19 @@
               "images": "./assets/img/salad1.jpg",
               "name": "Greek Salad",
               "about": "Crisp lettuce, tomatoes, cucumbers, red onions, Kalamata olives, and feta cheese tossed in Greek vinaigrette.",
-              "cost": 30
+              "cost": 10
             },
             {
               "images": "./assets/img/salad2.jpg",
               "name": "Waldorf Salad",
               "about": "Crisp apples, celery, grapes, and walnuts tossed in a creamy dressing.",
-              "cost": 30
+              "cost": 19
             },
             {
               "images": "./assets/img/salad3.jpg",
               "name": " Cobb Salad",
               "about": " Mixed greens topped with grilled chicken, avocado, bacon, hard-boiled eggs, tomatoes, and blue cheese.",
-              "cost": 30
+              "cost": 22
             }
           ],
           "desserts": [
@@ -157,7 +157,7 @@
       "restaurant": {
         "name": "Spice Avenue",
         "phone": "070-000-00-00",
-        "backgroundPhoto": "./assets/img/restoran1.jpg",
+        "backgroundPhoto": "./assets/img/restaurant2.webp",
         "photos": [
           "./assets/img/photo1.avif",
           "./assets/img/photo2.avif",
@@ -179,79 +179,115 @@
         "menu": {
           "hotDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/h21.jpg",
+              "name": "Spicy Tandoori Chicken",
+              "about": "Tender pieces of chicken marinated in spicy yogurt sauce and cooked in a traditional tandoor oven",
+              "cost": 20
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/h22.jpg",
+              "name": "Vegetable Biryani",
+              "about": " Fragrant basmati rice cooked with mixed vegetables, herbs, and spices, layered with saffron-infused rice.",
+              "cost": 18
+            },
+            {
+              "images": "./assets/img/h23.jpg",
+              "name": "Lamb Vindaloo",
+              "about": "Succulent lamb pieces cooked in a fiery vindaloo sauce made with vinegar, spices, and potatoes",
+              "cost": 25
+            },
+            {
+              "images": "./assets/img/h24.jpg",
+              "name": "Paneer Tikka Masala",
+              "about": "Cubes of paneer cheese marinated in a creamy and flavorful tomato-based sauce with aromatic spices",
+              "cost": 18
             }
           ],
           "coldDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c21.webp",
+              "name": "Tandoori Shrimp Cocktail",
+              "about": "Grilled tandoori shrimp served chilled with a spicy cocktail sauce and lemon wedges.",
+              "cost": 16
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c22.jpg",
+              "name": "Cucumber Raita",
+              "about": "Creamy yogurt mixed with diced cucumbers, mint, and spices, served chilled.",
+              "cost": 8
             }
           ],
           "salads": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c21.webp",
+              "name": "Spicy Chicken Caesar Salad",
+              "about": "Grilled chicken strips tossed with crisp romaine lettuce, croutons, Parmesan cheese, and spicy Caesar dressing.",
+              "cost": 18
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/s22.jpg",
+              "name": "Greek Orzo Salad",
+              "about": "Orzo pasta mixed with cherry tomatoes Kalamata olives, feta cheese, and Greek vinaigrette.",
+              "cost": 15
+            },
+            {
+              "images": "./assets/img/s23.jpg",
+              "name": "Asian Sesame Noodle Salad",
+              "about": " Cold noodles tossed with shredded carrots, bell peppers, green onions, and sesame soy dressing.",
+              "cost": 16
             }
           ],
           "desserts": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/d21.webp",
+              "name": "Gulab Jamun Cheesecake",
+              "about": "Creamy cheesecake topped with golden brown gulab jamun balls and a drizzle of rose syrup.",
+              "cost": 12
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/d22.webp",
+              "name": "Cardamom Rice Pudding",
+              "about": "Creamy rice pudding infused with aromatic cardamom and garnished with toasted almonds.",
+              "cost": 8
+            },
+            {
+              "images": "./assets/img/d23.jpg",
+              "name": "Chocolate Samosa with Ice Cream",
+              "about": "Crispy chocolate-filled samosas served warm with a scoop of vanilla ice cream.",
+              "cost": 10
             }
           ],
           "beverages": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/b1.jpg",
+              "name": "Fresh Lime Soda",
+              "about": " Sparkling soda water mixed with fresh lime juice and a touch of simple syrup.",
+              "cost": 4
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/b2.jpg",
+              "name": "Indian Masala Chai",
+              "about": " Traditional Indian tea brewed with black tea leaves, aromatic spices, milk, and sugar.",
+              "cost": 4
+            },
+            {
+              "images": "./assets/img/bev3.jpg",
+              "name": "Mint Mojito",
+              "about": " Rum, lime juice, mint leaves, soda water, and simple syrup served over ice.",
+              "cost": 8
+            },
+            {
+              "images": "./assets/img/b23.png",
+              "name": "Spiced Chai Latte",
+              "about": "Aromatic blend of black tea, spices, and steamed milk, lightly sweetened with honey.",
+              "cost": 5
             }
           ]
         }
       }
     },
     {
-      "name": "Mirze",
+      "name": "Mirze Ibadov",
       "email": "youthprojects22@gmail.com",
       "password": "12345",
       "id": 3,
@@ -260,8 +296,15 @@
         "phone": "070-000-00-00",
         "backgroundPhoto": "./assets/img/photo2.avif",
         "photos": [
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png"
+          "./assets/img/photo1.avif",
+          "./assets/img/photo2.avif",
+          "./assets/img/photo3.avif",
+          "./assets/img/photo4.avif",
+          "./assets/img/phoyo5.avif",
+          "./assets/img/photo6.avif",
+          "./assets/img/photo7.avif",
+          "./assets/img/photo8.avif",
+          "./assets/img/photo9.avif"
         ],
         "location": "Melbourne, Australia",
         "workTime": [
@@ -273,72 +316,108 @@
         "menu": {
           "hotDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/h31.jpg",
+              "name": "Kung Pao Chicken",
+              "about": "Spicy stir-fried chicken with peanuts, vegetables, and chili peppers in a savory Kung Pao sauce.",
+              "cost": 15
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/h32.jpg",
+              "name": "Shrimp Pad Thai",
+              "about": "Classic Thai stir-fried noodles with shrimp, tofu, bean sprouts, and peanuts in a tangy tamarind sauce.",
+              "cost": 20
+            },
+            {
+              "images": "./assets/img/h33.jpg",
+              "name": "Sichuan Eggplant",
+              "about": "Tender pieces of eggplant stir-fried with garlic, ginger, and Sichuan peppercorns in a spicy sauce.",
+              "cost": 16
+            },
+            {
+              "images": "./assets/img/h34.jpg",
+              "name": "Beef with Broccoli",
+              "about": " Tender slices of beef stir-fried with fresh broccoli florets in a garlic soy sauce.",
+              "cost": 18
             }
           ],
           "coldDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c31.jpg",
+              "name": "Bang Bang Chicken",
+              "about": "Shredded chicken breast tossed in a spicy, tangy sauce with sesame paste and peanuts.",
+              "cost": 10
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c32.jpg",
+              "name": "Sichuan Cold Noodles",
+              "about": "Cold noodles tossed in a spicy Sichuan sauce with shredded chicken and cucumber.",
+              "cost": 12
+            },
+            {
+              "images": "./assets/img/c33.jpg",
+              "name": "Crispy Spring Rolls",
+              "about": " Crispy spring rolls filled with shredded vegetables and served with a sweet and sour dipping sauce.",
+              "cost": 8
             }
           ],
           "salads": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/s31.jpg",
+              "name": "Roasted Beet and Goat Cheese Salad",
+              "about": " Roasted beets tossed with arugula, candied walnuts, and crumbled goat cheese. Drizzled with a balsamic reduction.",
+              "cost": 15
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/s32.jpg",
+              "name": "Thai Beef Salad",
+              "about": "Grilled beef slices served on a bed of mixed greens with cherry tomatoes, cucumber, and Thai basil. Tossed in a tangy lime dressing.",
+              "cost": 14
+            },
+            {
+              "images": "./assets/img/s33.jpg",
+              "name": "Miso Glazed Tofu Salad",
+              "about": "Grilled tofu marinated in miso paste served on a bed of mixed greens, edamame beans, radishes, and sesame seeds. Tossed in a miso ginger dressing.",
+              "cost": 11
             }
           ],
           "desserts": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/d31.jpg",
+              "name": "Pineapple Coconut Panna Cotta",
+              "about": "Creamy coconut milk panna cotta topped with fresh pineapple compote.",
+              "cost": 9
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/d32.jpg",
+              "name": "Chocolate Hazelnut Mousse",
+              "about": " Silky chocolate hazelnut mousse topped with chopped hazelnuts and chocolate shavings.",
+              "cost": 12
+            },
+            {
+              "images": "./assets/img/d33.webp",
+              "name": "Matcha Green Tea Tiramisu",
+              "about": "Layers of matcha-infused sponge cake, creamy mascarpone cheese, and whipped cream.",
+              "cost": 10
             }
           ],
           "beverages": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/b31.webp",
+              "name": "Passionfruit Mojito",
+              "about": "Rum, passionfruit juice, lime juice, mint leaves, and soda water.",
+              "cost": 9
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/b32.webp",
+              "name": "Jasmine Pearl Iced Tea",
+              "about": "Fragrant jasmine pearl tea brewed and served over ice with a slice of lemon.",
+              "cost": 4
+            },
+            {
+              "images": "./assets/img/b33.jpg",
+              "name": "Mango Ginger Smoothie",
+              "about": "Creamy mango smoothie blended with ginger syrup and yogurt.",
+              "cost": 6
             }
           ]
         }
@@ -350,14 +429,21 @@
       "password": "12345",
       "id": 4,
       "restaurant": {
-        "name": "Spicy",
+        "name": "Flavor Junction",
         "phone": "070-000-00-00",
         "backgroundPhoto": "./assets/img/photo9.avif",
         "photos": [
-          "./assets/img/faq-1.png",
-          "./assets/img/faq-1.png"
+          "./assets/img/le1.jpg",
+          "./assets/img/le2.jpg",
+          "./assets/img/le3.jpg",
+          "./assets/img/le4.jpg",
+          "./assets/img/le5.jpg",
+          "./assets/img/le6.avif",
+          "./assets/img/photo7.avif",
+          "./assets/img/photo8.avif",
+          "./assets/img/le7.jpg"
         ],
-        "location": "a",
+        "location": "123 Barbaros Boulevard, Turkey",
         "workTime": [
           "12:27",
           "12:27",
@@ -367,72 +453,233 @@
         "menu": {
           "hotDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/menu1.1.jpg",
+              "name": "Boeuf Bourguignon",
+              "about": "Tender beef cooked in red wine sauce with mushrooms and pearl onions. Served with garlic mashed potatoes.",
+              "cost": 25
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/h31.jpg",
+              "name": "Kung Pao Chicken",
+              "about": "Spicy stir-fried chicken with peanuts, vegetables, and chili peppers in a savory Kung Pao sauce.",
+              "cost": 15
+            },
+            {
+              "images": "./assets/img/h22.jpg",
+              "name": "Vegetable Biryani",
+              "about": " Fragrant basmati rice cooked with mixed vegetables, herbs, and spices, layered with saffron-infused rice.",
+              "cost": 18
             }
           ],
           "coldDishes": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/c22.jpg",
+              "name": "Cucumber Raita",
+              "about": "Creamy yogurt mixed with diced cucumbers, mint, and spices, served chilled.",
+              "cost": 8
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/cold.jpg",
+              "name": "Charcuterie Platter",
+              "about": "Assorted cured meats, pâté, cheese, cornichons, and crusty bread served with whole grain mustard.",
+              "cost": 25
+            },
+            {
+              "images": "./assets/img/c32.jpg",
+              "name": "Sichuan Cold Noodles",
+              "about": "Cold noodles tossed in a spicy Sichuan sauce with shredded chicken and cucumber.",
+              "cost": 12
             }
           ],
           "salads": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/salad3.jpg",
+              "name": " Cobb Salad",
+              "about": " Mixed greens topped with grilled chicken, avocado, bacon, hard-boiled eggs, tomatoes, and blue cheese.",
+              "cost": 22
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/s32.jpg",
+              "name": "Thai Beef Salad",
+              "about": "Grilled beef slices served on a bed of mixed greens with cherry tomatoes, cucumber, and Thai basil. Tossed in a tangy lime dressing.",
+              "cost": 14
+            },
+            {
+              "images": "./assets/img/c21.webp",
+              "name": "Spicy Chicken Caesar Salad",
+              "about": "Grilled chicken strips tossed with crisp romaine lettuce, croutons, Parmesan cheese, and spicy Caesar dressing.",
+              "cost": 18
             }
           ],
           "desserts": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/des1.webp",
+              "name": "Crème Brûlée:",
+              "about": "A rich custard dessert topped with a contrasting layer of caramelized sugar.",
+              "cost": 10
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/d22.webp",
+              "name": "Cardamom Rice Pudding",
+              "about": "Creamy rice pudding infused with aromatic cardamom and garnished with toasted almonds.",
+              "cost": 8
+            },
+            {
+              "images": "./assets/img/d31.jpg",
+              "name": "Pineapple Coconut Panna Cotta",
+              "about": "Creamy coconut milk panna cotta topped with fresh pineapple compote.",
+              "cost": 9
             }
           ],
           "beverages": [
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/b32.webp",
+              "name": "Jasmine Pearl Iced Tea",
+              "about": "Fragrant jasmine pearl tea brewed and served over ice with a slice of lemon.",
+              "cost": 4
             },
             {
-              "images": "./assets/img/popular1.png",
-              "name": "Baked Chicken Wings and Legs",
-              "about": "4 Piece Chicken , Spicy Sauce",
-              "cost": 30
+              "images": "./assets/img/bev1.jpg",
+              "name": "Mango Lassi",
+              "about": " Creamy yogurt drink blended with ripe mangoes and a hint of cardamom.",
+              "cost": 5
+            },
+            {
+              "images": "./assets/img/bev2.jpg",
+              "name": "Sparkling Elderflower Lemonade",
+              "about": "Refreshing lemonade infused with elderflower syrup and sparkling water.",
+              "cost": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 5,
+      "restaurant": {
+        "name": "The Golden Spoon",
+        "phone": "070-000-00-00",
+        "backgroundPhoto": "./assets/img/restaurant3.webp",
+        "photos": [
+          "./assets/img/le1.jpg",
+          "./assets/img/le2.jpg",
+          "./assets/img/le3.jpg",
+          "./assets/img/le4.jpg",
+          "./assets/img/le5.jpg",
+          "./assets/img/le6.avif",
+          "./assets/img/photo7.avif",
+          "./assets/img/photo8.avif",
+          "./assets/img/le7.jpg"
+        ],
+        "location": "London, United Kingdom",
+        "workTime": [
+          "12:27",
+          "12:27",
+          "23:33",
+          "17:27"
+        ],
+        "menu": {
+          "hotDishes": [
+            {
+              "images": "./assets/img/menu1.1.jpg",
+              "name": "Boeuf Bourguignon",
+              "about": "Tender beef cooked in red wine sauce with mushrooms and pearl onions. Served with garlic mashed potatoes.",
+              "cost": 25
+            },
+            {
+              "images": "./assets/img/h31.jpg",
+              "name": "Kung Pao Chicken",
+              "about": "Spicy stir-fried chicken with peanuts, vegetables, and chili peppers in a savory Kung Pao sauce.",
+              "cost": 15
+            },
+            {
+              "images": "./assets/img/h22.jpg",
+              "name": "Vegetable Biryani",
+              "about": " Fragrant basmati rice cooked with mixed vegetables, herbs, and spices, layered with saffron-infused rice.",
+              "cost": 18
+            }
+          ],
+          "coldDishes": [
+            {
+              "images": "./assets/img/c22.jpg",
+              "name": "Cucumber Raita",
+              "about": "Creamy yogurt mixed with diced cucumbers, mint, and spices, served chilled.",
+              "cost": 8
+            },
+            {
+              "images": "./assets/img/cold.jpg",
+              "name": "Charcuterie Platter",
+              "about": "Assorted cured meats, pâté, cheese, cornichons, and crusty bread served with whole grain mustard.",
+              "cost": 25
+            },
+            {
+              "images": "./assets/img/c32.jpg",
+              "name": "Sichuan Cold Noodles",
+              "about": "Cold noodles tossed in a spicy Sichuan sauce with shredded chicken and cucumber.",
+              "cost": 12
+            }
+          ],
+          "salads": [
+            {
+              "images": "./assets/img/salad3.jpg",
+              "name": " Cobb Salad",
+              "about": " Mixed greens topped with grilled chicken, avocado, bacon, hard-boiled eggs, tomatoes, and blue cheese.",
+              "cost": 22
+            },
+            {
+              "images": "./assets/img/s32.jpg",
+              "name": "Thai Beef Salad",
+              "about": "Grilled beef slices served on a bed of mixed greens with cherry tomatoes, cucumber, and Thai basil. Tossed in a tangy lime dressing.",
+              "cost": 14
+            },
+            {
+              "images": "./assets/img/c21.webp",
+              "name": "Spicy Chicken Caesar Salad",
+              "about": "Grilled chicken strips tossed with crisp romaine lettuce, croutons, Parmesan cheese, and spicy Caesar dressing.",
+              "cost": 18
+            }
+          ],
+          "desserts": [
+            {
+              "images": "./assets/img/des1.webp",
+              "name": "Crème Brûlée:",
+              "about": "A rich custard dessert topped with a contrasting layer of caramelized sugar.",
+              "cost": 10
+            },
+            {
+              "images": "./assets/img/d22.webp",
+              "name": "Cardamom Rice Pudding",
+              "about": "Creamy rice pudding infused with aromatic cardamom and garnished with toasted almonds.",
+              "cost": 8
+            },
+            {
+              "images": "./assets/img/d31.jpg",
+              "name": "Pineapple Coconut Panna Cotta",
+              "about": "Creamy coconut milk panna cotta topped with fresh pineapple compote.",
+              "cost": 9
+            }
+          ],
+          "beverages": [
+            {
+              "images": "./assets/img/b32.webp",
+              "name": "Jasmine Pearl Iced Tea",
+              "about": "Fragrant jasmine pearl tea brewed and served over ice with a slice of lemon.",
+              "cost": 4
+            },
+            {
+              "images": "./assets/img/bev1.jpg",
+              "name": "Mango Lassi",
+              "about": " Creamy yogurt drink blended with ripe mangoes and a hint of cardamom.",
+              "cost": 5
+            },
+            {
+              "images": "./assets/img/bev2.jpg",
+              "name": "Sparkling Elderflower Lemonade",
+              "about": "Refreshing lemonade infused with elderflower syrup and sparkling water.",
+              "cost": 4
             }
           ]
         }

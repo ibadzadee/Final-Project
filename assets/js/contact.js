@@ -1,19 +1,37 @@
 function emailSend() {
-  let userName = document.querySelector("#name").value;
-//   let password = document.querySelector("#password").value;  
-  let email = document.querySelector("#email").value;
-  let messageBody = "Name: " + userName + "<br/> Email: " + email;
+  let params ={
+    from_name : document.getElementById("firstName").value,
+    email_id: document.getElementById("email").value,
+    message: document.getElementById("message").value
+  }
+  emailjs.send("service_0ch8q6j" , "template_njwvjkw", params).then(function(res){
+    // alert("success" , res.status)
+    //----------------------MODALjs----------------------
+    let modalContent = document.querySelector(".modal-content");
+    let modalContainer = document.getElementById("modalContainer");
+    setTimeout(function () {
+      modalContainer.style.animation = "slideOut 0.5s forwards";
+      setTimeout(function () {
+        modalContainer.style.display = "none";
+        modalContainer.style.animation = "";
+      }, 500);
+    }, 1500);
+  
+    document.querySelector(".close").addEventListener("click", function () {
+      document.getElementById("modalContainer").style.animation =
+        "slideOut 0.5s forwards";
+      setTimeout(function () {
+        document.getElementById("modalContainer").style.display = "none";
+        document.getElementById("modalContainer").style.animation = "";
+      }, 300);
+    });
+  
+    modalContainer.style.display = "flex";
+    setTimeout(() => {
+      window.location.reload();
+    }, 2500);
+  })
 
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "ld6xwe2ez@code.edu.az",
-    Password: "8BFDF29AD6E603256DEC0276B51F3B0BDF6A3C711522ACFE65A24DE62965F18E4425D01A",
-    To: "sara.ibadzade@gmail.com",
-    From: "ld6xwe2ez@code.edu.az",
-    Subject: "This is the subject",
-    Body: messageBody,
-    SecureToken: "your_secure_token",
-  }).then((message) => alert(message));
 }
 
 

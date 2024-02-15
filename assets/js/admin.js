@@ -1,6 +1,13 @@
 let logoffEl = document.querySelector("#logoff");
 let infoEl = document.querySelector("#info");
 let logoutBtn = document.querySelector(".logout");
+let photos = [];
+let hot = [];
+let cold = [];
+let salad = [];
+let desserts = [];
+let beverages = [];
+let inputList = [];
 
 let user = localStorage.getItem("currentUser")
   ? JSON.parse(localStorage.getItem("currentUser")).name
@@ -32,95 +39,46 @@ logoutBtn.addEventListener("click", () => {
   window.location = `./register.html`;
 });
 
-// -------------Delete button---Modal-------------
-// const updateDeleteButtons = () => {
-//   const deleteButtons = document.querySelectorAll(".bi-trash3-fill");
-//   const deleteModal = document.getElementById("deleteModal");
-//   const confirmDeleteButton = document.getElementById("confirmDelete");
-//   const closeModalButtons = document.querySelectorAll(
-//     '[data-dismiss="modal"], .modal'
-//   );
-
-//   deleteButtons.forEach((deleteButton) => {
-//     deleteButton.addEventListener("click", () => {
-//       deleteModal.style.display = "block";
-//       confirmDeleteButton.onclick = () => {
-//         deleteButton.parentElement.parentElement.remove();
-//         deleteModal.style.display = "none";
-//       };
-//     });
-//   });
-
-//   closeModalButtons.forEach((button) => {
-//     button.addEventListener("click", () => {
-//       deleteModal.style.display = "none";
-//     });
-//   });
-// };
-
-// updateDeleteButtons();
 
 // ------------------------ Add Table ------------------------
 
 document.querySelectorAll(".addTab").forEach((button) => {
-  button.addEventListener("click", () => {
-    const key = button.getAttribute("data-key");
-    const table = document.querySelector(`table[data-key="${key}"]`);
-
-    if (table) {
-      const tbody = table.querySelector("tbody");
-      let allInputsFilled = true;
-
-      tbody.querySelectorAll("tr").forEach((row) => {
-        const inputs = row.querySelectorAll("input");
-        inputs.forEach((e) => console.log(e.value));
-        inputs.forEach((input) => {
-          if (input.value.trim() === "") {
-            allInputsFilled = false;
-            return;
-          }
-        });
-      });
-
-      if (!allInputsFilled) {
-        alert("Please fill in all fields before adding a new row.");
-        return;
-      }
-      let unique = uuidv4();
-      const rowCount = tbody.querySelectorAll("tr").length + 1;
-      const newRow = document.createElement("tr");
-      newRow.innerHTML = `
-        <td>${rowCount}</td>
-        <td>
-          <label for="${unique}" class="custom-file-upload">image</label>
-          <input type="file" id="${unique}" style="display : none" >
-        </td>
-        <td><input type="text" ></td>
-        <td><input type="text" ></td>
-        <td><input type="text" ></td>
-        <td><i class="bi bi-trash3-fill"</i></td>
-      `;
-
-      tbody.appendChild(newRow);
+  // console.log(button);
+  button.addEventListener("click", (e) => {
+    let key = e.target.dataset.key;
+    let template = {
+      images: "",
+      name: "",
+      about: "",
+      cost: 0,
+    };
+    switch (Number(key)) {
+      case 1:
+        hot.push({ ...template });
+        break;
+      case 2:
+        cold.push({ ...template });
+        break;
+      case 3:
+        salad.push({ ...template });
+        break;
+      case 4:
+        desserts.push({ ...template });
+        break;
+      case 5:
+        beverages.push({ ...template });
+        break;
+      default:
+        console.log("Mig");
+        break;
     }
+
+    renderTables();
+
   });
 });
 
-// ------------------ Add 3 point ------------------
-// document.querySelectorAll('input[type="text"]').forEach((input) => {
-//   const originalText = input.value;
-//   const maxLength = 15;
 
-//   if (originalText.length > maxLength) {
-//     input.value = originalText.substring(0, maxLength) + "...";
-//     input.addEventListener("focus", () => {
-//       input.value = originalText;
-//     });
-//     input.addEventListener("blur", () => {
-//       input.value = originalText.substring(0, maxLength) + "...";
-//     });
-//   }
-// });
 
 // -------------- Nav codes --------------
 
@@ -173,8 +131,32 @@ if (id) {
           password: password.value,
         };
         console.log(obj);
-        axios.put(url + id, obj);
-        window.location.reload();
+  //----------------------MODALjs----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
+
+  document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("modalContainer").style.animation =
+      "slideOut 0.5s forwards";
+    setTimeout(function () {
+      document.getElementById("modalContainer").style.display = "none";
+      document.getElementById("modalContainer").style.animation = "";
+    }, 300);
+  });
+
+  // modalContent.innerHTML= "Menu Saved Successfully!";
+  modalContainer.style.display = "flex";
+  setTimeout(() => {
+    axios.post(url+id, obj);
+    window.location.reload();
+  }, 2500);
       });
     });
 }
@@ -193,10 +175,55 @@ let mainPhoto = document.querySelector("#mainPhotoSrc");
 let img = document.querySelectorAll(".imgSrcAll");
 let imageDivAll = document.querySelector(`.imageDivAll`);
 let PhotoArr = [];
-// let inputColor = document.querySelector('#textColor')
 
-// let img = document.querySelector(`#${unicId}`);
-// let unicId = uuidv4();
+
+function renderPhotos() {
+  console.log(photos);
+
+  imageDivAll.innerHTML = "";
+  photos.forEach((elem, i) => {
+    let uId = uuidv4();
+    let unique = uId.substring(1, uId.length - 1);
+    imageDivAll.innerHTML += `
+    <div class="imageDivAll">
+    <div class="imageDiv">
+    <div class="display">
+      <label for="${unique}" class="custom-file-upload">image</label>
+      <i class="bi bi-trash3-fill deleteIcon" data-index="${i}"></i>
+      </div>
+      <input id="${unique}" type="file" class="photoForRes" style="display: none" data-index="${i}" />
+      <div class="img">
+        <img id="imgRestoran" class="imgSrcAll" src="${elem}" alt="image" />
+      </div>
+    </div>  
+    `;
+  });
+
+  document.querySelectorAll(".photoForRes").forEach((input) => {
+    input.addEventListener("input", (e) => {
+      let index = e.target.dataset.index;
+
+      let file = e.target.files[0];
+
+      if (file) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          photos.splice(index, 1, reader.result);
+          renderPhotos();
+        };
+      }
+    });
+  });
+
+  document.querySelectorAll(".deleteIcon").forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      let index = e.target.dataset.index;
+      photos.splice(index, 1);
+      renderPhotos();
+    });
+  });
+}
 
 if (id) {
   fetch(url + id)
@@ -211,48 +238,12 @@ if (id) {
       sundayStartTime.value = data.restaurant.workTime[2];
       sundayEndTime.value = data.restaurant.workTime[3];
       mainPhoto.src = data.restaurant.backgroundPhoto;
-      // inputColor.value = data.restaurant.nameColor;
-      let uId = uuidv4();
-      let unique = uId.substring(1, uId.length - 1);
 
-      let lengthPhotos = data.restaurant.photos;
-      lengthPhotos.forEach((elem) => {
-        imageDivAll.innerHTML += `
-        <div class="imageDivAll">
-        <div class="imageDiv">
-        <div class="display">
-          <label for="${unique}" class="custom-file-upload">image</label>
-          <i class="bi bi-trash3-fill"></i>
-          </div>
-          <input id="${unique}" type="file" style="display: none" />
-          <div class="img">
-            <img id="imgRestoran" class="imgSrcAll" src="${elem}" alt="image" />
-          </div>
-        </div>  
-        `;
-      });
-      // console.log(lengthPhotos);
-      // let i = 0;
-      img.forEach((element, index) => {
-        element.src = data.restaurant.photos[index];
-        // i++;
-      });
-      //------- Choose File-------
-      // if (lengthPhotos.length > 0) {
-      //   document.getElementById(`${unique}`).addEventListener("input", (e) => {
-      //     let file = e.target.files[0];
-      //     if (file) {
-      //       let reader = new FileReader();
-      //       reader.readAsDataURL(file);
-      //       reader.onload = function () {
-      //         img.forEach((element) => {
-      //           element.src = reader.result;
-      //           PhotoArr.push(element.src);
-      //         });
-      //       };
-      //     }
-      //   });
-      // }
+
+      photos = data.restaurant.photos;
+
+      renderPhotos();
+
     });
 }
 console.log();
@@ -260,19 +251,8 @@ console.log();
 let addFile = document.querySelector(".addFile");
 
 addFile.addEventListener("click", () => {
-  let unicId = uuidv4();
-  imageDivAll.innerHTML += `
-  <div class="imageDiv">
-  <div class="display">
-  <label for="${unicId}" class="custom-file-upload">image</label>
-  <i class="bi bi-trash3-fill"></i>
-  </div>
-  <input id="${unicId}" type="file" style="display: none" />
-  <div class="img">
-    <img id="imgRestoran" src="" alt="image" />
-  </div>
-  </div>
-`;
+  photos.push("");
+  renderPhotos();
 });
 
 // Choose file for back image:
@@ -289,16 +269,10 @@ fileInpBack.addEventListener("input", (e) => {
   }
 });
 
-
-
-
-
 // Send AllData
 editRestoranForm.addEventListener("submit", (e) => {
   let i = 0;
-  // img.forEach((element) => {
-  //   element.src = data.restaurant.photos[i];
-  //   i++;
+
   e.preventDefault();
   axios.get(url + id).then((res) => {
     let data = res.data;
@@ -310,8 +284,7 @@ editRestoranForm.addEventListener("submit", (e) => {
         name: nameRestoran.value,
         phone: phone.value,
         backgroundPhoto: mainPhotoSrc.src,
-        // nameColor: inputColor.value,
-        // photos: PhotoArr,
+        photos: photos,
         location: locationRestoran.value,
         workTime: [
           monToSatStartTime.value,
@@ -319,149 +292,273 @@ editRestoranForm.addEventListener("submit", (e) => {
           sundayStartTime.value,
           sundayEndTime.value,
         ],
-        // fileInp: fileInp,
       },
     };
-    // if(img.src !==''){
-    axios.put(url + id, obj);
-    // }else{
-    //   alert("please choose a new image")
-    // }
+
+
+   //----------------------MODALjs----------------------
+   let modalContent = document.querySelector(".modal-content");
+   let modalContainer = document.getElementById("modalContainer");
+   setTimeout(function () {
+     modalContainer.style.animation = "slideOut 0.5s forwards";
+     setTimeout(function () {
+       modalContainer.style.display = "none";
+       modalContainer.style.animation = "";
+     }, 500);
+   }, 1500);
+ 
+   document.querySelector(".close").addEventListener("click", function () {
+     document.getElementById("modalContainer").style.animation =
+       "slideOut 0.5s forwards";
+     setTimeout(function () {
+       document.getElementById("modalContainer").style.display = "none";
+       document.getElementById("modalContainer").style.animation = "";
+     }, 300);
+   });
+ 
+   // modalContent.innerHTML= "Menu Saved Successfully!";
+   modalContainer.style.display = "flex";
+   setTimeout(() => {
+     axios.post(url+id, obj);
+     window.location.reload();
+   }, 2500);
+
   });
 });
-// });
-
-// let deleteMainPhoto = document.querySelector('.deleteMainPhoto');
-// deleteMainPhoto.addEventListener('click' , ()=>{
-
-//   axios.delete(url+id+'/backgroundPhoto')
-//   // axios.get(url+id).then((res ,index)=>{
-//   //   let data = res.data;
-//   //   console.log(data);
-//   //   let photo =data.restaurant.backgroundPhoto;
-//   //   photo.remove();
-//   //   // console.log(data.restaurant.backgroundPhoto);
-//   //   // axios.delete(url+id).then(elem=>{
-//   //   //   elem.remove();
-//   //   // })
-//   // })
-// })
-
-
 
 // ------------------------------ Edit Menu -------------------------------
-let existingData;
+
 let tBodyHot = document.querySelector("#tbodyHot");
 let tBodyCold = document.querySelector("#tbodyCold");
 let tBodySalads = document.querySelector("#tBodySalads");
 let tBodyDesserts = document.querySelector("#tBodyDesserts");
 let tBodyBeverages = document.querySelector("#tBodyBeverages");
 
-function populateTableRows(dishes, tbody, dishType) {
-  let unique = uuidv4();
-  dishes.forEach((elem, index, obj) => {
+
+function populateTableRows(dishes, tbody, dishType, sort) {
+  
+  tbody.innerHTML = "";
+  dishes.forEach((elem, index) => {
+    let unique = uuidv4();
+
     tbody.innerHTML += `
       <tr>
         <td id="number">${index + 1}</td>
         <td>
           <label for="${unique}" class="custom-file-upload">image</label>
-          <input id="${unique}" type="file" style="display: none" />
+          <input id="${unique}" type="file" class="menuimages" style="display: none" data-labindex=${index} data-type='${sort}'/>
+          <img src = "${elem.images}" width="20px" height="20px"/>
         </td>
         <td>
-          <input class="name name${dishType}" type="text" value="${
+          <input class="menu name name${dishType}" type="text" data-labindex=${index} data-type='${sort}' value="${
       elem.name
     }" />
         </td>
         <td>
-          <input type="text" class="about about${dishType}" value="${
+          <input type="text" class="menu about about${dishType}" data-labindex=${index} data-type='${sort}' value="${
       elem.about
     }" />
         </td> 
-        <td><input type="text" class="cost cost${dishType}" value="${
+        <td><input type="text" class="menu cost cost${dishType}" data-labindex=${index} data-type='${sort}' value="${
       elem.cost
     }" /></td>
-        <td><i class="bi bi-trash3-fill" onclick="deleteMenuItems(${
-          index + 1
-        })"></i></td>
+        <td><i class="bi bi-trash3-fill deleteRow" data-labindex=${index} data-type='${sort}'></i></td>
       </tr>`;
   });
+
+  document.querySelectorAll(".menu").forEach((inputs) => {
+    inputs.addEventListener("input", (e) => {
+      let text = e.target.value;
+      let labIndex = e.target.dataset.labindex;
+      let arr = e.target.dataset.type;
+      let type = e.target.classList[1];
+
+      switch (arr) {
+        case "hot":
+          hot[labIndex][type] = text;
+
+          break;
+
+        case "cold":
+          cold[labIndex][type] = text;
+
+          break;
+        case "salad":
+          salad[labIndex][type] = text;
+
+          break;
+        case "desserts":
+          desserts[labIndex][type] = text;
+
+          break;
+        case "beverages":
+          beverages[labIndex][type] = text;
+
+          break;
+        default: console.log("Mig");
+          break;
+      }
+
+    });
+  });
+
+  document.querySelectorAll('.menuimages').forEach(photoInp =>{
+
+    photoInp.addEventListener('input', (e)=>{
+      let index = e.target.dataset.labindex;
+      let arr = e.target.dataset.type;
+
+
+      let file = e.target.files[0];
+
+      let reader = new FileReader();
+
+      if(file){
+        reader.readAsDataURL(file)
+        reader.onload = () =>{
+          e.target.nextElementSibling.src = reader.result;
+
+          switch (arr) {
+            case "hot":
+              hot[index]['images'] = reader.result;
+    
+              break;
+    
+            case "cold":
+              cold[index]['images'] = reader.result;
+    
+              break;
+            case "salad":
+              salad[index]['images'] = reader.result;
+    
+              break;
+            case "desserts":
+              desserts[index]['images'] = reader.result;
+    
+              break;
+            case "beverages":
+              beverages[index]['images'] = reader.result;
+    
+              break;
+            default: console.log("Mig");
+              break;
+          }
+
+
+        }
+      }
+    })
+  })
+
+  document.querySelectorAll('.deleteRow').forEach(trashBtn=>{
+    trashBtn.addEventListener('click',(e)=>{
+      let index = e.target.dataset.labindex;
+      let arr = e.target.dataset.type;
+
+      switch (arr) {
+        case "hot":
+          hot.splice(index,1)
+
+          break;
+
+        case "cold":
+          cold.splice(index,1)
+
+          break;
+        case "salads":
+          salad.splice(index,1)
+
+          break;
+        case "desserts":
+          desserts.splice(index,1)
+
+          break;
+        case "beverages":
+          beverages.splice(index,1)
+
+          break;
+        default: console.log("Mig");
+          break;
+      }
+      renderTables()
+
+    })
+  })
 }
+
+
+function renderTables() {
+  populateTableRows(hot, tBodyHot, "Hot", "hot");
+  populateTableRows(cold, tBodyCold, "Cold", "cold");
+  populateTableRows(salad, tBodySalads, "Salads", "salads");
+  populateTableRows(desserts, tBodyDesserts, "Desserts", "desserts");
+  populateTableRows(beverages, tBodyBeverages, "Beverages", "beverages");
+}
+
 axios.get(url + id).then((res) => {
   data = res.data;
+  hot = data.restaurant.menu.hotDishes;
+  cold = data.restaurant.menu.coldDishes;
+  salad = data.restaurant.menu.salads;
+  desserts = data.restaurant.menu.desserts;
+  beverages = data.restaurant.menu.beverages;
 
-  populateTableRows(data.restaurant.menu.hotDishes, tBodyHot, "Hot");
-  populateTableRows(data.restaurant.menu.coldDishes, tBodyCold, "Cold");
-  populateTableRows(data.restaurant.menu.salads, tBodySalads, "Salads");
-  populateTableRows(data.restaurant.menu.desserts, tBodyDesserts, "Desserts");
-  populateTableRows(
-    data.restaurant.menu.beverages,
-    tBodyBeverages,
-    "Beverages"
-  );
+  renderTables();
 });
 
-//------- delete Data from Table--------
-// function deleteMenuItems(index) {
-//   // axios.delete(`${url}/${id}/restaurant/${index}`)
-//   console.log(`${url}/${id}?/restaurant/${index}`);
-//   // axios.get(url+id).then(res=>{
-//   //   let data = res.data;
-//   //   data.restaurant.menu.hotDishes.forEach((elem , index , obj)=>{
 
-//   //     console.log(obj[index]);
-//   //   })
-//   //   // console.log(index);
-//   // })
-// }
 
 // ----------------Send Menu----------------
-// let saveMenu = document.querySelector(".saveMenu");
-// let nameHot = document.querySelectorAll(".nameHot");
-// let aboutHot = document.querySelectorAll(".aboutHot");
-// let costHot = document.querySelectorAll(".costHot");
-// let nameHotArr = [];
-// let aboutHotArr = [];
-// let costHotArr = [];
-// saveMenu.addEventListener("click", () => {
-//   nameHot.forEach((elem) => {
-//     nameHotArr.push(elem.value);
-//   });
-// });
-// console.log(nameHotArr);
-// axios.get(url + id).then((res) => {
-//   let data = res.data;
-// });
+let saveMenu = document.querySelector(".saveMenu");
+saveMenu.addEventListener("click", (e) => {
+  axios.get(url + id).then((res) => {
+    let data = res.data;
 
-// });
+    let obj = {
+      ...data,
+      restaurant: {
+        ...data.restaurant,
+        menu : {
+          hotDishes : hot,
+          coldDishes : cold,
+          salads : salad,
+          desserts : desserts,
+          beverages : beverages
+        }
+      },
+    };
 
-// let updatedHotDishes = [];
-// document.querySelectorAll(".nameHot").forEach((nameInput, index) => {
-//   let dish = {
-//     name: nameInput.value,
-//     about: document.querySelectorAll(".aboutHot")[index].value,
-//     cost: document.querySelectorAll(".costHot")[index].value,
-//   };
-//   updatedHotDishes.push(dish);
-// });
+  //----------------------MODALjs----------------------
+  let modalContent = document.querySelector(".modal-content");
+  let modalContainer = document.getElementById("modalContainer");
+  setTimeout(function () {
+    modalContainer.style.animation = "slideOut 0.5s forwards";
+    setTimeout(function () {
+      modalContainer.style.display = "none";
+      modalContainer.style.animation = "";
+    }, 500);
+  }, 1500);
 
-// axios.get(url+id).then(res=>{
-//   let existingData = res.data;
-//   let obj = {
-//       ...existingData,
-//       restaurant: {
-//           ...existingData.restaurant,
-//           menu: {
-//               ...existingData.restaurant.menu,
-//               hotDishes: updatedHotDishes,
-//           },
-//       },
-//     };
-// })
+  document.querySelector(".close").addEventListener("click", function () {
+    document.getElementById("modalContainer").style.animation =
+      "slideOut 0.5s forwards";
+    setTimeout(function () {
+      document.getElementById("modalContainer").style.display = "none";
+      document.getElementById("modalContainer").style.animation = "";
+    }, 300);
+  });
 
-//     axios.put(url + id, obj)
-//       .then((res) => {
-//         window.location.reload();
-//       })
+  // modalContent.innerHTML= "Menu Saved Successfully!";
+  modalContainer.style.display = "flex";
+  setTimeout(() => {
+    axios.post(url+id, obj);
+    window.location.reload();
+  }, 2500);
+  });
+});
+
+
+
 
 //
 // ------GOPAGE------
@@ -477,4 +574,3 @@ link.innerHTML = `http://127.0.0.1:5500/restorans.html?name=${user}`;
 let barcode = document.querySelector("#barcode");
 barcode.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https:///restorans.html?id=${id}/`;
 
-console.log("sara");
