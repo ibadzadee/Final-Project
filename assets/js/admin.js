@@ -97,7 +97,7 @@ menuIcon.addEventListener("click", () => {
 });
 
 // ---------------- Fetch Data -----------------
-const url = `http://localhost:3000/users/`;
+const url = `https://chalk-foggy-promise.glitch.me/users/`;
 let id = localStorage.getItem("currentUser")
   ? JSON.parse(localStorage.getItem("currentUser")).id
   : null;
@@ -150,7 +150,7 @@ if (id) {
         // modalContent.innerHTML= "Menu Saved Successfully!";
         modalContainer.style.display = "flex";
         setTimeout(() => {
-          axios.post(url + id, obj);
+          axios.patch(url + id, obj);
           window.location.reload();
         }, 2500);
       });
@@ -311,7 +311,7 @@ editRestoranForm.addEventListener("submit", (e) => {
     // modalContent.innerHTML= "Menu Saved Successfully!";
     modalContainer.style.display = "flex";
     setTimeout(() => {
-      axios.post(url + id, obj);
+      axios.patch(url + id, obj);
       window.location.reload();
     }, 2500);
   });
@@ -536,7 +536,7 @@ saveMenu.addEventListener("click", (e) => {
     // modalContent.innerHTML= "Menu Saved Successfully!";
     modalContainer.style.display = "flex";
     setTimeout(() => {
-      axios.post(url + id, obj);
+      axios.patch(url + id, obj);
       window.location.reload();
     }, 2500);
   });

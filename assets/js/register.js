@@ -1,5 +1,5 @@
 let form = document.querySelector("#form");
-let url = `http://localhost:3000/users`;
+let url = `https://chalk-foggy-promise.glitch.me/users`;
 let signBtn = document.querySelector("#signUpForm");
 
 console.log(signBtn);
@@ -34,7 +34,7 @@ signBtn.addEventListener("submit", (e) => {
     }, 300);
   });
 
-  fetch("http://localhost:3000/users")
+  fetch("https://chalk-foggy-promise.glitch.me/users")
     .then((res) => res.json())
     .then((data) => {
       let existingUser = data.find((user) => user.email === emailInp);
@@ -85,7 +85,7 @@ loginBtn.addEventListener("submit", (e) => {
   let passLogin = document.querySelector("#passwordLogin").value;
 
   console.log(emailLogin);
-  fetch("http://localhost:3000/users")
+  fetch("https://chalk-foggy-promise.glitch.me/users")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -181,7 +181,7 @@ loginBtn2.addEventListener("submit", (e) => {
   let passLogin = document.querySelector("#passwordLogin2").value;
 
   console.log(emailLogin);
-  fetch("http://localhost:3000/users")
+  fetch("https://chalk-foggy-promise.glitch.me/users")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);

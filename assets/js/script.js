@@ -45,12 +45,12 @@ seeMoreBtn.addEventListener("click", () => {
 
 // <!-------------- Fetch Data----------------->
 
-const url = `http://localhost:3000/users`;
+const url = `https://chalk-foggy-promise.glitch.me/users`;
 const section = document.querySelector(".bottomFlip");
 console.log(section);
 const limit = 3;
 
-fetch(`http://localhost:3000/users?_limit=${limit}`)
+fetch(`https://chalk-foggy-promise.glitch.me/users?_limit=${limit}`)
   .then((res) => res.json())
   .then((data) => {
     data.forEach((element, index) => {

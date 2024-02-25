@@ -9,7 +9,7 @@ mouseIcon.addEventListener("click", () => {
 
 
 // ------------- Fetch Data -------------
-const url = `http://localhost:3000/users/`;
+const url = `https://chalk-foggy-promise.glitch.me/users/`;
 
 let contactSection = document.querySelector("#contactSection");
 let restoranName = document.querySelector("#restoranName");
