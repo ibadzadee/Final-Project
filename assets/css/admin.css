@@ -634,4 +634,8 @@ table i:hover {
   .restoranForm .mainImageDiv .img {
     width: 100%;
   }
+  .col-md-9 .tab-content .tab-pane {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
 }/*# sourceMappingURL=admin.css.map */
