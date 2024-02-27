@@ -630,12 +630,14 @@ table i:hover {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 500px) {
-  .restoranForm .mainImageDiv .img {
-    width: 100%;
-  }
+@media screen and (max-width: 600px) {
   .col-md-9 .tab-content .tab-pane {
     padding-left: 15px !important;
     padding-right: 15px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .restoranForm .mainImageDiv .img {
+    width: 100%;
   }
 }/*# sourceMappingURL=admin.css.map */
